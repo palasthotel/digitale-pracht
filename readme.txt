@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, responsive-layout, custom-colors, featured-images, microformats, theme-options, threaded-comments, translation-ready
 
 == Description ==
-digitale Pracht is a typography focused, minimal WordPress theme, brought to you by Palasthotel. It is fully responsive and looking good wheather you are using a phone, tablet or desktop pc. Contrary to most popular themes, this one makes several things differently: It is no theme for everyone, for example it has no top menu widget area. But if minimalism is your thing, you will probably like it.
+digitale Pracht is a typography focused, minimal WordPress theme, brought to you by Palasthotel. It is fully responsive and looking good whether you are using a phone, tablet or desktop pc. Contrary to most popular themes, this one makes several things differently: It is no theme for everyone, for example it has no top menu widget area. But if minimalism is your thing, you will probably like it.
 
 There are some nice features, which make this theme unique, like the reading indicator or the related posts box underneath the post texts. Also it uses square post images, which open up new design possibilities. Last but not least, this theme brings support for our Grid Plugin, which easily allows you to build custom landingpages (take a look at https://wordpress.org/plugins/grid).
 
@@ -17,7 +17,7 @@ Core features
 - Responsive
 - Square images
 - Reading indicator
-- Related posts (showing tagrelated, categoryrelated and random posts)
+- Related posts (showing tag related, category related and random posts)
 - Optimized for performance
 
 Additional features
