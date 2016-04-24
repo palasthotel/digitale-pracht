@@ -1,0 +1,76 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-pager {
+  max-width: $grid-content-width;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ph-pager-btn {
+  @extend .ph-btn;
+  padding: 8px $base-unit/2 !important;
+  min-width: $base-unit*4;
+}
+
+.ph-pager-btn-rel {
+  padding: 8px $base-unit*3/2 !important;
+
+  &:after,
+  &:before {
+    font-family: $icon;
+    @extend %f14-19-icon;
+  }
+}
+
+.ph-pager-btn-rel-prev:before {
+  @extend .ph-icon-left-open:before;
+}
+
+.ph-pager-btn-rel-next:after {
+  @extend .ph-icon-right-open:before;
+}
+
+.ph-pager-placeholder {
+  font-weight: 700;
+  padding: 8px $base-unit/2;
+}
+
+.ph-pager-btn-rel-prev-text {
+  padding-left: 4px;
+}
+
+.ph-pager-btn-rel-next-text {
+  padding-right: 4px;
+}
+
+// responsiveness step 1: show next and previous page link
+.ph-pager-btn-rel-prev-1,
+.ph-pager-btn-rel-next-1 {
+  display: none !important;
+
+  @include bp(388px) {
+    display: inline-block !important;
+  }
+}
+
+// responsiveness step 2: show nextnext and previousprevious page link
+.ph-pager-btn-rel-prev-2,
+.ph-pager-btn-rel-next-2 {
+  display: none !important;
+
+  @include bp(474px) {
+    display: inline-block !important;
+  }
+}
+
+// responsiveness step 3: show next and previous text
+.ph-pager-btn-rel-prev-text,
+.ph-pager-btn-rel-next-text {
+  display: none;
+
+  @include bp(588px) {
+    display: inline !important;
+  }
+}

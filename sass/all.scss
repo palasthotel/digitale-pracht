@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/**
+ * Aggregates all scss files into one
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+@import "no-output/base";
+
+@import "styleguide/colors";
+@import "styleguide/animation";
+@import "styleguide/grid";
+@import "styleguide/breakpoints";
+@import "styleguide/font-definition";
+@import "styleguide/font-sizes";
+
+@import "not-namespaced/normalize";
+@import "not-namespaced/a";
+@import "not-namespaced/headlines";
+@import "not-namespaced/p";
+@import "not-namespaced/lists";
+@import "not-namespaced/img";
+@import "not-namespaced/input";
+@import "not-namespaced/other-html";
+@import "not-namespaced/general";
+@import "not-namespaced/blockquote";
+@import "not-namespaced/pagination";
+@import "not-namespaced/table";
+@import "not-namespaced/wp";
+@import "not-namespaced/wp-image";
+@import "not-namespaced/wp-comment";
+@import "not-namespaced/ph-article-oembed";
+@import "not-namespaced/avatar";
+@import "not-namespaced/menu";
+@import "not-namespaced/widget";
+@import "not-namespaced/page";
+@import "not-namespaced/debug";
+
+@import "namespaced/*";
+
+@import "not-namespaced/print";

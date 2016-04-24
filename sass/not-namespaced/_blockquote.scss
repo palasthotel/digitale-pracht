@@ -1,0 +1,44 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+blockquote {
+  margin: 3em 0;
+  text-align: left;
+  @extend %ph-article-breakout;
+
+  @include bp($breakpoint-tablet) {
+    margin: 4em 0;
+  }
+
+  > p {
+    font-family: $lato;
+    @extend %f28-35--f38-45;
+    font-style: italic;
+    font-weight: 300;
+    display: inline;
+  }
+
+  .ph-article-text-lead & {
+    margin: 0 !important;
+
+    > p {
+      font-family: $lora;
+      @extend %f17-28--f24-36;
+      font-style: italic;
+
+      &:before {
+        content: '»';
+      }
+      &:after {
+        content: '«';
+      }
+    }
+  }
+
+  .comment-content & {
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+}

@@ -1,0 +1,335 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitale Pracht\n"
+"POT-Creation-Date: 2016-03-05 14:41+0100\n"
+"PO-Revision-Date: 2016-03-05 14:42+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: author.php:40
+msgid "Website"
+msgstr "Website"
+
+#: author.php:47 widget-social-share-overlay.php:36
+msgid "Twitter"
+msgstr "Twitter"
+
+#: comments.php:33
+#, php-format
+msgid "One comment"
+msgid_plural "%d comments"
+msgstr[0] "Ein Kommentar"
+msgstr[1] "%d Kommentare"
+
+#: comments.php:54
+msgid "Comments are closed."
+msgstr "Die Kommentarfunktion ist geschlossen."
+
+#: comments.php:59
+msgid "Leave a Reply"
+msgstr "Schreiben Sie uns einen Kommentar"
+
+#: comments.php:60
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Schreiben Sie einen Kommentar zu %s"
+
+#: comments.php:61
+msgid "Your email address will not be published."
+msgstr "Ihre E-Mail-Adresse wird nicht veröffentlicht."
+
+#: comments.php:61
+msgid "Required fields are marked. <span class=\"required\">*</span>"
+msgstr "Erforderliche Felder sind markiert <span class=\"required\">*</span>"
+
+#: content-404.php:12
+msgid "404 not found"
+msgstr "404 nicht gefunden"
+
+#: content-404.php:18
+msgid "Oops, something went wrong here."
+msgstr "Ups, hier sind Sie falsch."
+
+#: content-404.php:19 content-none.php:19
+msgid "Why not try the search function?"
+msgstr "Versuchen Sie es doch mal mit der Suchfunktion."
+
+#: content-author.php:13 content-single.php:34
+#, php-format
+msgid "All articles by %s"
+msgstr "Alle Artikel von %s"
+
+#: content-author.php:45 content-category.php:41 content-front-page.php:44
+#: index.php:56 search.php:51
+msgid "Previous"
+msgstr "Zurück"
+
+#: content-author.php:46 content-category.php:42 content-front-page.php:45
+#: index.php:57 search.php:52
+msgid "Next"
+msgstr "Weiter"
+
+#: content-author.php:47 content-category.php:43 content-front-page.php:46
+#: index.php:58 search.php:53
+msgid "Posts navigation"
+msgstr "Beitragsnavigation"
+
+#: content-no-search-result.php:14
+msgid "Sorry, no content found"
+msgstr "Leider keine Inhalte gefunden"
+
+#: content-no-search-result.php:15
+msgid "Why not try another search term?"
+msgstr "Versuchen Sie es doch einfach mit einem anderen Suchbegriff."
+
+#: content-none.php:12
+msgid "No content found"
+msgstr "Kein Inhalt gefunden"
+
+#: content-none.php:18
+msgid "Oops, nothing to show here."
+msgstr "Ups, hier gibt es leider nichts anzuzeigen."
+
+#: content-page.php:22 content-single.php:38
+msgid "Edit article"
+msgstr "Artikel bearbeiten"
+
+#: content-page.php:73 content-single.php:88
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: content-page.php:77 content-single.php:92
+msgid "Page"
+msgstr "Seite"
+
+#: content-single.php:32
+#, php-format
+msgid "by <a href=\"%1$s\" title=\"%2$s\" class=\"fn url\">%3$s</a>"
+msgstr "von <a href=\"%1$s\" title=\"%2$s\" class=\"fn url\">%3$s</a>"
+
+#: content-single.php:102
+msgid "Category"
+msgstr "Kategorie"
+
+#: content-single.php:109
+msgid "Tags"
+msgstr "Schlagwörter"
+
+#: content-single.php:122
+msgid "Related articles"
+msgstr "Passend zum Thema"
+
+#: content-single.php:132
+msgid "Read more stories on our homepage"
+msgstr "mehr Artikel gibts auf der Startseite"
+
+#: footer.php:32
+#, php-format
+msgid "© Copyright %s."
+msgstr "© Copyright %s."
+
+#: footer.php:34
+#, php-format
+msgid "Proudly powered by %s."
+msgstr "Mit bester Unterstützung von %s."
+
+#: footer.php:45
+#, php-format
+msgid "Theme %1$s by %2$s."
+msgstr "Theme %1$s von %2$s."
+
+#: functions.php:53
+msgid "Footer Menu"
+msgstr "Footer Menü"
+
+#: functions.php:91
+msgid "Widget Area Bottom"
+msgstr "Widget Bereicht unten"
+
+#: functions.php:93
+msgid "Appears at the bottom of the content on posts and pages."
+msgstr "Erscheint bei Beiträgen und Seiten am unteren Ende des Inhalts."
+
+#: functions.php:301
+msgid "Paragraph"
+msgstr "Absatz"
+
+#: functions.php:302 functions.php:303
+#, php-format
+msgid "Headline %d"
+msgstr "Überschrift %d"
+
+#: functions.php:304
+msgid "Preformatted"
+msgstr "Vorformatiert"
+
+#: functions.php:450
+#, php-format
+msgid "via %s"
+msgstr "via %s"
+
+#: grid/grid-container.tpl.php:28
+#, php-format
+msgid "The container type %s is not supported by this theme."
+msgstr "Der Containertyp %s wird leider von diesem Theme nicht unterstützt."
+
+#: header.php:47
+msgid "Go to content"
+msgstr "Zum Inhalt"
+
+#: header.php:50
+msgctxt "verb"
+msgid "Search"
+msgstr "Suchen"
+
+#: header.php:54
+msgctxt "noun"
+msgid "Search"
+msgstr "Suche"
+
+#: header.php:57 searchform.php:11
+msgid "Find me…"
+msgstr "Finde mich…"
+
+#: header.php:60 searchform.php:15
+msgid "Submit search"
+msgstr "Suche starten"
+
+#: header.php:67
+msgid "Back to top"
+msgstr "Nach oben"
+
+#: header.php:70
+msgctxt "verb"
+msgid "Share"
+msgstr "Teilen"
+
+#: inc/customizer.php:18
+msgid "Accent Color"
+msgstr "Akzentfarbe"
+
+#: inc/customizer.php:29
+msgid "Twitter @Username"
+msgstr "Twitter @Benutzername"
+
+#: inc/customizer.php:30
+msgid ""
+"You can provide your Twitter username here, without the @ character. It will "
+"appear inside the Twitter sharing links and in the Twitter Cards meta tags, "
+"if you choose to include them."
+msgstr ""
+"Sie können hier Ihren Twitter Benutzernamen angeben, ohne das führende @-"
+"Zeichen. Dieser wird dann in den Tweet Links erscheinen und in den Twitter "
+"Cards Meta Tags, falls Sie diese anzeigen lassen möchten."
+
+#: inc/customizer.php:42
+msgid "Open Graph"
+msgstr "Open Graph"
+
+#: inc/customizer.php:43
+msgid "Include Open Graph meta tags in HTML output."
+msgstr "Die Open Graph Meta Tags im HTML Code ausgeben."
+
+#: inc/customizer.php:55
+msgid "Twitter Cards"
+msgstr "Twitter Cards"
+
+#: inc/customizer.php:56
+msgid ""
+"Include Twitter Cards meta tags in HTML output. You need to provide a "
+"Twitter username for this to work."
+msgstr "Die Twitter Cards Meta Tags im HTML Code ausgeben."
+
+#: inc/setup-grid.php:73
+msgid "Teaser Big"
+msgstr "Großer Aufmacher"
+
+#: inc/setup-grid.php:77
+msgid "Teaser Illustrated"
+msgstr "Illustrierter Aufmacher"
+
+#: inc/setup-grid.php:81
+msgid "Teaser Pure"
+msgstr "Purer Aufmacher"
+
+#: search.php:15
+msgid "Search and find"
+msgstr "Suchen und finden"
+
+#: searchform.php:9
+#, php-format
+msgid "Search in %s"
+msgstr "Suche in %s"
+
+#: widget-social-share-overlay.php:10
+#, php-format
+msgid "Article from %s"
+msgstr "Artikel auf %s"
+
+#: widget-social-share-overlay.php:11 widget-social-share-overlay.php:12
+msgid "Maybe that would be something interesting for you:"
+msgstr "Vielleicht wäre das was für dich:"
+
+#: widget-social-share-overlay.php:22
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: widget-social-share-overlay.php:26
+msgid "Whatsapp"
+msgstr "Whatsapp"
+
+#: widget-social-share-overlay.php:31
+msgid "Google+"
+msgstr "Google+"
+
+#: widget-social-share-overlay.php:40
+msgid "Facebook"
+msgstr "Facebook"
+
+#. Theme Name of the plugin/theme
+msgid "digitale Pracht"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://wordpress.org/themes/digitalepracht/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "digitale Pracht Theme powered by Palasthotel"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Palasthotel <rezeption@palasthotel.de> (in person: Kim-Christian Meyer)"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://palasthotel.de"
+msgstr ""
+
+#~ msgid "Maybe you find here what you are looking for?"
+#~ msgstr "Vielleicht finden Sie ja hier, was Sie suchen?"
+
+#~ msgid "Twitter Username"
+#~ msgstr "Twitter Benutzername"
+
+#~ msgid ""
+#~ "You can provide your Twitter username here, beginning without the @ "
+#~ "character. It will appear inside the Twitter sharing links."
+#~ msgstr ""
+#~ "Sie können hier Ihren Twitter Benutzernamen angeben, ohne das führende @ "
+#~ "Zeichen. Dieser wird dann im Tweet Text erscheinen, wenn ein Besucher den "
+#~ "Twitter-Teilen-Button benutzt."

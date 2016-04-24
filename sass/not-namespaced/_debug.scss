@@ -1,0 +1,56 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-debug-grid {
+  position: fixed;
+  top: 0;
+  left: 4px;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999;
+  pointer-events: none;
+  max-width: $grid-width;
+  margin: 0 auto;
+  background-color: rgba($accent, 0.5);
+  opacity: 0.5;
+
+  @include bp($breakpoint-desktop) {
+    max-width: $grid-width;
+  }
+
+  .is-narrow-layout & {
+    max-width: $grid-width !important;
+  }
+}
+
+.ph-debug-grid-padding {
+  height: 100%;
+  width: $grid-320-padding-perc-outside;
+  float: left;
+
+  @include bp($breakpoint-tablet) {
+    width: $grid-padding-perc-outside;
+  }
+}
+
+.ph-debug-grid-slot {
+  height: 100%;
+  background-color: $accent;
+  width: $grid-320-slot-width-perc-outside;
+  float: left;
+
+  @include bp($breakpoint-tablet) {
+    width: $grid-slot-width-perc-outside;
+  }
+}
+
+.ph-debug-grid-slot-gap {
+  height: 100%;
+  width: $grid-320-slot-gap-perc-outside;
+  float: left;
+
+  @include bp($breakpoint-tablet) {
+    width: $grid-slot-gap-perc-outside;
+  }
+}

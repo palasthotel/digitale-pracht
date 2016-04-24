@@ -1,0 +1,125 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.grid-container {
+  position: relative;
+  margin: 6*$base-unit $grid-320-padding-perc-outside 0 $grid-320-padding-perc-outside;
+  padding-top: 4*$base-unit;
+  border-top: 2px solid $gray-light;
+  @extend .ph-clearfix;
+
+  &:first-child {
+    margin-top: 0 !important;
+  }
+  &:first-child.has-no-title {
+    border-top: 0;
+    padding-top: 0 !important;
+  }
+  @include bp($breakpoint-grid-2) {
+    margin: 10*$base-unit $grid-320-padding-perc-outside 0 $grid-320-padding-perc-outside;
+    padding-top: 8*$base-unit;
+  }
+  @include bp($breakpoint-tablet) {
+    margin: 10*$base-unit $grid-padding-perc-outside 0 $grid-padding-perc-outside;
+  }
+
+  &.has-title {
+    border-color: $accent;
+  }
+  &.has-border-top-accent {
+    border-color: $accent;
+  }
+  &.has-no-border-top {
+    border-top: 0;
+  }
+  &.has-no-padding-top {
+    padding-top: 0;
+  }
+  &.has-no-margin-top {
+    margin-top: 0;
+  }
+}
+
+.grid-container-title {
+  font-family: $lato;
+  position: relative;
+  top: -4*$base-unit;
+  left: 50%;
+  transform: translateX(-50%);
+  @extend .ph-btn-italic;
+  @extend .is-active;
+
+  @include bp($breakpoint-grid-2) {
+    top: -8*$base-unit;
+  }
+}
+
+[href].grid-container-title {
+  @extend .ph-btn-submit;
+  transition: background-color $speed $ease;
+
+  &:hover,
+  &:focus {
+    transition: none;
+  }
+}
+
+.grid-container-title-link {
+  color: inherit;
+  border: 0;
+}
+
+.grid-container-prolog {
+  clear: both;
+  margin: 0 0 6*$base-unit 0;
+  @extend %f17-28--f28-42;
+  font-weight: 300;
+  font-style: italic;
+
+  @include bp($breakpoint-tablet) {
+    margin-top: -6px;
+    margin-left: 1*$grid-slot-width-perc + 1*$grid-slot-gap-perc;
+    margin-right: 1*$grid-slot-width-perc + 1*$grid-slot-gap-perc;
+  }
+  @include bp($breakpoint-tablet-2) {
+    margin-left: 2*$grid-slot-width-perc + 2*$grid-slot-gap-perc;
+    margin-right: 2*$grid-slot-width-perc + 2*$grid-slot-gap-perc;
+  }
+}
+
+.grid-container-epilog {
+  @extend .grid-container-prolog;
+  margin-top: 6*$base-unit;
+  margin-bottom: 2*$base-unit;
+
+  @include bp($breakpoint-tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.grid-container-after {
+  overflow: hidden;
+}
+
+.grid-container-readmore-link {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  margin-top: 40px !important;
+  transform: translateX(-50%);
+  @extend .ph-btn-italic;
+
+  &:before {
+    content: "»\00a0";
+  }
+}
+
+.grid-container-warning {
+  text-align: center;
+  @extend %f17-28--f28-42;
+  font-weight: 300;
+  font-style: italic;
+  color: $error;
+  text-transform: none;
+}

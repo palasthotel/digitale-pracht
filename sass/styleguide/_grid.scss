@@ -1,0 +1,63 @@
+/**
+ * general grid constants (padding, columns, baseline, …)
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+// calculate all sizes, margins, paddings from this unit
+$base-unit                      : 10px;
+
+// ads
+$skyscraper-width               : 200px;
+
+// ?px 12 col grid
+$grid-slot-width                : 62px; // 12 col grid
+$grid-padding                   : 50px; // horizontal padding outside of grid container
+$grid-slot-gap                  : 50px; // horizontal width between slots
+
+$grid-content-width             : 12 * $grid-slot-width + 11 * $grid-slot-gap; // 744px
+$grid-width                     : $grid-content-width + 2 * $grid-padding; // 744px
+
+$grid-slot-5d6-width            : 10 * $grid-slot-width + 9 * $grid-slot-gap;
+$grid-slot-2d3-width            : 8 * $grid-slot-width + 7 * $grid-slot-gap;
+$grid-slot-1d4-width            : 3 * $grid-slot-width + 2 * $grid-slot-gap;
+$grid-slot-1d3-width            : 4 * $grid-slot-width + 3 * $grid-slot-gap;
+$grid-slot-1d2-width            : 6 * $grid-slot-width + 5 * $grid-slot-gap;
+
+// grid values in %
+$grid-slot-width-perc           : $grid-slot-width / $grid-content-width * 100%;
+$grid-slot-width-perc-outside   : $grid-slot-width / $grid-width * 100%;
+$grid-slot-width-perc-inside-5d6: $grid-slot-width / $grid-slot-5d6-width * 100%;
+$grid-slot-width-perc-inside-2d3: $grid-slot-width / $grid-slot-2d3-width * 100%;
+$grid-slot-width-perc-inside-1d4: $grid-slot-width / $grid-slot-1d4-width * 100%;
+$grid-slot-width-perc-inside-1d3: $grid-slot-width / $grid-slot-1d3-width * 100%;
+$grid-slot-width-perc-inside-1d2: $grid-slot-width / $grid-slot-1d2-width * 100%;
+$grid-padding-perc              : $grid-padding / $grid-content-width * 100%;
+$grid-padding-perc-outside      : $grid-padding / $grid-width * 100%;
+$grid-padding-perc-inside-5d6   : $grid-padding / $grid-slot-5d6-width * 100%;
+$grid-padding-perc-inside-2d3   : $grid-padding / $grid-slot-2d3-width * 100%;
+$grid-padding-perc-inside-1d4   : $grid-padding / $grid-slot-1d4-width * 100%;
+$grid-padding-perc-inside-1d3   : $grid-padding / $grid-slot-1d3-width * 100%;
+$grid-padding-perc-inside-1d2   : $grid-padding / $grid-slot-1d2-width * 100%;
+$grid-slot-gap-perc             : $grid-slot-gap / $grid-content-width * 100%;
+$grid-slot-gap-perc-outside     : $grid-slot-gap / $grid-width * 100%;
+$grid-slot-gap-perc-inside-5d6  : $grid-slot-gap / $grid-slot-5d6-width * 100%;
+$grid-slot-gap-perc-inside-2d3  : $grid-slot-gap / $grid-slot-2d3-width * 100%;
+$grid-slot-gap-perc-inside-1d4  : $grid-slot-gap / $grid-slot-1d4-width * 100%;
+$grid-slot-gap-perc-inside-1d3  : $grid-slot-gap / $grid-slot-1d3-width * 100%;
+$grid-slot-gap-perc-inside-1d2  : $grid-slot-gap / $grid-slot-1d2-width * 100%;
+
+// mobile 320px 4 cols grid
+$grid-320-slot-width            : 62.5px;
+$grid-320-padding               : 20px;
+$grid-320-slot-gap              : 10px;
+$grid-320-content-width         : 4 * $grid-320-slot-width + 3 * $grid-320-slot-gap; // 300px
+$grid-320-width                 : $grid-320-content-width + 2 * $grid-320-padding; // 320px
+
+// mobile grid values in %
+$grid-320-slot-width-perc       : $grid-320-slot-width / $grid-320-content-width * 100%;
+$grid-320-slot-width-perc-outside : $grid-320-slot-width / $grid-320-width * 100%;
+$grid-320-padding-perc          : $grid-320-padding / $grid-320-content-width * 100%;
+$grid-320-padding-perc-outside  : $grid-320-padding / $grid-320-width * 100%;
+$grid-320-slot-gap-perc         : $grid-320-slot-gap / $grid-320-content-width * 100%;
+$grid-320-slot-gap-perc-outside : $grid-320-slot-gap / $grid-320-width * 100%;

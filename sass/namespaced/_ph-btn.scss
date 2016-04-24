@@ -1,0 +1,62 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+%ph-btn-base {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 7px $base-unit*3/2 9px $base-unit*3/2;
+  border: 0;
+  color: black;
+  @extend %f14-19;
+  text-decoration: none;
+  transition: background-color $speed $ease;
+  font-family: $lato;
+
+  &.is-black {
+    background-color: black;
+  }
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    outline: none;
+    background-color: $accent !important;
+    color: black;
+    transition: none;
+  }
+}
+
+.ph-btn {
+  @extend %ph-btn-base;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: $gray-light;
+}
+
+.ph-btn-italic {
+  @extend %ph-btn-base;
+  font-style: italic;
+  text-transform: none;
+  font-weight: 400;
+  background-color: $gray-light;
+}
+
+.ph-btn-transparent-bg {
+  @extend %ph-btn-base;
+  text-transform: uppercase;
+  font-weight: 400;
+  background-color: transparent !important;
+}
+
+.ph-btn-submit {
+  background-color: $accent;
+  color: black;
+
+  &:hover,
+  &:focus {
+    background-color: mix($accent, white, 80%) !important;
+    transition: none;
+  }
+}

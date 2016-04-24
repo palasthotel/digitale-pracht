@@ -1,0 +1,97 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+// all possible input fields
+input[type="color"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="reset"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 7px $base-unit*3/2 9px $base-unit*3/2;
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: $gray-light;
+  color: black;
+  text-decoration: none;
+  font-family: $lato;
+  font-weight: 300;
+  @extend %f17-28;
+  @extend .ph-animation-hover-background-color;
+
+  &:focus {
+    outline: none;
+    background-color: $gray-light-opaque;
+  }
+}
+
+input[type="color"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="reset"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+  max-width: 286px;
+}
+
+input[type="button"],
+input[type="submit"],
+button {
+  @extend .ph-btn;
+  -webkit-appearance:none;
+  border-radius: 0;
+}
+
+input[type="submit"],
+button[type="submit"] {
+  @extend .ph-btn-submit;
+}
+
+label {
+  display: block;
+  margin: $base-unit*3/2 0 $base-unit/2 0;
+  font-family: $lato;
+  font-weight: 400;
+  font-style: italic;
+  @extend %f14-19;
+  text-align: left;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: $gray-semilight;
+}
+.ph-search-input-overlay::-webkit-input-placeholder {
+  color: $gray;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: $gray-semilight;
+  opacity: 1;
+}
+.ph-search-input-overlay:-moz-placeholder {
+  color: $gray;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: $gray-semilight;
+  opacity: 1;
+}
+.ph-search-input-overlay::-moz-placeholder {
+  color: $gray;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $gray-semilight;
+}
+.ph-search-input-overlay:-ms-input-placeholder {
+  color: $gray;
+}

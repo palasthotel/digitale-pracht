@@ -1,0 +1,72 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.gallery {
+  display: block;
+  @extend %ph-article-block-element;
+  @extend %ph-article-breakout-more;
+  @extend .ph-clearfix;
+}
+
+.gallery-item {
+  display: block;
+  width: 100%;
+  margin: 0 1% $base-unit 0;
+  text-align: left;
+  float: left;
+
+  @include bp($breakpoint-tablet) {
+    margin-bottom: 3/2*$base-unit;
+  }
+
+  .gallery-columns-1 & {
+    margin-right: 0;
+  }
+
+  @for $i from 2 through 9 {
+    .gallery-columns-#{$i} & {
+      width: #{(100% - ($i - 1) * 1%) / $i};
+
+      &:nth-child(#{$i}n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(#{$i}n+1) {
+        clear: both;
+      }
+    }
+  }
+}
+
+.gallery-icon {
+
+}
+
+.gallery-caption {
+  // break too long words
+  // @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+
+  // These are technically the same, but use both
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  // -ms-word-break: break-all; // every word somewhere in the middle!
+  // // This is the dangerous one in WebKit, as it breaks things wherever
+  // word-break: break-all;
+  // Instead use this non-standard one:
+  word-break: break-word;
+
+  // // Adds a hyphen where the word breaks, if supported (No Blink)
+  // -ms-hyphens: auto;
+  // -moz-hyphens: auto;
+  // -webkit-hyphens: auto;
+  // hyphens: auto;
+
+  .gallery-columns-6 &,
+  .gallery-columns-7 &,
+  .gallery-columns-8 &,
+  .gallery-columns-9 & {
+    display: none;
+  }
+}

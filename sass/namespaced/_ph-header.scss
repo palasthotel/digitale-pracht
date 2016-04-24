@@ -1,0 +1,14 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-header {
+  box-sizing: border-box;
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  padding: $base-unit*4 $grid-320-padding-perc-outside;
+  @include bp($breakpoint-tablet) {
+    padding: $base-unit*11 $grid-padding-perc-outside $base-unit*6 $grid-padding-perc-outside;
+  }
+}

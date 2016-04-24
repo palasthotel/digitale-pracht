@@ -1,0 +1,70 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-overlay-share {
+  .is-share-expanded & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .no-csstransforms & {
+    transition: opacity $speed $ease, bottom $speed $ease, visibility $speed $ease;
+    bottom: -$base-unit/2;
+    .is-share-expanded & {
+      bottom: 0;
+    }
+  }
+  .csstransforms & {
+    transition: opacity $speed $ease, transform $speed $ease, visibility $speed $ease;
+    bottom: 0;
+    transform: translateY(5px);
+  }
+  .csstransforms .is-share-expanded & {
+    transform: translateY(0);
+  }
+}
+
+.ph-overlay-share-btn {
+  border: 0;
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.ph-overlay-share-label {
+  display: block;
+  color: white;
+  @extend %f14-19;
+  font-weight: 700;
+  margin: $base-unit 0 0 0;
+  transition: color $speed $ease;
+
+  .ph-overlay-share-btn:hover &,
+  .ph-overlay-share-btn:focus & {
+    color: $accent;
+    transition: none;
+  }
+}
+
+.ph-overlay-share-list {
+  position: absolute;
+  bottom: $base-unit*2;
+  left: 0;
+  right: 0;
+  list-style-type: none;
+  white-space: normal;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+}
+
+.ph-overlay-share-list-item {
+  display: inline-block;
+  width: $base-unit*10;
+  padding: $base-unit $base-unit;
+  text-align: center;
+}

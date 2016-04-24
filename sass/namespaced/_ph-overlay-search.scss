@@ -1,0 +1,26 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-overlay-search {
+  .is-search-expanded & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .no-csstransforms & {
+    transition: opacity $speed $ease, top $speed $ease, visibility $speed $ease;
+    top: -$base-unit/2;
+    .is-search-expanded & {
+      top: 0;
+    }
+  }
+  .csstransforms & {
+    transition: opacity $speed $ease, transform $speed $ease, visibility $speed $ease;
+    top: 0;
+    transform: translateY(-5px);
+  }
+  .csstransforms .is-search-expanded & {
+    transform: translateY(0);
+  }
+}

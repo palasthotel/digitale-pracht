@@ -1,0 +1,17 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.footer-menu > .menu-item {
+  display: inline;
+  margin-right: $base-unit/2;
+
+  & > a {
+    color: inherit;
+    text-transform: uppercase;
+
+    &:focus {
+      border-color: black;
+    }
+  }
+}

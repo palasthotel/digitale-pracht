@@ -1,0 +1,18 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.page-links {
+  @extend %grid-slot-1d1-indented-more;
+  margin-top: 3*$base-unit;
+  @extend %ph-article-meta-style-pure;
+}
+
+.page-links-item {
+  margin: 0 $base-unit/2;
+
+  // active item
+  .page-links > & {
+    font-weight: 700;
+  }
+}

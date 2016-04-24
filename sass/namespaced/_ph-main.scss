@@ -1,0 +1,13 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-main {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  // overlay for menu, search, share
+  &:after {
+    @extend .ph-overlay-bg;
+  }
+}

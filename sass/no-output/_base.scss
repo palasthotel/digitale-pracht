@@ -1,0 +1,16 @@
+/**
+ * sass/compass stuff, not generating any css so far
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+// breakpoint switcher
+$bp-print-queries: true;
+$bp-print-ie-layout: false;
+$bp-use-ie-selector: false;
+
+// other digitalepracht switcher
+$ph-use-sprites: false;
+$strict-normalize: true; // makes _normalice.scss much smaller
+
+@import "mixins";      // custom mixins

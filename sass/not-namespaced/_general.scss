@@ -1,0 +1,15 @@
+/**
+ * holds general classes, which can be used as they are,
+ * or @extend-ed.
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+// from twentyfifteen
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}

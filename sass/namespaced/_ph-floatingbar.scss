@@ -1,0 +1,27 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-floatingbar {
+  position: fixed;
+  bottom: 4px;
+  right: 4px;
+  margin: 0;
+  padding: 0;
+  z-index: 80;
+  direction: rtl;
+  visibility: hidden;
+  transition: visibility $speed $ease $speed-delay-1;
+
+  .is-scrolled-end & {
+    visibility: visible;
+    transition: visibility $speed $ease;
+  }
+}
+
+.ph-floatingbar-link {
+  background-color: $gray-light !important; // fallback for non-rgba-browsers
+  background-color: $gray-light-opaque !important;
+  border: 0;
+}
+

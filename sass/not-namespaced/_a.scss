@@ -1,0 +1,56 @@
+// part of normalize.scss
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  position: relative;
+  background: transparent;
+  text-decoration: none;
+  border-bottom: 1px solid $gray-semilight;
+  transition: border-color $speed $ease;
+  color: inherit;
+
+  .comment-metadata & {
+    border-color: transparent;
+  }
+
+  .comment-author & {
+    border: 0;
+    @extend .ph-animation-hover-color;
+
+    &:hover,
+    &:focus {
+      color: $accent;
+    }
+  }
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+  outline: 0;
+  border-color: $gray;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+  border-color: $gray;
+  transition: none;
+}
+
+a:active {
+  bottom: -1px;
+}

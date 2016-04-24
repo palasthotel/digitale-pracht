@@ -1,0 +1,77 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-teaser-image-wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  .ph-teaser-big & {
+    float: left;
+    margin: 9px $grid-320-slot-gap-perc*2 8px 0;
+    $width: $grid-320-slot-width-perc + $grid-320-slot-gap-perc;
+    width: $width;
+    height: 0;
+    padding-top: $width;
+
+    .grid-slot-1d1 & {
+      @include bp($breakpoint-tablet) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        float: none;
+        $width: 4*$grid-slot-width-perc-inside-5d6 + 3*$grid-slot-gap-perc-inside-5d6;
+        width: $width;
+        padding-top: $width;
+        margin: 0;
+      }
+      @include bp($breakpoint-tablet-2) {
+        $width: 4*$grid-slot-width-perc-inside-2d3 + 3*$grid-slot-gap-perc-inside-2d3;
+        width: $width;
+        padding-top: $width;
+      }
+    }
+  }
+
+  .ph-teaser-illustrated & {
+    float: left;
+    margin: 9px $grid-320-slot-gap-perc*2 8px 0;
+    $width: $grid-320-slot-width-perc + $grid-320-slot-gap-perc;
+    width: $width;
+    height: 0;
+    padding-top: $width;
+
+    .grid-slot-1d1 & {
+      @include bp($breakpoint-tablet) {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        margin: 0;
+        $width: 2*$grid-slot-width-perc-inside-5d6 + $grid-slot-gap-perc-inside-5d6;
+        width: $width;
+        padding-top: $width;
+      }
+      @include bp($breakpoint-tablet-2) {
+        $width: $grid-slot-width-perc-inside-2d3 + $grid-slot-gap-perc-inside-2d3;
+        width: $width;
+        padding-top: $width;
+      }
+    }
+  }
+}
+
+.ph-teaser-image {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  .ph-teaser-big &,
+  .ph-teaser-illustrated & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+  }
+}

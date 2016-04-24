@@ -1,0 +1,25 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.grid-box-wordpress-menu-menu > .menu-item {
+  font-weight: 300;
+  display: block;
+  border-top: 1px solid $gray-light;
+
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+.grid-box-wordpress-menu-menu > .menu-item > a {
+  display: block;
+  border: 0;
+  padding: $base-unit 0;
+
+  @extend .ph-animation-hover-color;
+
+  &:hover {
+    color: $accent;
+  }
+}

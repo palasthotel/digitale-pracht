@@ -1,0 +1,47 @@
+/**
+ * colors following the context principal
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+/**
+ * color palette
+ */
+
+$accent: #facc00;
+$gray: #666;
+$gray-semilight: #ccc;
+$gray-light: #e5e5e5;  // = rgb(229, 229, 229)
+$gray-light-opaque: rgba(229, 229, 229, 0.7);
+$black-opaque: rgba(0, 0, 0, 0.9);
+
+$error: red;
+
+
+/**
+ * item specific colors
+ */
+
+$html-bg: white;
+$text-fg: black;
+$teaser-text-fg: black;
+$action-bar-icons-fg: black;
+$footer-bg: $gray-light;
+
+
+/**
+ * social colors from @url http://brandcolors.net/
+ */
+
+$facebook: #3b5998;
+$twitter: #55acee;
+$whatsapp: #4dc247;
+$googleplus: #dd4b39;
+$pinterest: #cc2127;
+$tumblr: #35465c;
+$youtube: #cd201f;
+$vimeo: #1ab7ea;
+$soundcloud: #ff8800;
+$linkedin: #0077b5;
+$xing: #cfdc00;
+$disqus: #2e9fff;

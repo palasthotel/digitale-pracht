@@ -1,0 +1,13 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+p {
+  margin: 1em 0 0 0;
+  font-size: inherit;
+  line-height: inherit;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

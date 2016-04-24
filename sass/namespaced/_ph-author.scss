@@ -1,0 +1,102 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-author {
+  position: relative;
+  @extend %grid-slot-1d1-indented;
+  margin-bottom: 60px;
+
+  @include bp($breakpoint-tablet) {
+    margin-bottom: 100px;
+  }
+}
+
+.ph-author-info {
+  padding-top: 22px;
+  margin-bottom: 60px;
+  @extend %grid-slot-1d1-indented;
+}
+
+.ph-author-image-wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin: 2*$base-unit $grid-320-slot-gap-perc*2 $base-unit 0;
+  $width: $grid-320-slot-width-perc + $grid-320-slot-gap-perc;
+  width: $width;
+  height: 0;
+  padding-top: $width;
+
+  @include bp($breakpoint-tablet) {
+    float: left;
+    $width: 4*$grid-slot-width-perc-inside-5d6 + 3*$grid-slot-gap-perc-inside-5d6;
+    width: $width;
+    margin: 0;
+    padding-top: $width;
+  }
+  @include bp($breakpoint-tablet-2) {
+    $width: 4*$grid-slot-width-perc-inside-2d3 + 3*$grid-slot-gap-perc-inside-2d3;
+    width: $width;
+    padding-top: $width;
+  }
+}
+
+.ph-author-title {
+  display: block;
+  color: black;
+  @extend %f24-30--f28-35;
+  font-family: $lora;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 0 0.6em 0;
+  border-top: 2px solid $accent;
+  padding-top: 16px;
+
+  @include bp($breakpoint-tablet) {
+    margin-left: 4*$grid-slot-width-perc-inside-5d6 + 4*$grid-slot-gap-perc-inside-5d6;
+  }
+  @include bp($breakpoint-tablet-2) {
+    margin-left: 4*$grid-slot-width-perc-inside-2d3 + 4*$grid-slot-gap-perc-inside-2d3;
+  }
+}
+
+.ph-author-text {
+  font-family: $lora;
+  @extend %f16-25--f18-30;
+  font-weight: 400;
+
+  @include bp($breakpoint-tablet) {
+    margin-left: 4*$grid-slot-width-perc-inside-5d6 + 4*$grid-slot-gap-perc-inside-5d6;
+  }
+  @include bp($breakpoint-tablet-2) {
+    margin-left: 4*$grid-slot-width-perc-inside-2d3 + 4*$grid-slot-gap-perc-inside-2d3;
+  }
+}
+
+.ph-author-description {
+  margin: 0 0 30px 0;
+}
+
+.ph-author-meta-label {
+  box-sizing: border-box;
+  float: left;
+  margin: 0;
+  padding: 0 8px 0 0;
+  font-family: $lato;
+  text-align: right;
+  text-transform: uppercase;
+  font-style: normal;
+  @extend %f14-19;
+  line-height: 28px !important;
+}
+
+.ph-author-meta-value {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 0 5px;
+  text-align: left;
+  @extend %f17-28;
+}

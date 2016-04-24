@@ -1,0 +1,71 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-social-media-icon {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+
+  &:before {
+    @extend .ph-icon:before;
+    @extend %f19-33-icon;
+    line-height: #{4*$base-unit + 2px} !important;
+    width: 4*$base-unit;
+    height: 4*$base-unit;
+    display: inline-block;
+    border-radius: #{$base-unit * 2+1px};
+  }
+
+  &.is-hollow:before {
+    margin: 0 1px;
+    color: black;
+    border: 1px solid black;
+  }
+  &.is-solid:before {
+    margin: 0 2px;
+    color: white;
+  }
+  &.is-huge:before {
+    width: 8*$base-unit;
+    height: 8*$base-unit;
+    border-radius: #{$base-unit * 4+1px};
+    @extend %f32-45-icon;
+    line-height: #{8*$base-unit + 2px} !important;
+  }
+}
+
+.ph-social-media-icon-facebook {
+  @extend .ph-icon-facebook;
+  &.is-solid:before {
+    background-color: #3b5998;
+  }
+}
+
+.ph-social-media-icon-twitter {
+  @extend .ph-icon-twitter;
+  &.is-solid:before {
+    background-color: #00aced;
+  }
+}
+
+.ph-social-media-icon-googleplus {
+  @extend .ph-icon-gplus;
+  &.is-solid:before {
+    background-color: #dd4b39;
+  }
+}
+
+.ph-social-media-icon-mail {
+  @extend .ph-icon-mail;
+  &.is-solid:before {
+    background-color: $gray;
+  }
+}
+
+.ph-social-media-icon-whatsapp {
+  @extend .ph-icon-whatsapp;
+  &.is-solid:before {
+    background-color: #34af23;
+  }
+}

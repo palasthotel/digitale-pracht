@@ -1,0 +1,44 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-teaser-link {
+  display: block;
+  text-decoration: none;
+  border: 0;
+  color: $teaser-text-fg;
+
+  // don´t forget http://outlinenone.com
+  // here we can remove the outline, because we have another visual mark
+  &:focus {
+    outline: none;
+  }
+
+  // min-height for teaser = teaser image height
+  .ph-teaser-big &:before {
+    @include bp($breakpoint-tablet) {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      float: left;
+      padding-top: 4*$grid-slot-width-perc-inside-5d6 + 3*$grid-slot-gap-perc-inside-5d6;
+    }
+    @include bp($breakpoint-tablet-2) {
+      padding-top: 4*$grid-slot-width-perc-inside-2d3 + 3*$grid-slot-gap-perc-inside-2d3;
+    }
+  }
+  .ph-teaser-illustrated &:before {
+    @include bp($breakpoint-tablet) {
+      content: "";
+      display: block;
+      width: 0;
+      height: 6px;
+      float: left;
+      padding-top: 2*$grid-slot-width-perc-inside-5d6 + $grid-slot-gap-perc-inside-5d6;
+    }
+    @include bp($breakpoint-tablet-2) {
+      padding-top: $grid-slot-width-perc-inside-2d3 + $grid-slot-gap-perc-inside-2d3;
+    }
+  }
+}

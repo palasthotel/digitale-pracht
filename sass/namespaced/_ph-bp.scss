@@ -1,0 +1,28 @@
+/**
+ * breakpoint classes, which toggle visibility
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-bp-mobile-only {
+  @include bp($breakpoint-tablet) {
+    display: none !important;
+  }
+}
+
+.ph-bp-tablet-inline,
+.ph-bp-tablet-inline-block {
+  display: none;
+}
+
+.ph-bp-tablet-inline {
+  @include bp($breakpoint-tablet) {
+    display: inline;
+  }
+}
+
+.ph-bp-tablet-inline-block {
+  @include bp($breakpoint-tablet) {
+    display: inline-block;
+  }
+}

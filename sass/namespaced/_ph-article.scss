@@ -1,0 +1,177 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-article {
+  @extend .grid-container;
+  @extend .grid-container.has-no-title;
+}
+
+.ph-article-title {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  border-top: 2px solid $accent;
+  padding-top: 16px;
+
+  @extend %f28-35--f38-45;
+  @extend %grid-slot-1d1-indented;
+
+  font-style: normal;
+  font-weight: 600;
+  text-transform: none;
+  font-family: $lora;
+  text-align: left;
+
+  @include bp($breakpoint-tablet) {
+    padding-top: 2*$base-unit;
+  }
+}
+
+%ph-article-meta-style-pure {
+  font-family: $lato;
+  font-weight: 400;
+  font-style: italic;
+  text-align: left;
+  @extend %f12-17--f14-19;
+}
+
+%ph-article-meta-style {
+  @extend %ph-article-meta-style-pure;
+}
+
+.ph-article-date-author {
+  @extend %ph-article-meta-style;
+  @extend %grid-slot-1d1-indented;
+}
+
+.ph-article-categories,
+.ph-article-tags {
+  @extend %ph-article-meta-style;
+}
+
+
+.ph-article-text {
+  margin: 3*$base-unit 0;
+  font-family: $lora;
+  @extend %f16-25--f18-30;
+
+  @include bp($breakpoint-grid-2) {
+    margin-top: 6*$base-unit;
+  }
+
+  @include bp($breakpoint-tablet) {
+    margin-top: 8*$base-unit;
+  }
+}
+
+.ph-article-text-lead {
+  @extend %f17-28--f24-36;
+  font-style: italic;
+  margin-bottom: 2em;
+  @extend %grid-slot-1d1-indented;
+}
+
+.ph-article-text-body {
+  @extend %grid-slot-1d1-indented-more;
+}
+
+.ph-article-meta {
+  @extend .ph-clearfix;
+  @extend %grid-slot-1d1-indented-more;
+  margin-top: $base-unit;
+  margin-bottom: $base-unit;
+}
+
+.ph-article-relateds {
+  margin-top: 6*$base-unit;
+  @include bp($breakpoint-tablet) {
+    margin-top: 10*$base-unit;
+  }
+}
+
+
+// everything inside ph-article-text with 100% width = block element
+%ph-article-block-element {
+  margin-top: 2*$base-unit;
+  margin-bottom: 3*$base-unit;
+
+  @include bp($breakpoint-grid-2) {
+    margin-top: 4*$base-unit;
+    margin-bottom: 4*$base-unit;
+  }
+  @include bp($breakpoint-tablet) {
+    margin-top: 6*$base-unit;
+    margin-bottom: 6*$base-unit;
+  }
+}
+
+// exceeds the article column width with one column on each size
+%ph-article-breakout {
+  @include bp($breakpoint-tablet) {
+    $onecol_onegap: $grid-slot-gap-perc-inside-2d3;
+    margin-left: #{-$onecol_onegap};
+    margin-right: #{-$onecol_onegap};
+    width: 100% + 2*$onecol_onegap !important;
+  }
+  @include bp($breakpoint-tablet-2) {
+    $onecol_onegap: $grid-slot-gap-perc-inside-1d2;
+    margin-left: #{-$onecol_onegap};
+    margin-right: #{-$onecol_onegap};
+    width: 100% + 2*$onecol_onegap !important;
+  }
+}
+
+%ph-article-breakout-more {
+  @include bp($breakpoint-tablet) {
+    $onecol_onegap: $grid-slot-width-perc-inside-2d3 + $grid-slot-gap-perc-inside-2d3;
+    margin-left: #{-$onecol_onegap};
+    margin-right: #{-$onecol_onegap};
+    width: 100% + 2*$onecol_onegap !important;
+  }
+  @include bp($breakpoint-tablet-2) {
+    $onecol_onegap: $grid-slot-width-perc-inside-1d2 + $grid-slot-gap-perc-inside-1d2;
+    margin-left: #{-$onecol_onegap};
+    margin-right: #{-$onecol_onegap};
+    width: 100% + 2*$onecol_onegap !important;
+  }
+}
+
+%ph-article-breakout-left {
+  float: left;
+  width: 2*$grid-320-slot-width-perc !important;
+  margin: 1.4em 2*$grid-320-slot-gap-perc 2*$base-unit 0;
+
+  @include bp($breakpoint-tablet) {
+    $onecol_onegap: $grid-slot-width-perc-inside-2d3 + $grid-slot-gap-perc-inside-2d3;
+    margin-left: #{-$onecol_onegap};
+    margin-right: $grid-slot-gap-perc-inside-2d3;
+    margin-bottom: 3*$base-unit;
+    width: 3*$grid-slot-width-perc-inside-2d3 + 2*$grid-slot-gap-perc-inside-2d3 !important;
+  }
+  @include bp($breakpoint-tablet-2) {
+    $onecol_onegap: $grid-slot-width-perc-inside-1d2 + $grid-slot-gap-perc-inside-1d2;
+    margin-left: #{-$onecol_onegap};
+    margin-right: $grid-slot-gap-perc-inside-1d2;
+    width: 3*$grid-slot-width-perc-inside-1d2 + 2*$grid-slot-gap-perc-inside-1d2 !important;
+  }
+}
+
+%ph-article-breakout-right {
+  float: right;
+  width: 2*$grid-320-slot-width-perc !important;
+  margin: 1.4em 0 2*$base-unit 2*$grid-320-slot-gap-perc;
+
+  @include bp($breakpoint-tablet) {
+    $onecol_onegap: $grid-slot-width-perc-inside-2d3 + $grid-slot-gap-perc-inside-2d3;
+    margin-left: $grid-slot-gap-perc-inside-2d3;
+    margin-right: #{-$onecol_onegap};
+    margin-bottom: 3*$base-unit;
+    width: 3*$grid-slot-width-perc-inside-2d3 + 2*$grid-slot-gap-perc-inside-2d3 !important;
+  }
+  @include bp($breakpoint-tablet-2) {
+    $onecol_onegap: $grid-slot-width-perc-inside-1d2 + $grid-slot-gap-perc-inside-1d2;
+    margin-left: $grid-slot-gap-perc-inside-1d2;
+    margin-right: #{-$onecol_onegap};
+    width: 3*$grid-slot-width-perc-inside-1d2 + 2*$grid-slot-gap-perc-inside-1d2 !important;
+  }
+}

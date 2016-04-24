@@ -1,0 +1,14 @@
+/**
+ * a list of the most important breakpoints. there may be other
+ * more specific breakpoints defined in the scss modules
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+$breakpoint-tablet: 958px; // minimum size to fit a rectangle in a 1d3 slot
+$breakpoint-tablet-2: 1200px;
+$breakpoint-desktop: $grid-width;
+$breakpoint-giant-desktop: 1440px; //size of very big desktop screens
+
+$breakpoint-grid-2: 500px;
+$breakpoint-grid-3: $breakpoint-tablet;

@@ -1,0 +1,31 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-teaser {
+  position: relative;
+  margin-top: 0;
+  @extend .ph-clearfix;
+
+  .grid-slot + .grid-slot > .grid-box > &,
+  .grid-box + .grid-box > &,
+  & + & {
+    margin-top: $base-unit*6;
+
+    @include bp($breakpoint-tablet) {
+      margin-top: $base-unit*10;
+    }
+
+    .grid-slot-1d4 & {
+      @include bp($breakpoint-tablet) {
+        margin-top: $base-unit*6;
+      }
+    }
+  }
+
+  .grid-slot-1d4 > .grid-box:first-child > & {
+    @include bp($breakpoint-tablet) {
+      margin-top: 0 !important;
+    }
+  }
+}

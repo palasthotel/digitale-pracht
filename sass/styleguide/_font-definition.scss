@@ -1,0 +1,60 @@
+/**
+ * IE8 allows four(!) different weights + styles per font.
+ *
+ * @url http://blog.typekit.com/2011/06/27/new-from-typekit-variation-specific-font-family-names-in-ie-6-8/
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+
+/*** FONT FACES ***/
+
+// we use fontello to create our own custom stripped icon font
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?38854172');
+  src: url('../fonts/fontello.eot?38854172#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?38854172') format('woff'),
+       url('../fonts/fontello.ttf?38854172') format('truetype'),
+       url('../fonts/fontello.svg?38854172#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*** FONT CLASSES, can be used in other classes via @extend: ***/
+
+// .lato-italic {
+// }
+
+
+/*** FONT FAMILIES ***/
+
+// default, leave them here for fallbacks
+$times-new-roman: 'Times New Roman', Times, Georgia, serif;
+$times:           Times, 'Times New Roman', Georgia, serif;
+$georgia:         Georgia, 'Times New Roman', serif;
+$verdana:         Verdana, Tahoma, sans-serif;
+$tahoma:          Tahoma, Verdana, sans-serif;
+$helvetica:       'Helvetica Neue', Arial, sans-serif;
+$arial:           Arial, 'Helvetica Neue', sans-serif;
+$courier:         'Courier New', monospace, sans-serif;
+
+// custom, for this theme only
+$lato:            'Lato', $arial;
+$lora:            'Lora', $georgia;
+
+$icon:            'fontello';
+
+
+/*** OVERWRITE NORMALIZE.SCSS CONSTANTS ***/
+
+$base-font-size: 17px;
+$base-line-height: 31px;
+$base-font-family: $lato;
+
+$h1-font-size: 2    * $base-font-size;
+$h2-font-size: 1.5  * $base-font-size;
+$h3-font-size: 1.17 * $base-font-size;
+$h4-font-size: 1    * $base-font-size;
+$h5-font-size: 0.83 * $base-font-size;
+$h6-font-size: 0.67 * $base-font-size;

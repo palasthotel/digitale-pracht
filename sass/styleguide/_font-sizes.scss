@@ -1,0 +1,191 @@
+/**
+ * every website should be limited to a few font variants, which are defined here.
+ * these classes should only contain font-size and line-height,
+ * so that they can be used via @extend in other classes.
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+
+
+/* ###### LATO ###### */
+
+
+%f10-12 {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+// page subtitle
+// article meta
+// footer
+%f12-17--f14-19 {
+  font-size: 12px;
+  line-height: 17px;
+  @include bp($breakpoint-grid-2) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+// .ph-btn
+// overlay share labels
+%f14-19 {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+%f14-19--f17-28 {
+  font-size: 14px;
+  line-height: 19px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 17px;
+    line-height: 28px;
+  }
+}
+
+// grid container prolog text
+%f17-28--f28-42 {
+  font-size: 17px;
+  line-height: 28px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  @include bp($breakpoint-tablet) {
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
+
+// comment text
+// teaser text
+%f17-28 {
+  font-size: 17px;
+  line-height: 28px;
+}
+
+// teaser title
+// h2
+%f24-30--f28-35 {
+  font-size: 24px;
+  line-height: 30px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 28px;
+    line-height: 35px;
+  }
+}
+
+// teaser title 1d4
+%f24-30--f17-28 {
+  font-size: 24px;
+  line-height: 30px;
+
+  @include bp($breakpoint-tablet) {
+    font-size: 17px;
+    line-height: 28px;
+  }
+}
+
+// search
+%f28-35--f38-45 {
+  font-size: 28px;
+  line-height: 35px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 38px;
+    line-height: 45px;
+  }
+}
+
+
+
+/* ###### LORA ###### */
+
+
+// article title
+%f24-30--f38-45 {
+  font-size: 24px;
+  line-height: 30px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 38px;
+    line-height: 45px;
+  }
+}
+
+// article lead text
+%f17-28--f24-36 {
+  font-size: 17px;
+  line-height: 28px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+// article text
+%f16-25--f18-30 {
+  font-size: 16px;
+  line-height: 25px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+
+
+/* ###### ICONS ###### */
+
+
+// .pager-btn-rel icon font
+%f14-19-icon {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+// .ph-icon-btn text
+%f14-33 {
+  font-size: 14px;
+  line-height: 33px;
+}
+
+// .ph-icon-btn icon font
+%f19-33-icon {
+  font-size: 19px;
+  line-height: 33px;
+}
+
+%f32-45-icon {
+  font-size: 32px;
+  line-height: 45px;
+}
+
+// search page icon
+%f19-33--f32-45-icon {
+  font-size: 19px;
+  line-height: 33px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 32px;
+    line-height: 45px;
+  }
+}
+
+// logo
+%f48-55--f78-105 {
+  font-size: 48px;
+  line-height: 55px;
+
+  @include bp($breakpoint-grid-2) {
+    font-size: 78px;
+    line-height: 105px;
+  }
+}

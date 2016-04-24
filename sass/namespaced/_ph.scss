@@ -1,0 +1,81 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-jumplink {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+
+  &:focus {
+    height: auto;
+    left: 50%;
+    margin-left: -65px;
+    width: 130px;
+    text-align: center;
+    outline: none;
+    @extend .ph-btn;
+    @extend .ph-btn-submit;
+  }
+}
+
+
+/* ###### GENERAL ###### */
+
+.ph-hide {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.ph-show {
+  width: auto;
+  height: auto;
+  text-indent: 0;
+  white-space: normal;
+  overflow: auto;
+  z-index: auto;
+}
+
+.ph-hide-text {
+  display: inline-block;
+  width: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ph-show-text {
+  width: auto;
+  text-indent: 0;
+  white-space: normal;
+  overflow: auto;
+}
+
+.ph-remove-touch-color {
+  user-select: none;
+  user-drag: none;
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.ph-clear {
+  clear: both;
+}
+
+/**
+ * best and simplest clearfix right now
+ * @see http://cssmojo.com/the-very-latest-clearfix-reloaded/
+ */
+.ph-clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}

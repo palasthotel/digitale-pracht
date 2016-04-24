@@ -1,0 +1,22 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+address {
+  font-style: italic;
+}
+
+cite {
+  font-style: italic;
+}
+
+code, kbd, tt, var, samp, pre {
+  font-size: 0.9rem;
+  line-height: 1rem;
+  font-family: 'Inconsolata', monospace;
+}
+
+code {
+  padding: 0.125em 0.25em;
+  background-color: $gray-light;
+}

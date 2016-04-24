@@ -1,0 +1,31 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 40px 0;
+}
+
+th {
+  padding-right: 30px;
+  font-family: $lato;
+  font-weight: 700;
+  font-style: normal;
+  text-align: left;
+  text-transform: uppercase;
+  @extend %f14-19--f17-28;
+
+  thead & {
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
+td {
+  padding-right: 30px;
+}

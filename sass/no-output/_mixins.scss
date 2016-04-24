@@ -1,0 +1,133 @@
+/**
+ * a collection of useful mixins.
+ *
+ * @author Kim-Christian Meyer, kim.meyer@palasthotel.de
+ */
+
+
+/**
+ * returns converts pixel value to em
+ */
+@function pem($pxval, $base: 16) {
+  @if (unitless($pxval)) {
+    $pxval: $pxval * 1px;
+  }
+
+  @if (unitless($base)) {
+    $base: $base * 1px;
+  }
+
+  @return $pxval / $base * 1em;
+}
+
+
+/**
+ * @url https://gist.github.com/ddemaree/5470343
+ */
+@mixin retina($ratio: 1.5) {
+  $dpi: $ratio * 96;
+  $opera-ratio: $ratio * 100;
+
+  @media only screen and (-webkit-min-device-pixel-ratio: #{$ratio}),
+         only screen and (     -o-min-device-pixel-ratio: '#{$opera-ratio}/100'),
+         only screen and (                min-resolution: #{$dpi}dpi),
+         only screen and (                min-resolution: #{$ratio}dppx) {
+    @content;
+  }
+}
+
+
+$bp-print-queries: true !default;
+$bp-print-ie-layout: false !default;
+$bp-use-ie-selector: false !default;
+$bp-ie-layout-breakpoint: 980px !default;
+// This is a standard media query mixin,
+// with the option to add a layout for ie8 or lower
+// It will bring in all min-width styles without a max constraint
+// As well as any styles that meet the 980 threshold.
+// @url https://drupal.org/node/1539682#comment-6481394
+@mixin breakpoint($min-width, $max-width: false) {
+  @if ($bp-print-queries) {
+    @if ($max-width) {
+      @media all and (min-width: $min-width) and (max-width: $max-width) {
+        @content;
+      }
+    }
+    @else {
+      @media all and (min-width: $min-width) {
+        @content;
+      }
+    }
+  }
+  @if ($bp-print-ie-layout) {
+    @if ($bp-use-ie-selector) {
+      .lt-ie9 & {
+        @content;
+      }
+    }
+    @else {
+      @content;
+    }
+  }
+}
+
+// shorthand for @mixin breakpoint
+@mixin bp($min-width, $max-width: false) {
+  @include breakpoint($min-width, $max-width) {
+    @content;
+  }
+}
+
+
+/**
+ * retina background images
+ * @url https://gist.github.com/thulstrup/2140082
+ */
+@mixin sprite-background($name, $dimensions: true, $padding: 0) {
+  @if ($dimensions == true) {
+    @include sprite-dimensions($sprites, $name);
+  }
+
+  background-image: sprite-url($sprites);
+  background-position: sprite-position($sprites, $name, -$padding, -$padding);
+  background-repeat: no-repeat;
+
+  @if ($padding > 0) {
+    padding: $padding;
+  }
+
+  @if ($bp-print-queries == true) {
+    @media only screen and (min--moz-device-pixel-ratio: 1.3),
+           only screen and (-o-min-device-pixel-ratio: 13/10),
+           only screen and (-webkit-min-device-pixel-ratio: 1.3),
+           only screen and (min-device-pixel-ratio: 1.3),
+           only screen and (min-resolution: 1.3dppx),
+           only screen and (min-resolution: 120dpi) {
+      $pos: sprite-position($sprites2x, $name, -$padding * 2, -$padding * 2);
+      background-image: sprite-url($sprites2x);
+      background-position: nth($pos, 1) nth($pos, 2)/2;
+      @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2), auto);
+    }
+  }
+}
+
+@mixin ie-background-cover($image-path) {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_path($image-path)}, sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_path($image-path)}, sizingMethod='scale')";
+  background-image: none;
+}
+
+/**
+ * @see http://thesassway.com/intermediate/mixins-for-semi-transparent-colors
+ * @modified
+ */
+@mixin alpha-attribute($attribute, $color, $background, $output-rgba: false) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+
+  @if ($output-rgba == true) {
+    #{$attribute}: $color;
+  }
+}

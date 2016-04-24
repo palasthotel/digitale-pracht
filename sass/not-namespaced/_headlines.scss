@@ -1,0 +1,30 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+h1,
+h2 {
+  font-family: $lora;
+  @extend %f24-30--f28-35;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: none;
+  margin: 3em 0 1.5em 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: $lora;
+  @extend %f17-28--f24-36;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: none;
+  margin: 3em 0 1.5em 0;
+}
+
+.h404 {
+  margin-top: 2em;
+  margin-bottom: 0;
+}

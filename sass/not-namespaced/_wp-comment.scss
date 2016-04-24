@@ -1,0 +1,213 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.form-allowed-tags {
+  display: none;
+}
+
+.comment-notes,
+.logged-in-as {
+  font-family: $lato;
+  font-weight: 300;
+  @extend %f17-28;
+}
+
+.comments-area {
+  @extend .ph-clearfix;
+  @extend %grid-slot-1d1-indented;
+  &.has-comments {
+    border-top: 2px solid $accent;
+    margin-top: 10*$base-unit;
+  }
+}
+
+.comment-respond {
+  .comments-area > & {
+    @extend %grid-slot-1d1-indented-more-inside-indented;
+  }
+  margin-top: 8px;
+  @include bp($breakpoint-grid-2) {
+    margin-top: 14px;
+  }
+}
+
+.comments-title {
+  @extend .grid-container-title;
+  top: 0 !important;
+  margin-bottom: 6*$base-unit !important;
+}
+
+.comment-reply-title {
+  display: block;
+  @extend %f24-30--f28-35;
+  font-family: $lato;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  margin: 3em 0 0.6em 0;
+}
+
+.comment-list {
+  @extend %grid-slot-1d1-indented-more-inside-indented;
+}
+
+.comment-form {
+}
+
+.required {
+  color: $accent;
+}
+
+.no-comments {
+  @extend %grid-slot-1d1-indented-more-inside-indented;
+  font-style: italic;
+}
+
+.comment-author {
+  display: inline;
+  font-weight: 700;
+  font-style: normal;
+  @extend %f17-28;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.comment-content {
+  font-weight: 300;
+  @extend %f17-28;
+}
+
+.comment-meta {
+  @extend %ph-article-meta-style-pure;
+  margin: 0 0 0.3em 0;
+}
+
+.comment-metadata {
+  display: inline;
+  margin: 0 0 0 $base-unit/2;
+}
+
+.says {
+  @extend .screen-reader-text;
+}
+
+.comment-body {
+  &,
+  .comment + .pingback & {
+    margin-top: 6*$base-unit;
+  }
+
+  .pingback & {
+    margin-top: 3*$base-unit;
+  }
+
+  .comment-list > li:first-child > & {
+    margin-top: 0;
+  }
+}
+
+.children {
+  margin-left: 3*$base-unit;
+}
+
+.reply {
+}
+
+.comment-reply-link {
+  @extend %ph-article-meta-style-pure;
+  font-weight: 300;
+}
+
+#cancel-comment-reply-link {
+  display: inline-block;
+  @extend %ph-article-meta-style-pure;
+  text-transform: none;
+}
+
+#comment {
+  height: 16*$base-unit;
+}
+
+// make form elements collapsible
+.comment-notes,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.logged-in-as,
+.comment-form-comment label {
+  overflow: hidden;
+  max-height: 85px;
+  opacity: 1;
+  margin: 0;
+  transition: max-height $speed $ease, opacity $speed $ease, margin $speed $ease;
+  .comment-respond.is-collapsed & {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.comment-form-comment label {
+  margin: $base-unit*3/2 0 $base-unit/2 0;
+  transition: margin-top $speed $ease;
+  .comment-respond.is-collapsed & {
+    margin: -30px 0 0 0;
+  }
+}
+
+.edit-link > a {
+  border-color: $gray-semilight;
+  &:hover,
+  &:focus {
+    border-color: black;
+  }
+}
+
+.pingback {
+  font-family: $lato;
+  font-style: italic;
+  font-weight: 300;
+  @extend %f17-28;
+}
+
+.bypostauthor .comment-author:after,
+.byuser .comment-author:after {
+  content: "*";
+  color: $accent;
+}
+
+.comment-navigation {
+  @extend %grid-slot-1d1-indented-more-inside-indented;
+  margin-top: 6*$base-unit;
+  margin-bottom: 6*$base-unit;
+  padding: 7px 15px 9px 15px;
+  border-top: 2px solid $gray-light;
+  text-align: center;
+}
+
+.nav-links {
+  .comment-navigation > & {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: black;
+    @extend %f14-19;
+    text-decoration: none;
+    font-family: $lato;
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+
+.nav-previous,
+.nav-next {
+  display: inline-block;
+}
+
+.nav-previous {
+  margin-right: $base-unit;
+  @include bp($breakpoint-grid-2) {
+    margin-right: 2*$base-unit;
+  }
+}

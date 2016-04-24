@@ -1,0 +1,101 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-icon-mail:before { content: '\2709'; } /* '✉' */
+.ph-icon-cancel:before { content: '\274c'; } /* '❌' */
+.ph-icon-up-bold:before { content: '\e4af'; } /* '' */
+.ph-icon-share:before { content: '\e73c'; } /* '' */
+.ph-icon-left-open:before { content: '\e75d'; } /* '' */
+.ph-icon-right-open:before { content: '\e75e'; } /* '' */
+.ph-icon-whatsapp:before { content: '\e800'; } /* '' */
+.ph-icon-twitter:before { content: '\f309'; } /* '' */
+.ph-icon-facebook:before { content: '\f30c'; } /* '' */
+.ph-icon-gplus:before { content: '\f30f'; } /* '' */
+.ph-icon-search:before { content: '🔍'; } /* '\1f50d' */
+
+[class^="ph-icon-"]:before,
+[class*=" ph-icon-"]:before,
+.ph-icon:before {
+  font-family: $icon;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  // margin-right: .2em;
+  text-align: center;
+
+  // /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  // /* fix buttons height, for twitter bootstrap */
+  // removed due to overwrite issues
+  // line-height: 1em;
+
+  // /* Animation center compensation - margins should be symmetric */
+  // /* remove if not needed */
+  // margin-left: .2em;
+
+  // /* you can be more comfortable with increased icons size */
+  // /* font-size: 120%; */
+
+  // /* Uncomment for 3D effect */
+  // /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.ph-icon-btn {
+  display: block;
+  max-width: 12px;
+  height: 35px;
+  padding: 0 12px 0 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: uppercase;
+  @extend %f14-33;
+  font-weight: 400;
+  text-align: right;
+  direction: rtl;
+  text-decoration: none;
+  color: $action-bar-icons-fg;
+  background-color: transparent;
+  transition: background-color $speed $ease, max-width $speed $ease;
+
+  &:before {
+    margin-left: 4px;
+    display: inline-block;
+    width: 26px;
+    height: 35px;
+    @extend %f19-33-icon;
+    position: relative;
+    top: 2px;
+    right: 2px; // strange offset fix
+    text-align: right;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    max-width: 140px;
+    background-color: $accent !important;
+    transition: #{max-width $speed $ease} !important;
+  }
+
+  &.ph-floatingbar-link {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $speed $ease, visibility $speed $ease, background-color $speed $ease, max-width $speed $ease;
+
+    // handled via back-to-top.js
+    .is-scrolled-end & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.has-delay-1 {
+      transition: opacity $speed $ease $speed-delay-1, visibility $speed $ease $speed-delay-1, background-color $speed $ease, max-width $speed $ease;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+/**
+ * defines the folder, where sprite pngs will be set.
+ * if those folders are empty, there might occur a compass
+ * compile error. in that case just comment those lines out.
+ *
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+$sprites: null;
+$sprites2x: null;
+
+@if $ph-use-sprites {
+  $sprites:   sprite-map("sprites/*.png",    $spacing: 30px);
+  $sprites2x: sprite-map("sprites@2x/*.png", $spacing: 30px);
+}

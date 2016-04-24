@@ -1,0 +1,47 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+
+.ph-article-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+}
+
+.ph-article-image-wrapper {
+  @include bp($breakpoint-grid-2) {
+    float: right;
+    $width: 2*$grid-320-slot-width-perc;
+    width: $width;
+    // padding-top: $width;
+    margin: 55px 0 2*$base-unit 2*$grid-320-slot-gap-perc;
+  }
+
+  @include bp($breakpoint-tablet) {
+    $width: 4*$grid-slot-width-perc + 3*$grid-slot-gap-perc;
+    width: $width;
+    // padding-top: $width;
+    margin: 75px #{1*$grid-slot-width-perc + 1*$grid-slot-gap-perc} 4*$base-unit $grid-slot-gap-perc;
+  }
+}
+
+.ph-article-image-link {
+  position: relative;
+  display: block;
+  border: 0;
+  width: 100%;
+  padding-top: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+.ph-article-image-caption {
+  margin: 0.5em 0 0 0;
+  font-family: $lato;
+  font-weight: 400;
+  font-style: italic;
+  @extend %f12-17--f14-19;
+}

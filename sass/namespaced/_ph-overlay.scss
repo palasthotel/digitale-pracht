@@ -1,0 +1,80 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.ph-overlay-bg {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $black-opaque;
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  transition: opacity $speed $ease, visibility $speed $ease;
+
+  .is-menu-expanded &,
+  .is-search-expanded &,
+  .is-share-expanded & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// overlay, used for search and share
+.ph-overlay {
+  position: fixed;
+  top: 0;
+  left: 4px;
+  right: 0;
+  bottom: 0;
+  z-index: 110;
+  margin: 0 auto;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  max-width: $grid-width;
+
+  // close "x"
+  &:after {
+    @extend .ph-icon-cancel:before;
+    @extend .ph-icon:before;
+    position: fixed;
+    top: 4px;
+    right: 4px;
+    display: block;
+    width: $base-unit*4;
+    height: 35px;
+    @extend %f19-33-icon;
+    color: $accent;
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
+.ph-overlay-content {
+  position: relative;
+  display: block;
+  max-width: $grid-content-width;
+  height: 100%;
+  padding: 2*$base-unit 0;
+  margin: 0 $grid-320-padding-perc-outside;
+  box-sizing: border-box;
+
+  @include bp($breakpoint-tablet) {
+    margin-left: $grid-padding-perc-outside + $grid-slot-width-perc-outside + $grid-slot-gap-perc-outside;
+    margin-right: $grid-padding-perc-outside + $grid-slot-width-perc-outside + $grid-slot-gap-perc-outside;
+  }
+
+  @include bp($breakpoint-tablet-2) {
+    margin-left: $grid-padding-perc-outside + 2*$grid-slot-width-perc-outside + 2*$grid-slot-gap-perc-outside;
+    margin-right: $grid-padding-perc-outside + 2*$grid-slot-width-perc-outside + 2*$grid-slot-gap-perc-outside;
+  }
+}
+
+.ph-overlay-title {
+  @extend .ph-hide;
+}

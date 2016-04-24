@@ -1,0 +1,42 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+[class*="wp-image"] {
+  width: 100%;
+  height: auto;
+
+  @extend %ph-article-block-element;
+
+  @media print {
+    width: 30% !important;
+    float: left !important;
+    margin: 0 1em 2em 0 !important;
+  }
+
+  &.alignnone {
+    @extend %ph-article-breakout-more;
+  }
+  &.aligncenter {
+    @extend %ph-article-breakout-more;
+  }
+  &.alignleft {
+    @extend %ph-article-breakout-left;
+    margin-top: 0.4em !important;
+  }
+  &.alignright {
+    @extend %ph-article-breakout-right;
+    margin-top: 0.4em !important;
+  }
+
+  .wp-caption & {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    @media print {
+      width: 100% !important;
+      float: none !important;
+      margin: 0 !important;
+    }
+  }
+}

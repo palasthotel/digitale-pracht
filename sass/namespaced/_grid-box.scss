@@ -1,0 +1,100 @@
+/**
+ * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ */
+
+.grid-box {
+  // teaser illustrated inside 1d1 slot will have margins on left and right side
+  // with full width
+  .grid-slot-1d1 & {
+    @extend %grid-slot-1d1-indented;
+  }
+}
+
+.grid-box.is-indented {
+  @extend %grid-slot-1d1-indented;
+}
+
+.grid-box.is-indented-more {
+  @extend %grid-slot-1d1-indented-more;
+}
+
+.grid-box + .grid-box {
+  margin-top: 6*$base-unit;
+}
+
+.grid-box-title {
+  display: block;
+  margin: 6*$base-unit 0 1em 0;
+  padding: 7px 15px 9px 15px;
+  border-top: 2px solid $gray-light;
+  font-family: $lato;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
+  @extend %f14-19;
+
+  .grid-slot-1d4 & {
+    @include bp($breakpoint-tablet) {
+      margin-top: 0;
+      padding-left: 0;
+      text-align: left;
+    }
+  }
+}
+
+.grid-box-wp_html {
+  font-family: $lato;
+  font-weight: 300;
+  @extend %f17-28;
+}
+
+.grid-box-wordpress-menu-menu {
+  margin-top: 1em;
+}
+
+.grid-box-content {
+  .grid-box-wp_html.has-title & {
+    margin-top: 1em;
+  }
+}
+
+.grid-box-prolog {
+  margin: 1em 0;
+  @extend %f17-28--f28-42;
+  font-weight: 300;
+  font-style: italic;
+
+  .grid-slot-1d4 & {
+    @include bp($breakpoint-tablet) {
+      margin: 0.5em 0 1em 0;
+    }
+  }
+}
+
+.grid-box-epilog {
+  margin: 1em 0 0.5em 0;
+  @extend %f17-28--f28-42;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.grid-box-readmore-link {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  margin-top: 20px !important;
+  transform: translateX(-50%);
+  @extend .ph-btn-italic;
+
+  &:before {
+    content: "»\00a0";
+  }
+
+  .grid-slot-1d4 & {
+    @include bp($breakpoint-tablet) {
+      left: 0;
+      transform: none;
+      margin-top: 10px !important;
+    }
+  }
+}
