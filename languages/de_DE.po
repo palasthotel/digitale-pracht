@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digitale Pracht\n"
 "POT-Creation-Date: 2016-03-05 14:41+0100\n"
-"PO-Revision-Date: 2016-03-05 14:42+0100\n"
+"PO-Revision-Date: 2016-04-24 23:34+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -158,7 +158,7 @@ msgstr "Footer Menü"
 
 #: functions.php:91
 msgid "Widget Area Bottom"
-msgstr "Widget Bereicht unten"
+msgstr "Widget Bereich unten"
 
 #: functions.php:93
 msgid "Appears at the bottom of the content on posts and pages."
