@@ -199,14 +199,6 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 		);
 
 		wp_enqueue_script(
-			'digitalepracht-facebook-init',
-			get_template_directory_uri() . '/js/ph-facebook-init.js',
-			array(),
-			filemtime( get_template_directory() . '/js/ph-facebook-init.js' ),
-			false
-		);
-
-		wp_enqueue_script(
 			'digitalepracht-scroll-class',
 			get_template_directory_uri() . '/js/lib/ph-scroll-class.js',
 			array(),
