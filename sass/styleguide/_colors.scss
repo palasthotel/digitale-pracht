@@ -13,6 +13,8 @@ $gray: #666;
 $gray-semilight: #ccc;
 $gray-light: #e5e5e5;  // = rgb(229, 229, 229)
 $gray-light-opaque: rgba(229, 229, 229, 0.7);
+$almost-white: #f5f5f5;
+$almost-whiter: #fafafa;
 $black-opaque: rgba(0, 0, 0, 0.9);
 
 $error: red;
@@ -26,7 +28,8 @@ $html-bg: white;
 $text-fg: black;
 $teaser-text-fg: black;
 $action-bar-icons-fg: black;
-$footer-bg: $gray-light;
+$footer-bg: $almost-whiter;
+$footer-border-top: $almost-white;
 
 
 /**

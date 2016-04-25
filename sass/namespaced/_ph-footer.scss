@@ -7,6 +7,7 @@
   margin: $base-unit*7 0 0 0;
   padding: 0;
   background: $footer-bg;
+  border-top: 1px solid $footer-border-top;
   @include bp($breakpoint-tablet) {
     margin-top: $base-unit*20;
   }
