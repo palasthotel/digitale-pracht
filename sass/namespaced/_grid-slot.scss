@@ -2,6 +2,10 @@
  * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
  */
 
+.grid-slots-wrapper {
+  @extend .ph-clearfix;
+}
+
 .grid-slot-1d1 {
 
 }
