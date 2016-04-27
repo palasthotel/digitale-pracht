@@ -3,5 +3,5 @@
  */
 
 .grid {
-  @extend .ph-clearfix;
+  @include clearfix();
 }

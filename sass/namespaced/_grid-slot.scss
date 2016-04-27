@@ -3,7 +3,7 @@
  */
 
 .grid-slots-wrapper {
-  @extend .ph-clearfix;
+  @include clearfix();
 }
 
 .grid-slot-1d1 {

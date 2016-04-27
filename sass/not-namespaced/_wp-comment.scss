@@ -14,7 +14,7 @@
 }
 
 .comments-area {
-  @extend .ph-clearfix;
+  @include clearfix();
   @extend %grid-slot-1d1-indented;
   &.has-comments {
     border-top: 2px solid $accent;

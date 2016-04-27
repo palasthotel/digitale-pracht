@@ -5,7 +5,7 @@
 .ph-teaser {
   position: relative;
   margin-top: 0;
-  @extend .ph-clearfix;
+  @include clearfix();
 
   .grid-slot + .grid-slot > .grid-box > &,
   .grid-box + .grid-box > &,

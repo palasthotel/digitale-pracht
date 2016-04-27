@@ -7,7 +7,7 @@
   margin: 6*$base-unit $grid-320-padding-perc-outside 0 $grid-320-padding-perc-outside;
   padding-top: 4*$base-unit;
   border-top: 2px solid $gray-light;
-  @extend .ph-clearfix;
+  @include clearfix();
 
   &:first-child {
     margin-top: 0 !important;

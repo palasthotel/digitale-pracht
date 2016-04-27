@@ -6,6 +6,19 @@
 
 
 /**
+ * best and simplest clearfix right now
+ * @see http://cssmojo.com/the-very-latest-clearfix-reloaded/
+ */
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
+/**
  * returns converts pixel value to em
  */
 @function pem($pxval, $base: 16) {

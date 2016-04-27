@@ -76,7 +76,7 @@
 }
 
 .ph-article-meta {
-  @extend .ph-clearfix;
+  @include clearfix();
   @extend %grid-slot-1d1-indented-more;
   margin-top: $base-unit;
   margin-bottom: $base-unit;

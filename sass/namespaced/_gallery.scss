@@ -6,7 +6,7 @@
   display: block;
   @extend %ph-article-block-element;
   @extend %ph-article-breakout-more;
-  @extend .ph-clearfix;
+  @include clearfix();
 }
 
 .gallery-item {
