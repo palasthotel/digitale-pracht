@@ -42,6 +42,12 @@
 .ph-article-date-author {
   @extend %ph-article-meta-style;
   @extend %grid-slot-1d1-indented;
+  margin-top: $base-unit;
+  margin-bottom: 0.5em;
+
+  @include bp($breakpoint-grid-2) {
+    margin-bottom: 0;
+  }
 }
 
 .ph-article-categories,
