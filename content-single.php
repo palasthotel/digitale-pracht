@@ -59,8 +59,9 @@ $thumbnail_id = get_post_thumbnail_id();
 		// If original image is smaller than default thumbnail image size,
 		// get a smaller image size
 		$thumbnail_image_src = wp_get_attachment_image_src( $thumbnail_id, $image_format );
-		$min_width = digitalepracht_image_sizes()[ $image_format ][ 'width' ];
-		$min_height = digitalepracht_image_sizes()[ $image_format ][ 'height' ];
+		$sizes = digitalepracht_image_sizes();
+		$min_width = $sizes[ $image_format ][ 'width' ];
+		$min_height = $sizes[ $image_format ][ 'height' ];
 
 		if ( $thumbnail_image_src[ 1 ] < $min_width ||
 		     $thumbnail_image_src[ 2 ] < $min_height ) {
