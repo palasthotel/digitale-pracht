@@ -1,6 +1,4 @@
-/**
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 .widget-area-bottom {
   max-width: $grid-width;
@@ -51,6 +49,20 @@
       transition: none;
       color: $accent;
     }
+  }
+}
+
+.widget .sub-menu {
+  margin-top: 10px;
+  margin-left: 20px;
+
+  @include bp($breakpoint-tablet) {
+    margin-top: 20px;
+  }
+
+  li:first-child {
+    padding-top: 10px;
+    border-top: 1px solid $gray-light;
   }
 }
 

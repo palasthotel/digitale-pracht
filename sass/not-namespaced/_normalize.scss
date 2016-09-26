@@ -22,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  // indicator width
+  /* Indicator width */
   padding-left: 4px;
 }
 
@@ -302,6 +302,7 @@ html [type="button"], /* 1 */
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button; /* 2 */
+  cursor: pointer;
 }
 
 /**

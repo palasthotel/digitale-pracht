@@ -35,7 +35,7 @@ if ( empty( $this->title ) ) {
 		<?php if ( is_string( $content ) ) : ?>
 			<?php echo $content; ?>
 		<?php else: ?>
-			<p>There is no working template for this Box.</p>
+			<p><?php _e( 'There is no working template for this Box.', 'digitale-pracht' ); ?></p>
 		<?php endif; ?>
 	</div>
 
@@ -49,5 +49,4 @@ if ( empty( $this->title ) ) {
 		<a href="<?php echo esc_url( $this->readmoreurl ); ?>"
 		   class="grid-box-readmore-link"><?php echo esc_html( $this->readmore ); ?></a>
 	<?php endif; ?>
-
 </div>

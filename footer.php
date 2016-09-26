@@ -32,26 +32,23 @@
 			<?php printf( esc_html__( '© Copyright %s.', 'digitale-pracht' ), date( 'Y' ) ); ?>
 			<?php printf(
 				wp_kses( __( 'Proudly powered by %s.', 'digitale-pracht' ), array(
-					'em' => array(),
-					'strong' => array(),
 					'a' => array(
 						'href' => array(),
 						'target' => array(),
 						) )
 				),
-				'<a href="https://wordpress.org" target="_blank">WordPress</a>'
+				'<a href="' . esc_url( __( 'https://wordpress.org', 'digitale-pracht' ) ) . '" target="_blank">' . __( 'WordPress', 'digitale-pracht' ) . '</a>'
 			); ?>
 			<?php printf(
 				wp_kses( __( 'Theme %1$s by %2$s.', 'digitale-pracht'), array(
-						'em' => array(),
-						'strong' => array(),
-						'a' => array(
-							'href' => array(),
-							'target' => array(),
-						) )
+					'em' => array(),
+					'a' => array(
+						'href' => array(),
+						'target' => array(),
+					) )
 				),
-				'<em>digitale Pracht</em>',
-				'<a href="http://palasthotel.de" target="_blank">Palasthotel</a>'
+				'<em>' . __( 'digitale Pracht', 'digitale-pracht' ) . '</em>',
+				'<a href="' . esc_url( __( 'http://palasthotel.de', 'digitale-pracht' ) ) . '" target="_blank">' . __( 'Palasthotel', 'digitale-pracht' ) . '</a>'
 			); ?>
 		</div>
 

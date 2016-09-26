@@ -13,7 +13,7 @@ $teaser_classes = array( 'ph-teaser', 'ph-teaser-illustrated' );
 		<h2 class="ph-teaser-title"><?php the_title(); ?></h2>
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure class="ph-teaser-image-wrapper">
-				<?php the_post_thumbnail( 'teaser-illustrated-desktop-2x', array( 'class' => 'ph-teaser-image' ) ); ?>
+				<?php the_post_thumbnail( 'digitalepracht-teaser-illustrated-desktop-2x', array( 'class' => 'ph-teaser-image' ) ); ?>
 			</figure>
 		<?php endif; ?>
 		<div class="ph-teaser-text"><?php the_excerpt(); ?></div>

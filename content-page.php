@@ -38,7 +38,7 @@ $thumbnail_id = get_post_thumbnail_id();
 		}
 
 		// Default thumbnail image size
-		$image_format = 'teaser-big-desktop-2x';
+		$image_format = 'digitalepracht-teaser-big-desktop-2x';
 
 		// If original image is smaller than default thumbnail image size,
 		// get a smaller image size
@@ -49,7 +49,7 @@ $thumbnail_id = get_post_thumbnail_id();
 
 		if ( $thumbnail_image_src[ 1 ] < $min_width ||
 		     $thumbnail_image_src[ 2 ] < $min_height ) {
-			$image_format = 'teaser-illustrated-mobile-max-2x';
+			$image_format = 'digitalepracht-teaser-illustrated-mobile-max-2x';
 		}
 
 		?>

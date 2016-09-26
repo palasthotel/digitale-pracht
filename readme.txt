@@ -1,8 +1,8 @@
 === digitale Pracht ===
 Contributors: Palasthotel <rezeption@palasthotel.de> (in person: Kim-Christian Meyer)
 Requires at least: WordPress 4.0
-Tested up to: WordPress 4.4.2
-Version: 1.2
+Tested up to: WordPress 4.6
+Version: 1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, responsive-layout, custom-colors, featured-images, microformats, theme-options, threaded-comments, translation-ready
@@ -22,8 +22,6 @@ Core features
 
 Additional features
 - Widget area bottom
-- Open Graph meta tag support
-- Twitter Cards meta tag support
 - Social share icons
 
 Works well with these plugins
@@ -37,7 +35,9 @@ Feel free to contact us, if you have any questions or suggestions: rezeption@pal
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Search for 'digitale Pracht'
 3. Click the 'Activate' button to use your new theme right away.
-5. Navigate to Appearance -> Customize in your admin panel and e.g. customize your main color. There you can also activate Open Graph or Twitter Cards support.
+5. Navigate to Appearance -> Customize in your admin panel and e.g. customize your main color.
+
+Hint on menus: You cannot use menus with multiple depth inside the footer.
 
 == Copyright ==
 digitale Pracht WordPress Theme, Copyright 2016 Palasthotel GfdPmbH Berlin
@@ -75,4 +75,6 @@ Some Entypo icons by Daniel Bruce
 License: CC BY-SA 4.0
 Source: http://www.entypo.com
 
-Image used in screenshot.png: Linlithgow Palace by Joseph Mallord William Turner, about 1807, no copyright.
+Image used in screenshot.png:
+Linlithgow Palace by Joseph Mallord William Turner, about 1807, no copyright.
+See this link for more information: https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_Linlithgow_Palace_-_Google_Art_Project.jpg

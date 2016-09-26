@@ -20,20 +20,24 @@ $thumbnail_id = get_post_thumbnail_id();
 		<h1 class="entry-title ph-article-title"><?php the_title(); ?></h1>
 		<div class="ph-article-date-author">
 			<time class="entry-date published ph-article-date"
-			      datetime="<?php the_date( 'Y-m-d' ); ?>">
+			      datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>">
 				<?php echo get_the_date( get_option( 'date_format' ) ); ?>
 			</time>
 			<time class="entry-updated updated"
-			      datetime="<?php the_modified_date( 'Y-m-d' ); ?>">
+			      datetime="<?php echo esc_attr( get_the_modified_date( 'Y-m-d' ) ); ?>">
 				<?php the_modified_date(); ?>
 			</time>
 			<span class="entry-author author vcard ph-article-author">
-			<?php
-			printf( __( 'by <a href="%1$s" title="%2$s" class="fn url">%3$s</a>', 'digitale-pracht' ),
-			    esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			    sprintf( esc_attr__( 'All articles by %s', 'digitale-pracht' ), get_the_author() ),
-			    get_the_author() );
-			?>
+				<?php printf(
+					wp_kses( __( 'by %s', 'digitale-pracht' ), array(
+						'a' => array(
+							'href' => array(),
+							'title' => array(),
+							'class' => array(),
+						) )
+					),
+					'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . sprintf( esc_attr__( 'All articles by %s', 'digitale-pracht' ), get_the_author() ) . '" class="fn url">' . get_the_author() . '</a>'
+				); ?>
 			</span><!-- end .entry-author -->
 			<?php edit_post_link( __( 'Edit article', 'digitale-pracht' ), '– <span class="edit-link">', '</span>' ); ?>
 		</div>
@@ -54,7 +58,7 @@ $thumbnail_id = get_post_thumbnail_id();
 		}
 
 		// Default thumbnail image size
-		$image_format = 'teaser-big-desktop-2x';
+		$image_format = 'digitalepracht-teaser-big-desktop-2x';
 
 		// If original image is smaller than default thumbnail image size,
 		// get a smaller image size
@@ -65,13 +69,13 @@ $thumbnail_id = get_post_thumbnail_id();
 
 		if ( $thumbnail_image_src[ 1 ] < $min_width ||
 		     $thumbnail_image_src[ 2 ] < $min_height ) {
-			$image_format = 'teaser-illustrated-mobile-max-2x';
+			$image_format = 'digitalepracht-teaser-illustrated-mobile-max-2x';
 		}
 
 		?>
 		<div class="entry-thumbnail ph-article-image-wrapper ph-article-featured-image">
 			<?php if ( ! empty( $large_image_url ) ) : ?>
-				<a class="ph-article-image-link" href="<?php echo esc_attr( $large_image_url[0] ); ?>" title="<?php echo esc_attr( $large_image_title ); ?>">
+				<a class="ph-article-image-link" href="<?php echo esc_url( $large_image_url[0] ); ?>" title="<?php echo esc_attr( $large_image_title ); ?>">
 					<?php echo wp_get_attachment_image( $thumbnail_id, $image_format, 0, array( 'class' => 'ph-article-image' ) ); ?>
 				</a>
 			<?php endif; ?>
@@ -116,7 +120,7 @@ $thumbnail_id = get_post_thumbnail_id();
 		<?php $category_list = get_the_category_list();
 		if ( ! empty( $category_list ) ): ?>
 			<div class="entry-tags ph-article-categories">
-				<span class="ph-article-categories-label"><?php esc_html_e( 'Category', 'digitale-pracht' ); ?>:</span>
+				<span class="ph-article-categories-label"><?php _e( 'Category', 'digitale-pracht' ); ?>:</span>
 				<?php the_category( ', ', '' ); ?>
 			</div>
 		<?php
@@ -125,7 +129,7 @@ $thumbnail_id = get_post_thumbnail_id();
 		$tags_list = get_the_tag_list();
 		if ( ! empty( $tags_list ) ): ?>
 			<div class="entry-tags ph-article-tags">
-				<span class="ph-article-tags-label"><?php esc_html_e( 'Tags', 'digitale-pracht' ); ?>:</span>
+				<span class="ph-article-tags-label"><?php _e( 'Tags', 'digitale-pracht' ); ?>:</span>
 				<?php the_tags( '', ', ', '' ); ?>
 			</div>
 		<?php endif; // get_the_tag_list() ?>
@@ -138,17 +142,17 @@ $thumbnail_id = get_post_thumbnail_id();
 <div class="grid ph-article-relateds no-print">
 	<section class="grid-container grid-container-c-1d1 has-title">
 		<div class="grid-container-before">
-			<h2 class="grid-container-title"><?php esc_html_e( 'Related articles', 'digitale-pracht' ); ?></h2>
+			<h2 class="grid-container-title"><?php _e( 'Related articles', 'digitale-pracht' ); ?></h2>
 		</div>
 		<div class="grid-slots-wrapper">
 			<div class="grid-slot grid-slot-1d1">
 				<div class="grid-box grid-box-posts has-no-title">
-					<?php get_template_part( 'widget', 'related-articles' ); ?>
+					<?php get_template_part( 'content', 'related-articles' ); ?>
 				</div>
 			</div>
 		</div>
 		<div class="grid-container-after">
-			<a href="/" class="grid-container-readmore-link ph-btn-submit"><?php esc_html_e( 'Read more stories on our homepage', 'digitale-pracht' ); ?></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="grid-container-readmore-link ph-btn-submit"><?php _e( 'Read more stories on our homepage', 'digitale-pracht' ); ?></a>
 		</div>
 	</section>
 </div>

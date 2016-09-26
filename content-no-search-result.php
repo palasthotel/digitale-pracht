@@ -11,8 +11,8 @@
 	<div class="grid-slots-wrapper">
 		<div class="grid-slot grid-slot-1d1">
 			<div class="grid-box is-indented grid-box-404">
-				<h2 class="h404"><?php esc_html_e( 'Sorry, no content found', 'digitale-pracht' ); ?></h2>
-				<p><?php esc_html_e( 'Why not try another search term?', 'digitale-pracht' ); ?></p>
+				<h2 class="h404"><?php _e( 'Sorry, no content found', 'digitale-pracht' ); ?></h2>
+				<p><?php _e( 'Why not try another search term?', 'digitale-pracht' ); ?></p>
 			</div>
 		</div>
 	</div>

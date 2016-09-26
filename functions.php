@@ -101,56 +101,6 @@ endif;
 add_action( 'widgets_init', 'digitalepracht_widgets_init' );
 
 
-if ( ! function_exists( 'digitalepracht_javascript_detection' ) ) :
-	/**
-	 * JavaScript Detection.
-	 *
-	 * Adds a `js` class to the root `<html>` element when JavaScript is detected.
-	 *
-	 * @since Twenty Fifteen 1.1
-	 */
-	function digitalepracht_javascript_detection() {
-		echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
-	}
-endif;
-add_action( 'wp_head', 'digitalepracht_javascript_detection', 0 );
-
-
-if ( ! function_exists( 'digitalepracht_disable_emojicons_tinymce' ) ) :
-	/**
-	 * @see http://wordpress.stackexchange.com/a/185578/89870
-	 */
-	function digitalepracht_disable_emojicons_tinymce( $plugins ) {
-		if ( is_array( $plugins ) ) {
-			return array_diff( $plugins, array( 'wpemoji' ) );
-		} else {
-			return array();
-		}
-	}
-endif;
-
-
-if ( ! function_exists( 'digitalepracht_disable_wp_emojicons' ) ) :
-	/**
-	 * @see http://wordpress.stackexchange.com/a/185578/89870
-	 */
-	function digitalepracht_disable_wp_emojicons() {
-		// all actions related to emojis
-		remove_action( 'admin_print_styles', 'print_emoji_styles' );
-		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-		remove_action( 'wp_print_styles', 'print_emoji_styles' );
-		remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-		remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-		remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-
-		// filter to remove TinyMCE emojis
-		add_filter( 'tiny_mce_plugins', 'digitalepracht_disable_emojicons_tinymce' );
-	}
-endif;
-add_action( 'init', 'digitalepracht_disable_wp_emojicons' );
-
-
 if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 	/**
 	 * Enqueue scripts and styles.
@@ -158,26 +108,32 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 	 * @since Twenty Fifteen 1.0
 	 */
 	function digitalepracht_scripts() {
-		wp_dequeue_style( 'grid_frontend' ); // remove default grid css
+
+		// Check if grid plugin is active
+		if ( class_exists( 'grid_plugin' ) ) {
+			// Remove default grid css
+			wp_dequeue_style( 'grid_frontend' );
+		}
+
+		// Must have top priority
+		wp_enqueue_script(
+			'digitalepracht-javascript-detection',
+			get_template_directory_uri() . '/js/ph-javascript-detection.js'
+		);
 
 		wp_enqueue_style(
 			'digitalepracht-googlefonts',
-			'http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic|Lora:400,400italic,700,700italic'
+			'https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic|Lora:400,400italic,700,700italic'
 		);
 
 		wp_enqueue_style(
 			'digitalepracht-style',
-			get_template_directory_uri() . '/css-sass/all.css',
-			array(),
-			@filemtime( get_template_directory() . '/css-sass/all.css' )
+			get_template_directory_uri() . '/css/all.css'
 		);
 
 		wp_enqueue_script(
 			'digitalepracht-general-first',
-			get_template_directory_uri() . '/js/ph-general-first.js',
-			array(),
-			filemtime( get_template_directory() . '/js/ph-general-first.js' ),
-			false
+			get_template_directory_uri() . '/js/ph-general-first.js'
 		);
 
 		// Load the html5 shiv.
@@ -185,32 +141,33 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 			'digitalepracht-html5',
 			get_template_directory_uri() . '/js/contrib/html5.js',
 			array(),
-			'3.7.3',
-			false
+			'3.7.3'
 		);
 		wp_script_add_data( 'digitalepracht-html5', 'conditional', 'lt IE 9' );
 
 		wp_enqueue_script(
-			'digitalepracht-base',
-			get_template_directory_uri() . '/js/lib/ph-base.js',
-			array(),
-			filemtime( get_template_directory() . '/js/lib/ph-base.js' ),
-			false
+			'digitalepracht-class-helper',
+			get_template_directory_uri() . '/js/lib/ph-class-helper.js'
+		);
+
+		wp_enqueue_script(
+			'digitalepracht-debounce',
+			get_template_directory_uri() . '/js/lib/ph-debounce.js'
 		);
 
 		wp_enqueue_script(
 			'digitalepracht-scroll-class',
 			get_template_directory_uri() . '/js/lib/ph-scroll-class.js',
-			array(),
-			filemtime( get_template_directory() . '/js/lib/ph-scroll-class.js' ),
+			array( 'digitalepracht-class-helper', 'digitalepracht-debounce' ),
+			false,
 			true
 		);
 
 		wp_enqueue_script(
 			'digitalepracht-toggle-class',
 			get_template_directory_uri() . '/js/lib/ph-toggle-class.js',
-			array(),
-			filemtime( get_template_directory() . '/js/lib/ph-toggle-class.js' ),
+			array( 'digitalepracht-class-helper' ),
+			false,
 			true
 		);
 
@@ -218,15 +175,15 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 			'digitalepracht-scroll-to',
 			get_template_directory_uri() . '/js/lib/ph-scroll-to.js',
 			array(),
-			filemtime( get_template_directory() . '/js/lib/ph-scroll-to.js' ),
+			false,
 			true
 		);
 
 		wp_enqueue_script(
 			'digitalepracht-indicator',
 			get_template_directory_uri() . '/js/ph-indicator.js',
-			array(),
-			filemtime( get_template_directory() . '/js/ph-indicator.js' ),
+			array( 'digitalepracht-debounce' ),
+			false,
 			true
 		);
 
@@ -237,8 +194,14 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 		wp_enqueue_script(
 			'digitalepracht-general-last',
 			get_template_directory_uri() . '/js/ph-general-last.js',
-			array(),
-			filemtime( get_template_directory() . '/js/ph-general-last.js' ),
+			array(
+				'digitalepracht-class-helper',
+				'digitalepracht-scroll-to',
+				'digitalepracht-toggle-class',
+				'digitalepracht-scroll-class',
+				'digitalepracht-indicator'
+			),
+			false,
 			true
 		);
 	}
@@ -272,58 +235,9 @@ endif;
 add_filter( 'embed_oembed_html', 'digitalepracht_embed_oembed_html', 99, 4 );
 
 
-if ( ! function_exists( 'digitalepracht_edit_mce_block_formats' ) ) :
-	/**
-	 * Customize MCE WYSIWYG Editor
-	 */
-	function digitalepracht_edit_mce_block_formats( $init_array ) {
-		// Limit our block formats and remove h1 headlines
-		$block_formats = array(
-			__( 'Paragraph', 'digitale-pracht' ) . '=p',
-			sprintf( __( 'Headline %d', 'digitale-pracht' ), 1 ) . '=h2',
-			sprintf( __( 'Headline %d', 'digitale-pracht' ), 2 ) . '=h3',
-			__( 'Preformatted', 'digitale-pracht' ) . '=pre',
-		);
-		$init_array['block_formats'] = implode( ';', $block_formats );
-
-		// Remove alignjustify and forecolor
-		$init_array['toolbar2'] = str_replace( 'alignjustify', '', $init_array['toolbar2'] );
-		$init_array['toolbar2'] = str_replace( 'forecolor', '', $init_array['toolbar2'] );
-		$init_array['toolbar2'] = str_replace( ',,', ',', $init_array['toolbar2'] ); // Correct double commas
-
-		return $init_array;
-	}
-endif;
-add_filter( 'tiny_mce_before_init', 'digitalepracht_edit_mce_block_formats' );
-
-
-if ( ! function_exists( 'digitalepracht_get_excerpt_or_content_until_more' ) ) :
-	/**
-	 * returns excerpt, if it has one, otherwise returns the content until more tag,
-	 * but limited to $max_words words.
-	 */
-	function digitalepracht_get_excerpt_or_content_until_more( $max_words = null ) {
-		if ( has_excerpt() ) {
-			$excerpt = get_the_excerpt();
-		} else {
-			// @see http://codex.wordpress.org/Customizing_the_Read_More#How_to_use_Read_More_in_Pages
-			global $more;
-			$more = 0;
-			$excerpt = wp_trim_excerpt();
-		}
-		// trim words?
-		if ( ! empty( $max_words ) ) {
-			$excerpt = digitalepracht_shorten_string_by_words( $excerpt, $max_words );
-		}
-
-		return $excerpt;
-	}
-endif;
-
-
 if ( ! function_exists( 'digitalepracht_excerpt_length' ) ) :
 	/**
-	 * limit excerpt to 40 words
+	 * Limit excerpt to 40 words
 	 */
 	function digitalepracht_excerpt_length( $length ) {
 		return 40;
@@ -332,59 +246,21 @@ endif;
 add_filter( 'excerpt_length', 'digitalepracht_excerpt_length', 999 );
 
 
-if ( ! function_exists( 'digitalepracht_the_excerpt' ) ) :
+if ( ! function_exists( 'digitalepracht_excerpt_more' ) ) :
 	/**
-	 * replace excerpt […] with …
+	 * Replace excerpt […] with …
 	 */
-	function digitalepracht_the_excerpt( $text ) {
-		$text = str_replace( '[...]', '…', $text );
-		$text = str_replace( '[…]', '…', $text );
-		$text = str_replace( '[&hellip;]', '…', $text );
-
-		return $text;
+	function digitalepracht_excerpt_more( $more ) {
+		return '…';
 	}
 endif;
-add_filter( 'the_excerpt', 'digitalepracht_the_excerpt' );
-
-
-if ( ! function_exists( 'digitalepracht_exclude_all_pages_search' ) ) :
-	/**
-	 * exclude pages from frontend search
-	 */
-	function digitalepracht_exclude_all_pages_search( $query ) {
-		if ( ! is_admin() // user is in backend
-		     && $query->is_main_query()
-		     && $query->is_search
-		) {
-			$query->set( 'post_type', 'post' );
-		}
-	}
-endif;
-add_action( 'pre_get_posts', 'digitalepracht_exclude_all_pages_search' );
-
-
-if ( ! function_exists( 'digitalepracht_shorten_string_by_words' ) ) :
-	/**
-	 * Shorten a string by words, so that there remains a maximum number of
-	 * $max_words words. There will be added a … char at the end of the string.
-	 *
-	 * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
-	 */
-	function digitalepracht_shorten_string_by_words( $string, $max_words ) {
-		$words = explode( ' ', $string, $max_words );
-		if ( count( $words ) >= $max_words ) {
-			array_pop( $words );
-			return implode( ' ', $words ) . '…';
-		}
-		return $string;
-	}
-endif;
+add_filter( 'excerpt_more', 'digitalepracht_excerpt_more' );
 
 
 if ( ! function_exists( 'digitalepracht_shorten_string_by_words_and_length' ) ) :
 	/**
 	 * Shorten a string by words, so that it fits inside a maximum number of
-	 * $limit characters including … at the end.
+	 * $max_chars characters including … at the end.
 	 *
 	 * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 	 */
@@ -401,7 +277,7 @@ if ( ! function_exists( 'digitalepracht_shorten_string_by_words_and_length' ) ) 
 		$return = '';
 
 		for ( $i = 0; $i < count( $words ); $i ++ ) {
-			// subtract 1 from $max_chars because we add the char … later
+			// Subtract 1 from $max_chars because we add the char … later
 			if ( mb_strlen( $return ) + mb_strlen( $words [ $i ] ) <= $max_chars - 1 ) {
 				$return .= $words[ $i ] . ' ';
 			} else {
@@ -423,7 +299,7 @@ if ( ! function_exists( 'digitalepracht_compose_tweet_text' ) ) :
 		$minimum_title_length     = 50;
 		$twitter_char_count_left  = $twitter_char_count_total - $twitter_char_count_url;
 
-		$twitter_username     = get_theme_mod( 'twitter_username', '' );
+		$twitter_username     = esc_html( get_theme_mod( 'digitalepracht_twitter_username', '' ) );
 		$twitter_user_credits = '';
 		if ( ! empty( $twitter_username ) &&
 		     mb_strlen( $twitter_username ) < $twitter_char_count_left - $minimum_title_length
@@ -447,6 +323,8 @@ endif;
  * Load Inc files.
  */
 require_once get_template_directory() . '/inc/customizer.php';
-require_once get_template_directory() . '/inc/setup-grid.php';
 require_once get_template_directory() . '/inc/image-sizes.php';
-require_once get_template_directory() . '/inc/open-graph.php';
+
+if ( class_exists( 'grid_plugin' ) ) {
+	require_once get_template_directory() . '/inc/setup-grid.php';
+}

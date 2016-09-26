@@ -1,14 +1,12 @@
-/**
- * every website should be limited to a few font variants, which are defined here.
- * these classes should only contain font-size and line-height,
- * so that they can be used via @extend in other classes.
- *
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// Every website should be limited to a few font variants, which are defined here.
+// These classes should only contain font-size and line-height,
+// so that they can be used via @extend in other classes.
+//
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 
 
-/* ###### LATO ###### */
+// ###### LATO ######
 
 
 %f10-12 {
@@ -104,7 +102,7 @@
 
 
 
-/* ###### LORA ###### */
+// ###### LORA ######
 
 
 // article title
@@ -142,7 +140,7 @@
 
 
 
-/* ###### ICONS ###### */
+// ###### ICONS ######
 
 
 // .pager-btn-rel icon font

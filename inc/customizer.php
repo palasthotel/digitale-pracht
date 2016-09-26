@@ -8,58 +8,55 @@
 
 if ( ! function_exists( 'digitalepracht_customize_register' ) ) :
 	function digitalepracht_customize_register( $wp_customize ) {
-		$wp_customize->add_setting( 'accent_color', array(
+		$wp_customize->add_setting( 'digitalepracht_accent_color', array(
 			'type'              => 'theme_mod',
 			'default'           => '#facc00',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'digitalepracht_accent_color', array(
 			'label'   => __( 'Accent Color', 'digitale-pracht' ),
 			'section' => 'colors',
 		) ) );
 
-		$wp_customize->add_setting( 'twitter_username', array(
+		$wp_customize->add_setting( 'digitalepracht_show_sharing_button', array(
+			'type'        => 'theme_mod',
+			'default'     => false,
+			'sanitize_callback' => 'digitalepracht_sanitize_boolean',
+		) );
+
+		$wp_customize->add_control( 'digitalepracht_show_sharing_button', array(
+			'label'       => __( 'Show sharing button', 'digitale-pracht' ),
+			'description' => __( 'Enables a small sharing button on posts, which appears on the bottom right corner when scrolling down.', 'digitale-pracht' ),
+			'type'        => 'checkbox',
+			'section'     => 'title_tagline',
+		) );
+
+		$wp_customize->add_setting( 'digitalepracht_twitter_username', array(
 			'type'              => 'theme_mod',
 			'default'           => '',
 			'sanitize_callback' => 'digitalepracht_sanitize_twitter_username',
 		) );
 
-		$wp_customize->add_control( 'twitter_username', array(
+		$wp_customize->add_control( 'digitalepracht_twitter_username', array(
 			'label'       => __( 'Twitter @Username', 'digitale-pracht' ),
-			'description' => __( 'You can provide your Twitter username here, without the @ character. It will appear inside the Twitter sharing links and in the Twitter Cards meta tags, if you choose to include them.', 'digitale-pracht' ),
+			'description' => __( 'You can provide your Twitter username here, without the @ character. It will appear inside the Twitter sharing links.', 'digitale-pracht' ),
 			'type'        => 'text',
-			'section'     => 'title_tagline',
-		) );
-
-		$wp_customize->add_setting( 'open_graph', array(
-			'type'        => 'theme_mod',
-			'default'     => false,
-			'sanitize_callback' => 'digitalepracht_sanitize_boolean',
-		) );
-
-		$wp_customize->add_control( 'open_graph', array(
-			'label'       => __( 'Open Graph', 'digitale-pracht' ),
-			'description' => __( 'Include Open Graph meta tags in HTML output.', 'digitale-pracht' ),
-			'type'        => 'checkbox',
-			'section'     => 'title_tagline',
-		) );
-
-		$wp_customize->add_setting( 'twitter_cards', array(
-			'type'        => 'theme_mod',
-			'default'     => false,
-			'sanitize_callback' => 'digitalepracht_sanitize_boolean',
-		) );
-
-		$wp_customize->add_control( 'twitter_cards', array(
-			'label'       => __( 'Twitter Cards', 'digitale-pracht' ),
-			'description' => __( 'Include Twitter Cards meta tags in HTML output. You need to provide a Twitter username for this to work.', 'digitale-pracht' ),
-			'type'        => 'checkbox',
 			'section'     => 'title_tagline',
 		) );
 	}
 endif;
 add_action( 'customize_register', 'digitalepracht_customize_register' );
+
+
+if ( ! function_exists( 'digitalepracht_sanitize_boolean' ) ) :
+	/**
+	 *
+	 */
+	function digitalepracht_sanitize_boolean( $bool ) {
+		return $bool === true ? true : false;
+	}
+endif;
 
 
 if ( ! function_exists( 'digitalepracht_sanitize_twitter_username' ) ) :
@@ -88,22 +85,12 @@ if ( ! function_exists( 'digitalepracht_sanitize_twitter_username' ) ) :
 endif;
 
 
-if ( ! function_exists( 'digitalepracht_sanitize_boolean' ) ) :
-	/**
-	 *
-	 */
-	function digitalepracht_sanitize_boolean( $bool ) {
-		return $bool === true ? true : false;
-	}
-endif;
-
-
 if ( ! function_exists( 'digitalepracht_accent_color_css' ) ) :
 	/**
 	 * Enqueues front-end CSS for color scheme.
 	 */
 	function digitalepracht_accent_color_css() {
-		$accent_color = get_theme_mod( 'accent_color', '#facc00' );
+		$accent_color = get_theme_mod( 'digitalepracht_accent_color', '#facc00' );
 
 		// Don't do anything if the default accent color is selected.
 		if ( $accent_color === '#facc00' ) {
@@ -126,6 +113,7 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
 	 * @return string Accent color CSS.
 	 */
 	function digitalepracht_get_accent_color_css( $color ) {
+		$color = esc_html( $color );
 		return <<<CSS
         /* Accent color */
 
@@ -191,12 +179,9 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
         input[type="text"].ph-search-input:focus {
             border-color: {$color};
         }
+        .grid-container.has-no-title .grid-slot:first-child.grid-slot-1d1 .grid-box:first-child.has-no-title .ph-teaser:first-child.ph-teaser-big .ph-teaser-title,
         .ph-search-input-page:focus {
             border-color: {$color} !important;
-        }
-        .grid-container.has-no-title .grid-slot:first-child.grid-slot-1d1 .grid-box:first-child.has-no-title .ph-teaser:first-child.ph-teaser-big .ph-teaser-title,
-        .ph-article:first-child .grid-slot:first-child .grid-box:first-child .ph-teaser:first-child.ph-teaser-big .ph-teaser-title {
-            border-color: {$color};
         }
         .ph-teaser-link:hover .ph-teaser-title,
         .ph-teaser-link:focus .ph-teaser-title {

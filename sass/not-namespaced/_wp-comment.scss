@@ -1,6 +1,4 @@
-/**
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 .form-allowed-tags {
   display: none;
@@ -129,7 +127,7 @@
   height: 16*$base-unit;
 }
 
-// make form elements collapsible
+/* Make form elements collapsible */
 .comment-notes,
 .comment-form-author,
 .comment-form-email,

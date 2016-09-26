@@ -1,6 +1,4 @@
-/**
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 .gallery {
   display: block;
@@ -44,8 +42,8 @@
 }
 
 .gallery-caption {
-  // break too long words
-  // @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+  /* break too long words
+     @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
 
   // These are technically the same, but use both
   overflow-wrap: break-word;

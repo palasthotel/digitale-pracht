@@ -8,7 +8,9 @@
  * @package digitale-pracht
  */
 
-$show_share_btns = is_single() && ( get_post_type() === 'page' || get_post_type() === 'post' );
+$show_sharing_button = is_single() &&
+                       ( get_post_type() === 'page' || get_post_type() === 'post' ) &&
+                       get_theme_mod( 'digitalepracht_show_sharing_button', false ) === true;
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -26,7 +28,12 @@ $show_share_btns = is_single() && ( get_post_type() === 'page' || get_post_type(
 
 <header id="masthead" class="ph-header site-header" role="banner">
 	<div class="site-branding">
-		<?php if ( is_home() || ( is_front_page() && isset( $post->grid ) ) ) : ?>
+		<?php if ( is_home() ||
+		           ( is_front_page() &&
+		             class_exists( 'grid_plugin' ) &&
+		             isset( $post->grid )
+		           )
+		         ) : ?>
 			<h1 class="ph-page-title site-title">
 				<a class="ph-page-title-link"
 				   href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -44,35 +51,28 @@ $show_share_btns = is_single() && ( get_post_type() === 'page' || get_post_type(
 		<p class="ph-page-subtitle site-description"><?php bloginfo( 'description' ); ?></p>
 	</div>
 
-	<a class="ph-jumplink skip-link no-print" href="#content"><?php esc_html_e( 'Go to content', 'digitale-pracht' ); ?></a>
+	<a class="ph-jumplink skip-link no-print" href="#content"><?php _e( 'Go to content', 'digitale-pracht' ); ?></a>
 
 	<nav class="ph-actionbar no-print" aria-hidden="true">
-		<a class="ph-icon-btn ph-icon ph-icon-search ph-actionbar-search-link" href="#search"><?php echo esc_html_x( 'Search', 'verb', 'digitale-pracht' ); ?></a>
+		<a class="ph-icon-btn ph-icon ph-icon-search ph-actionbar-search-link" href="#search"><?php _ex( 'Search', 'verb', 'digitale-pracht' ); ?></a>
 	</nav>
 
 	<div class="ph-overlay ph-overlay-search no-print">
-		<strong class="ph-overlay-title"><?php echo esc_html_x( 'Search', 'noun', 'digitale-pracht' ); ?></strong>
-		<form method="get" action="/" role="search"
-		      class="ph-search-form ph-search-form-overlay ph-overlay-content">
-			<input type="text" name="s" value="" placeholder="<?php esc_attr_e( 'Find me…', 'digitale-pracht' ); ?>"
-			       class="ph-search-input ph-search-input-overlay">
-			<button type="submit" class="ph-search-btn ph-search-btn-overlay">
-				<?php esc_html_e( 'Submit search', 'digitale-pracht' ); ?>
-			</button>
-		</form>
+		<strong class="ph-overlay-title"><?php _ex( 'Search', 'noun', 'digitale-pracht' ); ?></strong>
+		<?php get_search_form(); ?>
 	</div>
 
 	<div class="ph-floatingbar no-print" aria-hidden="true">
 		<a class="ph-floatingbar-link ph-icon ph-floatingbar-link-top ph-icon-btn ph-icon-up-bold has-delay-1"
-		   href="#top"><?php esc_html_e( 'Back to top', 'digitale-pracht' ); ?></a>
-		<?php if ( $show_share_btns ): ?>
+		   href="#top"><?php _e( 'Back to top', 'digitale-pracht' ); ?></a>
+		<?php if ( $show_sharing_button ): ?>
 			<a class="ph-floatingbar-link ph-icon ph-floatingbar-link-share ph-icon-btn ph-icon-share"
-			   href="#share"><?php echo esc_html_x( 'Share', 'verb', 'digitale-pracht' ); ?></a>
+			   href="#share"><?php _ex( 'Share', 'verb', 'digitale-pracht' ); ?></a>
 		<?php endif; ?>
 	</div>
 
-	<?php if ( $show_share_btns ): ?>
-		<?php get_template_part( 'widget', 'social-share-overlay' ); ?>
+	<?php if ( $show_sharing_button ): ?>
+		<?php get_template_part( 'social-share-overlay' ); ?>
 	<?php endif; ?>
 </header>
 

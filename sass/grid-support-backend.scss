@@ -1,10 +1,9 @@
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 /**
- * Custom CSS for Grid editor.
- *
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+ * Custom CSS for Grid editor
  */
 
-// add notice to unsupported grid types
+/* Add notice to unsupported grid types */
 .grid-new-element {
 
   > .grid-new-container-slots {
@@ -33,7 +32,7 @@
     }
   }
 
-  // allowed grid container types:
+  /* Allowed grid container types: */
   &[data-type="c-1d1"],
   &[data-type="c-1d4-1d4-1d4-1d4"] {
     > .grid-new-container-slots {
@@ -74,7 +73,7 @@
     opacity: 0.3;
   }
 
-  // allowed grid container types:
+  /* Allowed grid container types: */
   &[data-type="c-1d1"],
   &[data-type="c-1d4-1d4-1d4-1d4"] {
     &:before {

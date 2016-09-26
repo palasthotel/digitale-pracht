@@ -1,15 +1,15 @@
-/**
- * holds general classes, which can be used as they are,
- * or @extend-ed.
- *
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// Holds general classes, which can be used as they are, or @extend-ed.
+//
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
-// from twentyfifteen
+/* Text meant only for screen readers, from twentysixteen */
+.says,
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   overflow: hidden;
   position: absolute !important;
   width: 1px;
+  /* many screen reader and browser combinations announce broken words as they would appear visually */
+  word-wrap: normal !important;
 }

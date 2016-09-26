@@ -6,7 +6,7 @@
  */
 
 $classes = $this->classes;
-// don't need type_id
+// We don't need type_id
 // array_push($classes, 'grid-container-type-' . $this->type_id);
 
 if ( ! empty( $this->style ) ) {

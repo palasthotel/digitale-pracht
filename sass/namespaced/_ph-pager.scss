@@ -1,6 +1,4 @@
-/**
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 .ph-pager {
   max-width: $grid-content-width;
@@ -45,7 +43,7 @@
   padding-right: 4px;
 }
 
-// responsiveness step 1: show next and previous page link
+/* Responsiveness step 1: show next and previous page link */
 .ph-pager-btn-rel-prev-1,
 .ph-pager-btn-rel-next-1 {
   display: none !important;
@@ -55,7 +53,7 @@
   }
 }
 
-// responsiveness step 2: show nextnext and previousprevious page link
+/* Responsiveness step 2: show nextnext and previousprevious page link */
 .ph-pager-btn-rel-prev-2,
 .ph-pager-btn-rel-next-2 {
   display: none !important;
@@ -65,7 +63,7 @@
   }
 }
 
-// responsiveness step 3: show next and previous text
+/* Responsiveness step 3: show next and previous text */
 .ph-pager-btn-rel-prev-text,
 .ph-pager-btn-rel-next-text {
   display: none;

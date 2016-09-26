@@ -1,6 +1,6 @@
 <?php
 /**
- * Customize Grid to the needs of this theme
+ * Customize Grid to the needs of this theme.
  *
  * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
  * @package digitale-pracht
@@ -49,9 +49,7 @@ if ( ! function_exists( 'digitalepracht_grid_style_backend' ) ) :
 	function digitalepracht_grid_style_backend() {
 		wp_enqueue_style(
 			'digitalepracht-grid-style-backend',
-			get_template_directory_uri() . '/css-sass/grid-support-backend.css',
-			array(),
-			@filemtime( get_template_directory() . '/css-sass/grid-support-backend.css' )
+			get_template_directory_uri() . '/css/grid-support-backend.css'
 		);
 	}
 endif;

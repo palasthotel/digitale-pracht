@@ -1,20 +1,12 @@
-/**
- * @file
- * Print styling
- *
- * We provide some sane print styling for Drupal using Zen's layout method.
- */
-
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 /**
  * By importing this CSS file as media "all", we allow this print file to be
  * aggregated with other stylesheets, for improved front-end performance.
  */
 @media print {
 
-  /* Underline all links. */
   a:link,
   a:visited {
-    // text-decoration: underline !important;
 
     /* Don't underline header. */
     &.header__site-link {

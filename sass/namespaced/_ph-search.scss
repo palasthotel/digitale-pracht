@@ -1,6 +1,4 @@
-/**
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 .ph-search-form {
   position: relative;
@@ -8,9 +6,13 @@
   .grid-box-404 & {
     margin-top: 6*$base-unit;
   }
+
+  .ph-overlay-search > & {
+    @extend .ph-overlay-content;
+  }
 }
 
-input[type="text"].ph-search-input {  // we need higher css level
+input[type="text"].ph-search-input {  // We need higher css level
   padding: $base-unit*3/2 0;
   max-width: none;
   @extend %f28-35--f38-45;
@@ -30,32 +32,28 @@ input[type="text"].ph-search-input {  // we need higher css level
     @extend %f14-19--f17-28;
     line-height: 34px !important;
   }
-}
 
-input[type="text"].ph-search-input-overlay {  // we need higher css level
-  color: white;
-}
-
-.ph-search-input-page {
-  color: black;
-  border-color: $gray-light !important;
-  padding-left: 50px !important;
-
-  @include bp($breakpoint-grid-2) {
-    padding-left: 70px !important;
+  .ph-overlay-search & {
+    color: white;
   }
 
-  &:focus {
-    border-color: $accent !important;
-  }
+  .content-area & {
+     color: black;
+     border-color: $gray-light !important;
+     padding-left: 50px !important;
 
-  .widget & {
-    padding-left: 30px !important;
-  }
-}
+     @include bp($breakpoint-grid-2) {
+       padding-left: 70px !important;
+     }
 
-.ph-search-btn-overlay {
-  display: none;
+     &:focus {
+       border-color: $accent !important;
+     }
+
+     .widget & {
+       padding-left: 30px !important;
+     }
+   }
 }
 
 .ph-search-btn {
@@ -69,6 +67,10 @@ input[type="text"].ph-search-input-overlay {  // we need higher css level
   @include bp($breakpoint-grid-2) {
     top: 12px;
     padding: 5px 15px 5px 15px;
+  }
+
+  .ph-overlay-search & {
+    display: none;
   }
 
   .widget & {

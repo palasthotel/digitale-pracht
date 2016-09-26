@@ -1,13 +1,12 @@
-/**
- * general grid constants (padding, columns, baseline, …)
- *
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// General grid constants (padding, columns, baseline, …)
+//
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
-// calculate all sizes, margins, paddings from this unit
+
+// Calculate all sizes, margins, paddings from this unit
 $base-unit                      : 10px;
 
-// ads
+// Ads
 $skyscraper-width               : 200px;
 
 // ?px 12 col grid
@@ -24,7 +23,7 @@ $grid-slot-1d4-width            : 3 * $grid-slot-width + 2 * $grid-slot-gap;
 $grid-slot-1d3-width            : 4 * $grid-slot-width + 3 * $grid-slot-gap;
 $grid-slot-1d2-width            : 6 * $grid-slot-width + 5 * $grid-slot-gap;
 
-// grid values in %
+// Grid values in %
 $grid-slot-width-perc           : $grid-slot-width / $grid-content-width * 100%;
 $grid-slot-width-perc-outside   : $grid-slot-width / $grid-width * 100%;
 $grid-slot-width-perc-inside-5d6: $grid-slot-width / $grid-slot-5d6-width * 100%;
@@ -47,14 +46,14 @@ $grid-slot-gap-perc-inside-1d4  : $grid-slot-gap / $grid-slot-1d4-width * 100%;
 $grid-slot-gap-perc-inside-1d3  : $grid-slot-gap / $grid-slot-1d3-width * 100%;
 $grid-slot-gap-perc-inside-1d2  : $grid-slot-gap / $grid-slot-1d2-width * 100%;
 
-// mobile 320px 4 cols grid
+// Mobile 320px 4 cols grid
 $grid-320-slot-width            : 62.5px;
 $grid-320-padding               : 20px;
 $grid-320-slot-gap              : 10px;
 $grid-320-content-width         : 4 * $grid-320-slot-width + 3 * $grid-320-slot-gap; // 300px
 $grid-320-width                 : $grid-320-content-width + 2 * $grid-320-padding; // 320px
 
-// mobile grid values in %
+// Mobile grid values in %
 $grid-320-slot-width-perc       : $grid-320-slot-width / $grid-320-content-width * 100%;
 $grid-320-slot-width-perc-outside : $grid-320-slot-width / $grid-320-width * 100%;
 $grid-320-padding-perc          : $grid-320-padding / $grid-320-content-width * 100%;

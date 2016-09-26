@@ -1,12 +1,9 @@
-/**
- * colors following the context principal
- *
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// Colors following the context principal
+//
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
-/**
- * color palette
- */
+
+// ###### COLOR PALETTE ######
 
 $accent: #facc00;
 $gray: #666;
@@ -20,9 +17,7 @@ $black-opaque: rgba(0, 0, 0, 0.9);
 $error: red;
 
 
-/**
- * item specific colors
- */
+// Item specific colors
 
 $html-bg: white;
 $text-fg: black;
@@ -32,9 +27,7 @@ $footer-bg: $almost-whiter;
 $footer-border-top: $almost-white;
 
 
-/**
- * social colors from @url http://brandcolors.net/
- */
+// Social colors from @url http://brandcolors.net
 
 $facebook: #3b5998;
 $twitter: #55acee;

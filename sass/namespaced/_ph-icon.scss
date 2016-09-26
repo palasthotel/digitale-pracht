@@ -1,6 +1,4 @@
-/**
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 .ph-icon-mail:before { content: '\2709'; } /* '✉' */
 .ph-icon-cancel:before { content: '\274c'; } /* '❌' */
@@ -71,7 +69,7 @@
     @extend %f19-33-icon;
     position: relative;
     top: 2px;
-    right: 2px; // strange offset fix
+    right: 2px; // Strange offset fix
     text-align: right;
   }
 
@@ -88,7 +86,7 @@
     visibility: hidden;
     transition: opacity $speed $ease, visibility $speed $ease, background-color $speed $ease, max-width $speed $ease;
 
-    // handled via back-to-top.js
+    // Handled via back-to-top.js
     .is-scrolled-end & {
       opacity: 1;
       visibility: visible;

@@ -12,9 +12,9 @@ $curauth = ( get_query_var( 'author_name' ) ) ?
 
 $description = get_the_author_meta( 'description', $curauth->ID );
 
-$mailto_link = esc_url( 'mailto:' . get_the_author_meta( 'user_email', $curauth->ID ) );
-$url         = get_the_author_meta( 'url', $curauth->ID );
-$twitter     = get_the_author_meta( 'twitter', $curauth->ID );
+$mailto_link      = 'mailto:' . get_the_author_meta( 'user_email', $curauth->ID );
+$website          = get_the_author_meta( 'url', $curauth->ID );
+$twitter_username = wp_strip_all_tags( get_the_author_meta( 'twitter', $curauth->ID ) );
 get_header();
 
 ?>
@@ -32,28 +32,28 @@ get_header();
 						array( 'force_display' => true )
 					); ?>
 				</div>
-				<h1 class="ph-author-title"><?php the_author_meta( 'display_name', $curauth->ID ); ?></h1>
+				<h1 class="ph-author-title"><?php echo esc_html( get_the_author_meta( 'display_name', $curauth->ID ) ); ?></h1>
 				<div class="ph-author-text">
 					<?php if ( ! empty( $description ) ): ?>
-						<div class="ph-author-description"><?php echo $description; ?></div>
+						<div class="ph-author-description"><?php echo esc_html( $description ); ?></div>
 					<?php endif; ?>
 					<dl class="ph-author-meta ph-clearfix">
-						<dt class="ph-author-meta-label">E-Mail</dt>
+						<dt class="ph-author-meta-label"><?php _e( 'E-Mail', 'digitale-pracht' ); ?></dt>
 						<dd class="ph-author-meta-value"><a
-								href="<?php echo $mailto_link; ?>"><?php echo esc_html( get_the_author_meta( 'user_email', $curauth->ID ) ); ?></a>
+								href="<?php echo esc_url( $mailto_link, array( 'mailto' ) ); ?>"><?php echo esc_html( get_the_author_meta( 'user_email', $curauth->ID ) ); ?></a>
 						</dd>
-						<?php if ( ! empty( $url ) ): ?>
-							<dt class="ph-author-meta-label"><?php esc_html_e( 'Website', 'digitale-pracht' ); ?></dt>
+						<?php if ( ! empty( $website ) ): ?>
+							<dt class="ph-author-meta-label"><?php _e( 'Website', 'digitale-pracht' ); ?></dt>
 							<dd class="ph-author-meta-value"><a
-									href="<?php echo esc_url( $url ); ?>"
-									target="_blank"><?php echo esc_html( $url ); ?></a>
+									href="<?php echo esc_url( $website ); ?>"
+									target="_blank"><?php echo esc_html( $website ); ?></a>
 							</dd>
 						<?php endif; ?>
-						<?php if ( ! empty( $twitter ) ): ?>
-							<dt class="ph-author-meta-label"><?php esc_html_e( 'Twitter', 'digitale-pracht' ); ?></dt>
+						<?php if ( ! empty( $twitter_username ) ): ?>
+							<dt class="ph-author-meta-label"><?php _e( 'Twitter', 'digitale-pracht' ); ?></dt>
 							<dd class="ph-author-meta-value"><a
-									href="<?php echo esc_url( 'https://twitter.com/' . wp_strip_all_tags( $twitter ) ); ?>"
-									target="_blank">@<?php echo esc_html( wp_strip_all_tags( $twitter ) ); ?></a>
+									href="<?php echo esc_url( 'https://twitter.com/' . $twitter_username ); ?>"
+									target="_blank">@<?php echo esc_html( $twitter_username ); ?></a>
 							</dd>
 						<?php endif; ?>
 					</dl>

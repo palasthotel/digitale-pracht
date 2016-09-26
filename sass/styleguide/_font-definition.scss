@@ -1,14 +1,12 @@
-/**
- * IE8 allows four(!) different weights + styles per font.
- *
- * @url http://blog.typekit.com/2011/06/27/new-from-typekit-variation-specific-font-family-names-in-ie-6-8/
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// IE8 allows four(!) different weights + styles per font.
+//
+// @url http://blog.typekit.com/2011/06/27/new-from-typekit-variation-specific-font-family-names-in-ie-6-8/
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 
-/*** FONT FACES ***/
+// ###### FONT FACES ######
 
-// we use fontello to create our own custom stripped icon font
+// We use fontello to create our own custom stripped icon font
 
 @font-face {
   font-family: 'fontello';
@@ -21,13 +19,13 @@
   font-style: normal;
 }
 
-/*** FONT CLASSES, can be used in other classes via @extend: ***/
+// ###### FONT CLASSES, can be used in other classes via @extend: ######
 
 // .lato-italic {
 // }
 
 
-/*** FONT FAMILIES ***/
+// ###### FONT FAMILIES ######
 
 // default, leave them here for fallbacks
 $times-new-roman: 'Times New Roman', Times, Georgia, serif;
@@ -39,14 +37,14 @@ $helvetica:       'Helvetica Neue', Arial, sans-serif;
 $arial:           Arial, 'Helvetica Neue', sans-serif;
 $courier:         'Courier New', monospace, sans-serif;
 
-// custom, for this theme only
+// Custom, for this theme only
 $lato:            'Lato', $arial;
 $lora:            'Lora', $georgia;
 
 $icon:            'fontello';
 
 
-/*** OVERWRITE NORMALIZE.SCSS CONSTANTS ***/
+// ###### OVERWRITE NORMALIZE.SCSS CONSTANTS ######
 
 $base-font-size: 17px;
 $base-line-height: 31px;

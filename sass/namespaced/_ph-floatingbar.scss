@@ -1,6 +1,4 @@
-/**
- * @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
- */
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 .ph-floatingbar {
   position: fixed;
@@ -20,7 +18,7 @@
 }
 
 .ph-floatingbar-link {
-  background-color: $gray-light !important; // fallback for non-rgba-browsers
+  background-color: $gray-light !important; /* Fallback for non-rgba-browsers */
   background-color: $gray-light-opaque !important;
   border: 0;
 }
