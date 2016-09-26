@@ -20,8 +20,8 @@ if ( ! function_exists( 'digitalepracht_customize_register' ) ) :
 		) ) );
 
 		$wp_customize->add_setting( 'digitalepracht_show_sharing_button', array(
-			'type'        => 'theme_mod',
-			'default'     => false,
+			'type'              => 'theme_mod',
+			'default'           => false,
 			'sanitize_callback' => 'digitalepracht_sanitize_boolean',
 		) );
 
@@ -71,6 +71,7 @@ if ( ! function_exists( 'digitalepracht_sanitize_twitter_username' ) ) :
 	 * @see https://support.twitter.com/articles/115596
 	 *
 	 * @param string $value Twitter username.
+	 *
 	 * @return string Twitter username.
 	 */
 	function digitalepracht_sanitize_twitter_username( $username ) {
@@ -104,6 +105,35 @@ endif;
 add_action( 'wp_enqueue_scripts', 'digitalepracht_accent_color_css' );
 
 
+if ( ! function_exists( 'digitalepracht_get_foreground_color_with_best_contrast' ) ) :
+	/**
+	 * Calculates, which foreground color has the best contrast to the given
+	 * background-color.
+	 *
+	 * @see http://stackoverflow.com/a/8468448
+	 * @param string $background_color_hex HEX color without leading #.
+	 * @return string 'black' or 'white', depending on the given background-color.
+	 */
+	function digitalepracht_get_foreground_color_with_best_contrast( $background_color_hex ) {
+		$r = hexdec( substr( $background_color_hex, 0, 2 ) );
+		$g = hexdec( substr( $background_color_hex, 2, 2 ) );
+		$b = hexdec( substr( $background_color_hex, 4, 2 ) );
+
+		$contrast = sqrt(
+			$r * $r * .241 +
+			$g * $g * .691 +
+			$b * $b * .068
+		);
+
+		if ( $contrast > 130 ) {
+			return 'black';
+		}
+
+		return 'white';
+	}
+endif;
+
+
 if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
 	/**
 	 * Returns CSS for the accent color.
@@ -114,6 +144,8 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
 	 */
 	function digitalepracht_get_accent_color_css( $color ) {
 		$color = esc_html( $color );
+		$foreground_color = esc_html( digitalepracht_get_foreground_color_with_best_contrast( $color ) );
+
 		return <<<CSS
         /* Accent color */
 
@@ -134,6 +166,7 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
         }
         .ph-debug-grid-slot {
             background-color: {$color};
+            color: {$foreground_color};
         }
         .grid-container.has-title, .has-title.ph-article,
         .grid-container.has-border-top-accent{
@@ -155,13 +188,16 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
         input.is-active[type="submit"],
         button.is-active, .is-active.ph-pager-btn, .is-active.ph-jumplink:focus, .is-active.ph-btn-italic, .is-active.grid-box-readmore-link, .is-active.grid-container-readmore-link, .is-active.ph-btn-transparent-bg, .is-active.page-numbers, .page-numbers.current {
             background-color: {$color} !important;
+            color: {$foreground_color} !important;
         }
         .ph-btn-submit, input[type="submit"],
         button[type="submit"], [href].grid-container-title, [href].comments-title, .ph-jumplink:focus {
             background-color: {$color};
+            color: {$foreground_color};
         }
         .ph-icon-btn:hover, .ph-icon-btn:focus {
             background-color: {$color} !important;
+            color: {$foreground_color} !important;
         }
         .ph-indicator {
             background: {$color};
