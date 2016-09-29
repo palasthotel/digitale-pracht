@@ -35,7 +35,20 @@ get_header();
 				<h1 class="ph-author-title"><?php echo esc_html( get_the_author_meta( 'display_name', $curauth->ID ) ); ?></h1>
 				<div class="ph-author-text">
 					<?php if ( ! empty( $description ) ): ?>
-						<div class="ph-author-description"><?php echo esc_html( $description ); ?></div>
+						<div class="ph-author-description"><?php
+							echo wp_kses(
+								$description,
+								array(
+									'a' => array(
+										'href' => array(),
+										'title' => array(),
+										'target' => array(),
+									),
+									'br' => array(),
+									'em' => array(),
+									'strong' => array(),
+								)
+							); ?></div>
 					<?php endif; ?>
 					<dl class="ph-author-meta ph-clearfix">
 						<dt class="ph-author-meta-label"><?php _e( 'E-Mail', 'digitale-pracht' ); ?></dt>
