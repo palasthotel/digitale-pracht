@@ -80,3 +80,15 @@ Source: http://www.entypo.com
 Image used in screenshot.png:
 Linlithgow Palace by Joseph Mallord William Turner, about 1807, no copyright.
 See this link for more information: https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_Linlithgow_Palace_-_Google_Art_Project.jpg
+
+== Changelog ==
+
+= 1.10 =
+* Released: October 5, 2016
+- Added custom logo support (fixed height of 100px)
+- Added automatic contrast foreground color detection for custom colors
+- Reading indicator can now be disabled
+
+= 1.9 =
+* Released: September 26, 2016
+- Initial Release
