@@ -1453,6 +1453,23 @@ td {
   }
 }
 
+.custom-logo {
+  width: auto;
+  height: 50px;
+}
+
+@media all and (min-width: 500px) {
+  .custom-logo {
+    height: 100px;
+  }
+}
+
+.custom-logo-link {
+  display: inline-block;
+  text-decoration: none;
+  border: 0;
+}
+
 .entry-updated {
   display: none;
 }
@@ -2361,8 +2378,8 @@ button, .ph-pager-btn, .ph-jumplink:focus, .ph-btn-italic, .grid-box-readmore-li
   border: 0;
   color: black;
   text-decoration: none;
-  -webkit-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   font-family: "Lato", Arial, "Helvetica Neue", sans-serif;
 }
 
@@ -2647,7 +2664,7 @@ body.is-loaded .ph-indicator-wrapper {
 .ph-indicator {
   position: relative;
   height: 0;
-  background: #facc00;
+  background-color: #facc00;
   -webkit-transition: height 0.05s ease-in-out;
   transition: height 0.05s ease-in-out;
 }
@@ -2847,7 +2864,7 @@ body.is-loaded .ph-indicator-wrapper {
   }
 }
 
-.ph-page-logo-svg {
+.ph-page-dp-logo-svg {
   width: 53px;
   height: 51px;
   margin: 0 auto;
@@ -2857,7 +2874,7 @@ body.is-loaded .ph-indicator-wrapper {
 }
 
 @media all and (min-width: 500px) {
-  .ph-page-logo-svg {
+  .ph-page-dp-logo-svg {
     width: 88px;
     height: 101px;
     margin-top: 5px;
@@ -2865,20 +2882,20 @@ body.is-loaded .ph-indicator-wrapper {
   }
 }
 
-.ph-page-logo-svg > path {
+.ph-page-dp-logo-svg > path {
   fill: black;
   -webkit-transition: fill 0.3s ease-in-out;
   transition: fill 0.3s ease-in-out;
 }
 
-.ph-page-title-link:focus .ph-page-logo-svg > path {
+.custom-logo-link:focus .ph-page-dp-logo-svg > path {
   fill: #facc00;
   -webkit-transition: none;
   transition: none;
 }
 
 .ph-page-title {
-  margin: 10px 0 -10px 0 !important;
+  margin: 10px 0 -10px 0;
   text-align: center;
   font-family: "Lato", Arial, "Helvetica Neue", sans-serif;
   font-weight: 900;
@@ -2892,13 +2909,8 @@ body.is-loaded .ph-indicator-wrapper {
   .ph-page-title {
     font-size: 38px;
     line-height: 45px;
-    margin: 10px 0 5px 0 !important;
+    margin: 10px 0 5px 0;
   }
-}
-
-.ph-page-title-svg {
-  margin: 10px 0 -6px 0 !important;
-  text-align: center;
 }
 
 .ph-page-title-link {
@@ -2914,6 +2926,7 @@ body.is-loaded .ph-indicator-wrapper {
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0;
 }
 
 @media all and (min-width: 500px) {

@@ -42,6 +42,16 @@ if ( ! function_exists( 'digitalepracht_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		/*
+		 * Enable support for custom logo.
+		 */
+		add_theme_support( 'custom-logo', array(
+			'height'      => 200,
+			'width'       => 200,
+			'flex-width'  => true,
+			'header-text' => array( 'site-title', 'site-description' ),
+		) );
+
+		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -179,13 +189,15 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 			true
 		);
 
-		wp_enqueue_script(
-			'digitalepracht-indicator',
-			get_template_directory_uri() . '/js/ph-indicator.js',
-			array( 'digitalepracht-debounce' ),
-			false,
-			true
-		);
+		if ( get_theme_mod( 'digitalepracht_show_reading_indicator', true ) === true) {
+			wp_enqueue_script(
+				'digitalepracht-indicator',
+				get_template_directory_uri() . '/js/ph-indicator.js',
+				array( 'digitalepracht-debounce' ),
+				false,
+				true
+			);
+		}
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );

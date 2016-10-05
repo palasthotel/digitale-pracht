@@ -1,0 +1,16 @@
+// @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
+
+.custom-logo {
+  width: auto;
+  height: 50px;
+
+  @include bp($breakpoint-grid-2) {
+	height: 100px;
+  }
+}
+
+.custom-logo-link {
+  display: inline-block;
+  text-decoration: none;
+  border: 0;
+}

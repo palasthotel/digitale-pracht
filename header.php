@@ -12,6 +12,13 @@ $show_sharing_button = is_single() &&
                        ( get_post_type() === 'page' || get_post_type() === 'post' ) &&
                        get_theme_mod( 'digitalepracht_show_sharing_button', false ) === true;
 
+$page_title_class = 'ph-page-title';
+$page_title_link_class = 'ph-page-title-link';
+if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+	$page_title_class = 'ph-page-subtitle';
+	$page_title_link_class = 'ph-page-subtitle-link';
+}
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -28,25 +35,14 @@ $show_sharing_button = is_single() &&
 
 <header id="masthead" class="ph-header site-header" role="banner">
 	<div class="site-branding">
-		<?php if ( is_home() ||
-		           ( is_front_page() &&
-		             class_exists( 'grid_plugin' ) &&
-		             isset( $post->grid )
-		           )
-		         ) : ?>
-			<h1 class="ph-page-title site-title">
-				<a class="ph-page-title-link"
-				   href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-				</a>
-			</h1>
+		<?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
+			<div class="ph-page-title"><?php the_custom_logo(); ?></div>
+		<?php endif; ?>
+
+		<?php if ( is_home() || ( is_front_page() && class_exists( 'grid_plugin' ) && isset( $post->grid ) ) ) : ?>
+			<h1 class="<?php echo esc_attr( $page_title_class ); ?> site-title"><a class="<?php echo esc_attr( $page_title_link_class ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php else : ?>
-			<p class="ph-page-title site-title">
-				<a class="ph-page-title-link"
-				   href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-				</a>
-			</p>
+			<p class="<?php echo esc_attr( $page_title_class ); ?> site-title"><a class="<?php echo esc_attr( $page_title_link_class ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 		<?php endif; ?>
 		<p class="ph-page-subtitle site-description"><?php bloginfo( 'description' ); ?></p>
 	</div>

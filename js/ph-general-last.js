@@ -4,21 +4,6 @@
 
 ;(function (window, document, ph) {
 
-	/* ###### READING INDICATOR ###### */
-
-	var indicator,
-		articleTextDom = document.querySelector('.ph-article-text');
-	if (articleTextDom) {
-		indicator = new ph.Indicator(
-			document.getElementById('indicator'),
-			articleTextDom, 0);
-	}
-	else {
-		indicator = new ph.Indicator(
-			document.getElementById('indicator'),
-			document.getElementById('content'), 0);
-	}
-
 
 	/* ###### FLOATING BAR VISIBILITY ###### */
 

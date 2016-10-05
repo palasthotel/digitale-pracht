@@ -9,7 +9,7 @@
   color: black;
   @extend %f14-19;
   text-decoration: none;
-  transition: background-color $speed $ease;
+  transition: background-color $speed $ease, color $speed $ease;
   font-family: $lato;
 
   &.is-black {

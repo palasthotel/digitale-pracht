@@ -83,4 +83,21 @@
 		}
 	};
 
+
+	// Init reading indicator
+	document.addEventListener('DOMContentLoaded', function(e) {
+		var indicator,
+			articleTextDom = document.querySelector('.ph-article-text');
+		if (articleTextDom) {
+			indicator = new ph.Indicator(
+				document.getElementById('indicator'),
+				articleTextDom, 0);
+		}
+		else {
+			indicator = new ph.Indicator(
+				document.getElementById('indicator'),
+				document.getElementById('content'), 0);
+		}
+	});
+
 })(window, document, window.ph = window.ph || {});

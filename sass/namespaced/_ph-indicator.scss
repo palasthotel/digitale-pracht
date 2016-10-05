@@ -21,6 +21,6 @@
 .ph-indicator {
   position: relative;
   height: 0;
-  background: $accent;
+  background-color: $accent;
   transition: height 0.05s $ease;
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: digitale Pracht\n"
-"POT-Creation-Date: 2016-09-11 15:50+0200\n"
-"PO-Revision-Date: 2016-09-11 15:51+0200\n"
+"POT-Creation-Date: 2016-10-04 15:05+0200\n"
+"PO-Revision-Date: 2016-10-04 15:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -20,15 +20,15 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: author.php:41 social-share-overlay.php:22
+#: author.php:54 social-share-overlay.php:22
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: author.php:46
+#: author.php:59
 msgid "Website"
 msgstr "Website"
 
-#: author.php:53 social-share-overlay.php:36
+#: author.php:66 social-share-overlay.php:36
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -77,15 +77,15 @@ msgstr "Versuchen Sie es doch mal mit der Suchfunktion."
 msgid "All articles by %s"
 msgstr "Alle Artikel von %s"
 
-#: content-author.php:45 content-index.php:60 index.php:50 search.php:47
+#: content-author.php:45 content-index.php:60 index.php:47 search.php:47
 msgid "Previous"
 msgstr "Zurück"
 
-#: content-author.php:46 content-index.php:61 index.php:51 search.php:48
+#: content-author.php:46 content-index.php:61 index.php:48 search.php:48
 msgid "Next"
 msgstr "Weiter"
 
-#: content-author.php:47 content-index.php:62 index.php:52 search.php:49
+#: content-author.php:47 content-index.php:62 index.php:49 search.php:49
 msgid "Posts navigation"
 msgstr "Beitragsnavigation"
 
@@ -175,19 +175,19 @@ msgstr ""
 msgid "Palasthotel"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:53
 msgid "Footer Menu"
 msgstr "Footer Menü"
 
-#: functions.php:94
+#: functions.php:91
 msgid "Widget Area Bottom"
 msgstr "Widget Bereich unten"
 
-#: functions.php:96
+#: functions.php:93
 msgid "Appears at the bottom of the content on posts and pages."
 msgstr "Erscheint bei Beiträgen und Seiten am unteren Ende des Inhalts."
 
-#: functions.php:327
+#: functions.php:309
 #, php-format
 msgid "via %s"
 msgstr "via %s"
@@ -201,25 +201,25 @@ msgstr "Leider gibt es kein Template für diese Box."
 msgid "The container type %s is not supported by this theme."
 msgstr "Der Containertyp %s wird leider von diesem Theme nicht unterstützt."
 
-#: header.php:57
+#: header.php:54
 msgid "Go to content"
 msgstr "Zum Inhalt"
 
-#: header.php:60
+#: header.php:57
 msgctxt "verb"
 msgid "Search"
 msgstr "Suchen"
 
-#: header.php:64
+#: header.php:61
 msgctxt "noun"
 msgid "Search"
 msgstr "Suche"
 
-#: header.php:70
+#: header.php:67
 msgid "Back to top"
 msgstr "Nach oben"
 
-#: header.php:73
+#: header.php:70
 msgctxt "verb"
 msgid "Share"
 msgstr "Teilen"
@@ -229,16 +229,14 @@ msgid "Accent Color"
 msgstr "Akzentfarbe"
 
 #: inc/customizer.php:29
-msgid "Twitter @Username"
-msgstr "Twitter @Benutzername"
+msgid "Show reading indicator"
+msgstr "Lesefortschritt anzeigen"
 
 #: inc/customizer.php:30
 msgid ""
-"You can provide your Twitter username here, without the @ character. It will "
-"appear inside the Twitter sharing links."
-msgstr ""
-"Sie können hier Ihren Twitter Benutzernamen angeben, ohne das führende @-"
-"Zeichen. Dieser wird dann in den Tweet Links erscheinen."
+"Enables the the reading indicator on the left side of the screen, which "
+"visualises the current position."
+msgstr "Aktiviert die Lesefortschrittsanzeige am linken Bildschirmrand."
 
 #: inc/customizer.php:42
 msgid "Show sharing button"
@@ -251,6 +249,18 @@ msgid ""
 msgstr ""
 "Aktiviert einen kleinen Teilen-Button auf Beitragsseiten, der in der unteren "
 "rechten Ecke beim Herunterscrollen erscheint."
+
+#: inc/customizer.php:55
+msgid "Twitter @Username"
+msgstr "Twitter @Benutzername"
+
+#: inc/customizer.php:56
+msgid ""
+"You can provide your Twitter username here, without the @ character. It will "
+"appear inside the Twitter sharing links."
+msgstr ""
+"Sie können hier Ihren Twitter Benutzernamen angeben, ohne das führende @-"
+"Zeichen. Dieser wird dann in den Tweet Links erscheinen."
 
 #: inc/setup-grid.php:71
 msgid "Teaser Big"

@@ -6,6 +6,9 @@
  * @package digitale-pracht
  */
 
+require_once get_template_directory() . '/inc/color-helper.php';
+
+
 if ( ! function_exists( 'digitalepracht_customize_register' ) ) :
 	function digitalepracht_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'digitalepracht_accent_color', array(
@@ -18,6 +21,19 @@ if ( ! function_exists( 'digitalepracht_customize_register' ) ) :
 			'label'   => __( 'Accent Color', 'digitale-pracht' ),
 			'section' => 'colors',
 		) ) );
+
+		$wp_customize->add_setting( 'digitalepracht_show_reading_indicator', array(
+			'type'              => 'theme_mod',
+			'default'           => true,
+			'sanitize_callback' => 'digitalepracht_sanitize_boolean',
+		) );
+
+		$wp_customize->add_control( 'digitalepracht_show_reading_indicator', array(
+			'label'       => __( 'Show reading indicator', 'digitale-pracht' ),
+			'description' => __( 'Enables the the reading indicator on the left side of the screen, which visualises the current position.', 'digitale-pracht' ),
+			'type'        => 'checkbox',
+			'section'     => 'title_tagline',
+		) );
 
 		$wp_customize->add_setting( 'digitalepracht_show_sharing_button', array(
 			'type'              => 'theme_mod',
@@ -86,23 +102,27 @@ if ( ! function_exists( 'digitalepracht_sanitize_twitter_username' ) ) :
 endif;
 
 
-if ( ! function_exists( 'digitalepracht_accent_color_css' ) ) :
+if ( ! function_exists( 'digitalepracht_customizer_css' ) ) :
 	/**
 	 * Enqueues front-end CSS for color scheme.
 	 */
-	function digitalepracht_accent_color_css() {
+	function digitalepracht_customizer_css() {
+		// Custom accent color
 		$accent_color = get_theme_mod( 'digitalepracht_accent_color', '#facc00' );
-
 		// Don't do anything if the default accent color is selected.
-		if ( $accent_color === '#facc00' ) {
-			return;
+		if ( $accent_color !== '#facc00' ) {
+			$accent_color_css = digitalepracht_get_accent_color_css( $accent_color );
+			wp_add_inline_style( 'digitalepracht-style', $accent_color_css );
 		}
 
-		$accent_color_css = digitalepracht_get_accent_color_css( $accent_color );
-		wp_add_inline_style( 'digitalepracht-style', $accent_color_css );
+		// If the reading indicator is disabled
+		if ( get_theme_mod( 'digitalepracht_show_reading_indicator', true ) === false ) {
+			$remove_indicator_padding_style = 'body { padding-left: 0 !important; }';
+			wp_add_inline_style( 'digitalepracht-style', esc_html( $remove_indicator_padding_style ) );
+		}
 	}
 endif;
-add_action( 'wp_enqueue_scripts', 'digitalepracht_accent_color_css' );
+add_action( 'wp_enqueue_scripts', 'digitalepracht_customizer_css' );
 
 
 if ( ! function_exists( 'digitalepracht_get_foreground_color_with_best_contrast' ) ) :
@@ -115,17 +135,10 @@ if ( ! function_exists( 'digitalepracht_get_foreground_color_with_best_contrast'
 	 * @return string 'black' or 'white', depending on the given background-color.
 	 */
 	function digitalepracht_get_foreground_color_with_best_contrast( $background_color_hex ) {
-		$r = hexdec( substr( $background_color_hex, 0, 2 ) );
-		$g = hexdec( substr( $background_color_hex, 2, 2 ) );
-		$b = hexdec( substr( $background_color_hex, 4, 2 ) );
+		$ratio_black = digitalepracht_color_ratio( $background_color_hex, '000000' );
+		$ratio_white = digitalepracht_color_ratio( $background_color_hex, 'ffffff' );
 
-		$contrast = sqrt(
-			$r * $r * .241 +
-			$g * $g * .691 +
-			$b * $b * .068
-		);
-
-		if ( $contrast > 130 ) {
+		if ($ratio_black > $ratio_white) {
 			return 'black';
 		}
 
@@ -145,92 +158,129 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
 	function digitalepracht_get_accent_color_css( $color ) {
 		$color = esc_html( $color );
 		$foreground_color = esc_html( digitalepracht_get_foreground_color_with_best_contrast( $color ) );
+		$hover_color = esc_html( digitalepracht_color_blend( $color, '#ffffff', 0.8 ) );
 
 		return <<<CSS
         /* Accent color */
 
-        .comment-author a:hover, .comment-author a:focus {
-            color: {$color};
-        }
-        .pagination {
-            border-top: 2px solid {$color};
-        }
-        .comments-area.has-comments {
-            border-color: {$color};
-        }
-        .required {
-            color: {$color};
-        }
-        .grid-box-wordpress-menu-menu > .menu-item > a:hover {
-            color: {$color};
-        }
-        .ph-debug-grid-slot {
-            background-color: {$color};
-            color: {$foreground_color};
-        }
-        .grid-container.has-title, .has-title.ph-article,
-        .grid-container.has-border-top-accent{
-            border-color: {$color};
-        }
-        .ph-article-title {
-            border-color: {$color};
-        }
-        .ph-author-title {
-            border-color: {$color};
-        }
-        .ph-btn:hover, input[type="button"]:hover,
-        input[type="submit"]:hover,
-        button:hover, .ph-pager-btn:hover, .ph-jumplink:hover:focus, .ph-btn-italic:hover, .grid-box-readmore-link:hover, .grid-container-title:hover, .comments-title:hover, .grid-container-readmore-link:hover, .ph-btn-transparent-bg:hover, .page-numbers:hover, .ph-btn:focus, input[type="button"]:focus,
-        input[type="submit"]:focus,
-        button:focus, .ph-pager-btn:focus, .ph-jumplink:focus, .ph-btn-italic:focus, .grid-box-readmore-link:focus, .grid-container-title:focus, .comments-title:focus, .grid-container-readmore-link:focus, .ph-btn-transparent-bg:focus, .page-numbers:focus, input.comments-title[type="button"],
-        input.comments-title[type="submit"], .comments-title.ph-jumplink:focus, input.grid-container-title[type="button"],
-        input.grid-container-title[type="submit"], .grid-container-title.ph-jumplink:focus, .grid-container-title, .comments-title, .is-active.ph-btn, input.is-active[type="button"],
-        input.is-active[type="submit"],
-        button.is-active, .is-active.ph-pager-btn, .is-active.ph-jumplink:focus, .is-active.ph-btn-italic, .is-active.grid-box-readmore-link, .is-active.grid-container-readmore-link, .is-active.ph-btn-transparent-bg, .is-active.page-numbers, .page-numbers.current {
-            background-color: {$color} !important;
-            color: {$foreground_color} !important;
-        }
-        .ph-btn-submit, input[type="submit"],
-        button[type="submit"], [href].grid-container-title, [href].comments-title, .ph-jumplink:focus {
-            background-color: {$color};
-            color: {$foreground_color};
-        }
-        .ph-icon-btn:hover, .ph-icon-btn:focus {
-            background-color: {$color} !important;
-            color: {$foreground_color} !important;
-        }
-        .ph-indicator {
-            background: {$color};
-        }
-        .ph-overlay-share-btn:hover .ph-overlay-share-label,
-        .ph-overlay-share-btn:focus .ph-overlay-share-label {
-            color: {$color};
-        }
-        .ph-overlay:after {
-            color: {$color};
-        }
-        .ph-page-title-link:focus .ph-page-logo-svg > path {
-            fill: {$color};
-        }
-        input[type="text"].ph-search-input:focus {
-            border-color: {$color};
-        }
-        .grid-container.has-no-title .grid-slot:first-child.grid-slot-1d1 .grid-box:first-child.has-no-title .ph-teaser:first-child.ph-teaser-big .ph-teaser-title,
-        .ph-search-input-page:focus {
-            border-color: {$color} !important;
-        }
-        .ph-teaser-link:hover .ph-teaser-title,
-        .ph-teaser-link:focus .ph-teaser-title {
-            color: {$color};
-        }
-        .widget li > a:hover {
-            color: {$color};
-        }
-		.byuser .comment-author:after {
-			color: {$color};
+		.comment-author a:hover,
+		.comment-author a:focus,
+		.required,
+		.bypostauthor .comment-author:after,
+		.byuser .comment-author:after,
+		.grid-box-wordpress-menu-menu > .menu-item > a:hover,
+		.widget li a:hover,
+		.ph-overlay-share-btn:hover .ph-overlay-share-label,
+		.ph-overlay-share-btn:focus .ph-overlay-share-label,
+		.ph-overlay:after,
+		.ph-teaser-link:hover .ph-teaser-title,
+		.ph-teaser-link:focus .ph-teaser-title {
+		  color: {$color};
 		}
-      }
-    }
+		
+		.pagination,
+		.comments-area.has-comments,
+		.grid-container.has-title,
+		.has-title.ph-article,
+		.grid-container.has-border-top-accent,
+		.has-border-top-accent.ph-article,
+		.ph-article-title,
+		.ph-author-title {
+		  border-color: {$color};
+		}
+		
+		.ph-debug-grid-slot,
+		.ph-indicator {
+		  background-color: {$color};
+		}
+		
+		.ph-btn-submit,
+		input[type="submit"],
+		button[type="submit"],
+		[href].grid-container-title,
+		[href].comments-title,
+		.ph-jumplink:focus {
+		  background-color: {$color};
+		  color: {$foreground_color};
+		}
+		
+		.custom-logo-link:focus .ph-page-dp-logo-svg > path {
+		  fill: {$color};
+		}
+		
+		input[type="text"].ph-search-input:focus,
+		.content-area input[type="text"].ph-search-input:focus,
+		.grid-container.has-no-title .grid-slot:first-child.grid-slot-1d1 .grid-box:first-child.has-no-title .ph-teaser:first-child.ph-teaser-big .ph-teaser-title,
+		.ph-article .grid-slot:first-child.grid-slot-1d1 .grid-box:first-child.has-no-title .ph-teaser:first-child.ph-teaser-big .ph-teaser-title {
+		  border-color: {$color} !important;
+		}
+		
+		.ph-btn:hover,
+		input[type="button"]:hover,
+		input[type="submit"]:hover,
+		button:hover,
+		.ph-pager-btn:hover,
+		.ph-jumplink:hover:focus,
+		.ph-btn-italic:hover,
+		.grid-box-readmore-link:hover,
+		.grid-container-title:hover,
+		.comments-title:hover,
+		.grid-container-readmore-link:hover,
+		.ph-btn-transparent-bg:hover,
+		.page-numbers:hover,
+		.ph-btn:focus,
+		input[type="button"]:focus,
+		input[type="submit"]:focus,
+		button:focus,
+		.ph-pager-btn:focus,
+		.ph-jumplink:focus,
+		.ph-btn-italic:focus,
+		.grid-box-readmore-link:focus,
+		.grid-container-title:focus,
+		.comments-title:focus,
+		.grid-container-readmore-link:focus,
+		.ph-btn-transparent-bg:focus,
+		.page-numbers:focus,
+		input.comments-title[type="button"],
+		input.comments-title[type="submit"],
+		.comments-title.ph-jumplink:focus,
+		input.grid-container-title[type="button"],
+		input.grid-container-title[type="submit"],
+		.grid-container-title.ph-jumplink:focus,
+		.grid-container-title,
+		.comments-title,
+		.is-active.ph-btn,
+		input.is-active[type="button"],
+		input.is-active[type="submit"],
+		button.is-active,
+		.is-active.ph-pager-btn,
+		.is-active.ph-jumplink:focus,
+		.is-active.ph-btn-italic,
+		.is-active.grid-box-readmore-link,
+		.is-active.grid-container-readmore-link,
+		.is-active.ph-btn-transparent-bg,
+		.is-active.page-numbers,
+		.page-numbers.current,
+		.ph-icon-btn:hover,
+		.ph-icon-btn:focus {
+		  background-color: {$color} !important;
+		  color: {$foreground_color};
+		}
+		
+		.ph-btn-submit:hover,
+		input[type="submit"]:hover,
+		button[type="submit"]:hover,
+		[href].grid-container-title:hover,
+		[href].comments-title:hover,
+		.ph-jumplink:hover:focus,
+		.ph-btn-submit:focus,
+		input[type="submit"]:focus,
+		button[type="submit"]:focus,
+		[href].grid-container-title:focus,
+		[href].comments-title:focus,
+		.ph-jumplink:focus {
+		  background-color: {$hover_color} !important;
+		}
 
 CSS;
 	}

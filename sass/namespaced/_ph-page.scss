@@ -1,6 +1,6 @@
 // @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
-.ph-page-logo-svg {
+.ph-page-dp-logo-svg {
   width: 53px;
   height: 51px;
   margin: 0 auto;
@@ -11,8 +11,8 @@
   @include bp($breakpoint-grid-2) {
     width: 88px;
     height: 101px;
-    margin-top: 5px;
-    margin-bottom: -10px;
+	margin-top: 5px;
+	margin-bottom: -10px;
   }
 
   & > path {
@@ -20,14 +20,14 @@
     transition: fill $speed $ease;
   }
 
-  .ph-page-title-link:focus & > path {
+  .custom-logo-link:focus & > path {
     fill: $accent;
     transition: none;
   }
 }
 
 .ph-page-title {
-  margin: 10px 0 -10px 0 !important;
+  margin: 10px 0 -10px 0;
   text-align: center;
   font-family: $lato;
   font-weight: 900;
@@ -39,13 +39,8 @@
   @include bp($breakpoint-grid-2) {
     font-size: 38px;
     line-height: 45px;
-    margin: 10px 0 5px 0 !important;
+    margin: 10px 0 5px 0;
   }
-}
-
-.ph-page-title-svg {
-  margin: 10px 0 -6px 0 !important;
-  text-align: center;
 }
 
 .ph-page-title-link {
@@ -62,6 +57,7 @@
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0;
   @include bp($breakpoint-grid-2) {
     margin: 1px 0 $base-unit 0;
   }
@@ -70,7 +66,6 @@
     @include bp($breakpoint-grid-2) {
       margin-top: #{-$base-unit};
     }
-
   }
 }
 

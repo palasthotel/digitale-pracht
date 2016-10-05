@@ -23,6 +23,8 @@ Core features
 Additional features
 - Widget area bottom
 - Social share icons
+- Custom primary color
+- Custom logo width a fixed height of 100px (retina images are possible, if you choose an image with a height of at least 200px)
 
 Works well with these plugins
 - Grid (3 viewmodes and 2 container types supported)

@@ -6,6 +6,7 @@
  * @package digitale-pracht
  */
 
+
 if ( ! function_exists( 'digitalepracht_image_sizes' ) ) :
 	function digitalepracht_image_sizes() {
 		$image_sizes = array(
