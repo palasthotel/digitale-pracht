@@ -96,6 +96,7 @@
 
 // everything inside ph-article-text with 100% width = block element
 %ph-article-block-element {
+  display: block;
   margin-top: 2*$base-unit;
   margin-bottom: 3*$base-unit;
 

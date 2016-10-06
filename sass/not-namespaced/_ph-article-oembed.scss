@@ -33,3 +33,10 @@
     }
   }
 }
+
+// Support for Jetpack Shortcode Embeds
+// @see #4
+.embed-youtube {
+  @extend .ph-article-oembed-wrapper;
+  @extend .is-16to9-ratio;
+}
