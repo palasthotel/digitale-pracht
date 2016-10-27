@@ -89,6 +89,7 @@ add_action( 'after_setup_theme', 'digitalepracht_setup' );
 function digitalepracht_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'digitalepracht_content_width', 846 );
 }
+
 add_action( 'after_setup_theme', 'digitalepracht_content_width', 0 );
 
 
@@ -189,7 +190,7 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 			true
 		);
 
-		if ( get_theme_mod( 'digitalepracht_show_reading_indicator', true ) === true) {
+		if ( get_theme_mod( 'digitalepracht_show_reading_indicator', true ) === true ) {
 			wp_enqueue_script(
 				'digitalepracht-indicator',
 				get_template_directory_uri() . '/js/ph-indicator.js',
@@ -285,12 +286,12 @@ if ( ! function_exists( 'digitalepracht_shorten_string_by_words_and_length' ) ) 
 			return $string;
 		}
 
-		$words = explode( ' ', $string );
+		$words  = explode( ' ', $string );
 		$return = '';
 
 		for ( $i = 0; $i < count( $words ); $i ++ ) {
 			// Subtract 1 from $max_chars because we add the char … later
-			if ( mb_strlen( $return ) + mb_strlen( $words [ $i ] ) <= $max_chars - 1 ) {
+			if ( mb_strlen( $return ) + mb_strlen( $words[ $i ] ) <= $max_chars - 1 ) {
 				$return .= $words[ $i ] . ' ';
 			} else {
 				break;
@@ -329,6 +330,27 @@ if ( ! function_exists( 'digitalepracht_compose_tweet_text' ) ) :
 		return $tweet;
 	}
 endif;
+
+
+// todo test
+/**
+ * The first post on the first home index should get a different teaser viewmode.
+ * @return bool
+ */
+function digitalepracht_first_post_on_first_page_on_home_has_thumbnail() {
+	return is_home() &&
+	       get_query_var( 'paged', 0 ) === 0 &&
+	       digitalepracht_is_first_post_in_loop() &&
+	       has_post_thumbnail();
+}
+
+
+// todo test
+function digitalepracht_is_first_post_in_loop() {
+	global $wp_query;
+
+	return $wp_query->current_post === 0;
+}
 
 
 /**

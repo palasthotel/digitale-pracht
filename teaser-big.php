@@ -6,23 +6,6 @@
 
 $teaser_classes = array( 'ph-teaser', 'ph-teaser-big' );
 
-$thumbnail_id = get_post_thumbnail_id();
-
-// Default thumbnail image size
-$image_format = 'digitalepracht-teaser-big-desktop-2x';
-
-// If original image is smaller than default thumbnail image size,
-// get a smaller image size
-$thumbnail_image_src = wp_get_attachment_image_src( $thumbnail_id, $image_format );
-$sizes = digitalepracht_image_sizes();
-$min_width = $sizes[ $image_format ][ 'width' ];
-$min_height = $sizes[ $image_format ][ 'height' ];
-
-if ( $thumbnail_image_src[ 1 ] < $min_width ||
-     $thumbnail_image_src[ 2 ] < $min_height ) {
-	$image_format = 'digitalepracht-teaser-illustrated-mobile-max-2x';
-}
-
 ?>
 <article id="<?php echo $post->ID; ?>" <?php post_class( $teaser_classes ); ?>>
 	<a href="<?php echo get_permalink( $post->ID ); ?>" class="ph-teaser-link ph-clearfix"
@@ -30,7 +13,7 @@ if ( $thumbnail_image_src[ 1 ] < $min_width ||
 		<h2 class="ph-teaser-title"><?php the_title(); ?></h2>
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure class="ph-teaser-image-wrapper">
-				<?php the_post_thumbnail( $image_format, array( 'class' => 'ph-teaser-image' ) ); ?>
+				<?php the_post_thumbnail( 'digitalepracht-teaser-big', array( 'class' => 'ph-teaser-image' ) ); ?>
 			</figure>
 		<?php endif; ?>
 		<div class="ph-teaser-text"><?php the_excerpt(); ?></div>

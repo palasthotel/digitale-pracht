@@ -37,26 +37,11 @@ $thumbnail_id = get_post_thumbnail_id();
 			$large_image_caption = $large_image_attachment->post_excerpt;
 		}
 
-		// Default thumbnail image size
-		$image_format = 'digitalepracht-teaser-big-desktop-2x';
-
-		// If original image is smaller than default thumbnail image size,
-		// get a smaller image size
-		$thumbnail_image_src = wp_get_attachment_image_src( $thumbnail_id, $image_format );
-		$sizes = digitalepracht_image_sizes();
-		$min_width = $sizes[ $image_format ][ 'width' ];
-		$min_height = $sizes[ $image_format ][ 'height' ];
-
-		if ( $thumbnail_image_src[ 1 ] < $min_width ||
-		     $thumbnail_image_src[ 2 ] < $min_height ) {
-			$image_format = 'digitalepracht-teaser-illustrated-mobile-max-2x';
-		}
-
 		?>
 		<div class="entry-thumbnail ph-article-image-wrapper ph-article-featured-image">
 			<?php if ( ! empty( $large_image_url ) ) : ?>
 				<a class="ph-article-image-link" href="<?php echo esc_attr( $large_image_url[0] ); ?>" title="<?php echo esc_attr( $large_image_title ); ?>">
-					<?php echo wp_get_attachment_image( $thumbnail_id, $image_format, 0, array( 'class' => 'ph-article-image' ) ); ?>
+					<?php echo wp_get_attachment_image( $thumbnail_id, 'digitalepracht-featured-image', 0, array( 'class' => 'ph-article-image' ) ); ?>
 				</a>
 			<?php endif; ?>
 			<?php if ( ! empty( $large_image_caption ) ): ?>

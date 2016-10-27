@@ -2,7 +2,7 @@
 Contributors: Palasthotel <rezeption@palasthotel.de> (in person: Kim-Christian Meyer)
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.6
-Version: 1.11
+Version: 1.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, responsive-layout, custom-colors, featured-images, microformats, theme-options, threaded-comments, translation-ready
@@ -83,15 +83,21 @@ See this link for more information: https://commons.wikimedia.org/wiki/File:Jose
 
 == Changelog ==
 
+= 1.12 =
+* Released: October 27, 2016
+- Removed retina support for teaser and featured images, because that is better done by a plugin. Now the theme image sizes equal a screen density of 1x. And we suggest to reduce JPEG compression via an additional plugin to save bandwidth, if possible.
+- Added three new image sizes for content images.
+- WE SUGGEST YOU REGENERATE YOUR THUMBNAIL IMAGES after this update via a plugin, e.g. »Force Regenerate Thumbnails«.
+
 = 1.11 =
 * Released: October 6, 2016
-- Added support for YouTube videos embedded via Jetpack Shortcode Embeds plugin
+- Added support for YouTube videos embedded via Jetpack Shortcode Embeds plugin.
 
 = 1.10 =
 * Released: October 5, 2016
-- Added custom logo support (fixed height of 100px)
-- Added automatic contrast foreground color detection for custom colors
-- Reading indicator can now be disabled
+- Added custom logo support (fixed height of 100px).
+- Added automatic contrast foreground color detection for custom colors.
+- Reading indicator can now be disabled.
 
 = 1.9 =
 * Released: September 26, 2016
