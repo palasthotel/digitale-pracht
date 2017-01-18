@@ -20,14 +20,16 @@ input[type="text"].ph-search-input {  // We need higher css level
   font-weight: 400;
   background-color: transparent;
   border-bottom: 2px solid $gray;
+
   &:focus {
     outline: none;
     border-color: $accent;
     background-color: transparent;
   }
 
+  /* WordPress search widget */
   .widget & {
-    padding: 0;
+    padding: 0 0 0 32px;
     border-width: 1px;
     @extend %f14-19--f17-28;
     line-height: 34px !important;

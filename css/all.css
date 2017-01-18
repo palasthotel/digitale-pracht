@@ -3041,6 +3041,7 @@ input[type="text"].ph-search-input {
   font-weight: 400;
   background-color: transparent;
   border-bottom: 2px solid #666;
+  /* WordPress search widget */
 }
 
 input[type="text"].ph-search-input:focus {
@@ -3050,7 +3051,7 @@ input[type="text"].ph-search-input:focus {
 }
 
 .widget input[type="text"].ph-search-input {
-  padding: 0;
+  padding: 0 0 0 32px;
   border-width: 1px;
   line-height: 34px !important;
 }
