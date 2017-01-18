@@ -76,23 +76,24 @@
   font-style: italic;
 }
 
+.grid-box-readmore {
+  margin-top: 1em;
+
+  // Remove margins
+  line-height: 0;
+}
+
 .grid-box-readmore-link {
-  position: relative;
-  bottom: 0;
-  left: 50%;
-  margin-top: 20px !important;
-  transform: translateX(-50%);
-  @extend .ph-btn-italic;
+  display: inline-block;
+  color: black;
+  @extend %f14-19;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: 400;
+  font-family: $lato;
+  transition: color $speed $ease;
 
   &:before {
     content: "»\00a0";
-  }
-
-  .grid-slot-1d4 & {
-    @include bp($breakpoint-tablet) {
-      left: 0;
-      transform: none;
-      margin-top: 10px !important;
-    }
   }
 }

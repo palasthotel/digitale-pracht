@@ -71,8 +71,10 @@ if ( empty( $this->title ) ) {
 	<?php endif; ?>
 
 	<?php if ( ! empty( $this->readmore ) ) : ?>
-		<a href="<?php echo esc_url( $this->readmoreurl ); ?>"
-		   class="grid-box-readmore-link"><?php echo esc_html( $this->readmore ); ?></a>
+        <div class="grid-box-readmore">
+            <a href="<?php echo esc_url( $this->readmoreurl ); ?>"
+               class="grid-box-readmore-link"><?php echo esc_html( $this->readmore ); ?></a>
+        </div>
 	<?php endif; ?>
 
 </div>

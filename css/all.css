@@ -21,9 +21,9 @@
   }
 }
 
-label, .comment-navigation > .nav-links, .grid-box-title, .ph-author-meta-label, .ph-btn, input[type="button"],
+label, .comment-navigation > .nav-links, .grid-box-title, .grid-box-readmore-link, .ph-author-meta-label, .ph-btn, input[type="button"],
 input[type="submit"],
-button, .ph-pager-btn, .ph-jumplink:focus, .ph-btn-italic, .grid-box-readmore-link, .grid-container-title, .comments-title, .grid-container-readmore-link, .ph-btn-transparent-bg, .page-numbers, .ph-overlay-share-label {
+button, .ph-pager-btn, .ph-jumplink:focus, .ph-btn-italic, .grid-container-title, .comments-title, .grid-container-readmore-link, .ph-btn-transparent-bg, .page-numbers, .ph-overlay-share-label {
   font-size: 14px;
   line-height: 19px;
 }
@@ -1627,6 +1627,11 @@ td {
   display: none;
 }
 
+.grid-box-media {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 .grid-box-media img {
   width: 100%;
   height: auto;
@@ -1703,28 +1708,24 @@ td {
   font-style: italic;
 }
 
+.grid-box-readmore {
+  margin-top: 1em;
+  line-height: 0;
+}
+
 .grid-box-readmore-link {
-  position: relative;
-  bottom: 0;
-  left: 50%;
-  margin-top: 20px !important;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  display: inline-block;
+  color: black;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: 400;
+  font-family: "Lato", Arial, "Helvetica Neue", sans-serif;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .grid-box-readmore-link:before {
   content: "»\00a0";
-}
-
-@media all and (min-width: 958px) {
-  .grid-slot-1d4 .grid-box-readmore-link, .widget-bottom .grid-box-readmore-link {
-    left: 0;
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
-    margin-top: 10px !important;
-  }
 }
 
 .grid-container, .ph-article {
@@ -2371,7 +2372,7 @@ textarea:focus {
 
 .ph-btn, input[type="button"],
 input[type="submit"],
-button, .ph-pager-btn, .ph-jumplink:focus, .ph-btn-italic, .grid-box-readmore-link, .grid-container-title, .comments-title, .grid-container-readmore-link, .ph-btn-transparent-bg, .page-numbers {
+button, .ph-pager-btn, .ph-jumplink:focus, .ph-btn-italic, .grid-container-title, .comments-title, .grid-container-readmore-link, .ph-btn-transparent-bg, .page-numbers {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
@@ -2386,19 +2387,19 @@ button, .ph-pager-btn, .ph-jumplink:focus, .ph-btn-italic, .grid-box-readmore-li
 
 .is-black.ph-btn, input.is-black[type="button"],
 input.is-black[type="submit"],
-button.is-black, .is-black.ph-pager-btn, .is-black.ph-jumplink:focus, .is-black.ph-btn-italic, .is-black.grid-box-readmore-link, .is-black.grid-container-title, .is-black.comments-title, .is-black.grid-container-readmore-link, .is-black.ph-btn-transparent-bg, .is-black.page-numbers {
+button.is-black, .is-black.ph-pager-btn, .is-black.ph-jumplink:focus, .is-black.ph-btn-italic, .is-black.grid-container-title, .is-black.comments-title, .is-black.grid-container-readmore-link, .is-black.ph-btn-transparent-bg, .is-black.page-numbers {
   background-color: black;
 }
 
 .ph-btn:hover, input[type="button"]:hover,
 input[type="submit"]:hover,
-button:hover, .ph-pager-btn:hover, .ph-jumplink:hover:focus, .ph-btn-italic:hover, .grid-box-readmore-link:hover, .grid-container-title:hover, .comments-title:hover, .grid-container-readmore-link:hover, .ph-btn-transparent-bg:hover, .page-numbers:hover, .ph-btn:focus, input[type="button"]:focus,
+button:hover, .ph-pager-btn:hover, .ph-jumplink:hover:focus, .ph-btn-italic:hover, .grid-container-title:hover, .comments-title:hover, .grid-container-readmore-link:hover, .ph-btn-transparent-bg:hover, .page-numbers:hover, .ph-btn:focus, input[type="button"]:focus,
 input[type="submit"]:focus,
-button:focus, .ph-pager-btn:focus, .ph-jumplink:focus, .ph-btn-italic:focus, .grid-box-readmore-link:focus, .grid-container-title:focus, .comments-title:focus, .grid-container-readmore-link:focus, .ph-btn-transparent-bg:focus, .page-numbers:focus, input.comments-title[type="button"],
+button:focus, .ph-pager-btn:focus, .ph-jumplink:focus, .ph-btn-italic:focus, .grid-container-title:focus, .comments-title:focus, .grid-container-readmore-link:focus, .ph-btn-transparent-bg:focus, .page-numbers:focus, input.comments-title[type="button"],
 input.comments-title[type="submit"], .comments-title.ph-jumplink:focus, input.grid-container-title[type="button"],
 input.grid-container-title[type="submit"], .grid-container-title.ph-jumplink:focus, .grid-container-title, .comments-title, .is-active.ph-btn, input.is-active[type="button"],
 input.is-active[type="submit"],
-button.is-active, .is-active.ph-pager-btn, .is-active.ph-jumplink:focus, .is-active.ph-btn-italic, .is-active.grid-box-readmore-link, .is-active.grid-container-readmore-link, .is-active.ph-btn-transparent-bg, .is-active.page-numbers, .page-numbers.current {
+button.is-active, .is-active.ph-pager-btn, .is-active.ph-jumplink:focus, .is-active.ph-btn-italic, .is-active.grid-container-readmore-link, .is-active.ph-btn-transparent-bg, .is-active.page-numbers, .page-numbers.current {
   outline: none;
   background-color: #facc00 !important;
   color: black;
@@ -2414,7 +2415,7 @@ button, .ph-pager-btn, .ph-jumplink:focus {
   background-color: #e5e5e5;
 }
 
-.ph-btn-italic, .grid-box-readmore-link, .grid-container-title, .comments-title, .grid-container-readmore-link {
+.ph-btn-italic, .grid-container-title, .comments-title, .grid-container-readmore-link {
   font-style: italic;
   text-transform: none;
   font-weight: 400;
