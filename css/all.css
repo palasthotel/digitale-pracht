@@ -2069,6 +2069,11 @@ textarea:focus {
   text-transform: none;
   font-family: "Lora", Georgia, "Times New Roman", serif;
   text-align: left;
+  /* break too long words
+     @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 @media all and (min-width: 958px) {
