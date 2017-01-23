@@ -29,7 +29,6 @@
 			 */
 			do_action( 'digitalepracht_credits' );
 			?>
-			<?php printf( esc_html__( '© Copyright %s.', 'digitale-pracht' ), date( 'Y' ) ); ?>
 			<?php printf(
 				wp_kses( __( 'Proudly powered by %s.', 'digitale-pracht' ), array(
 					'a' => array(
