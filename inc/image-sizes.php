@@ -7,6 +7,13 @@
  */
 
 
+if ( ! function_exists( 'digitalepracht_get_content_width' ) ) :
+	function digitalepracht_get_content_width() {
+		return 846;
+	}
+endif;
+
+
 if ( ! function_exists( 'digitalepracht_image_sizes' ) ) :
 	function digitalepracht_image_sizes() {
 		// All available image widths in px:
@@ -40,7 +47,7 @@ if ( ! function_exists( 'digitalepracht_image_sizes' ) ) :
 		// - Article aligncenter @958px     : 732
 		// - Article aligncenter @1199px    : 917
 		// - Article aligncenter @1200px    : 726
-		// - Article aligncenter @1398px+   : 846
+		// - Article aligncenter @1398px+   : 846   equals content_width
 		// - Article alignside @320px       : 123
 		// - Article alignside @375px       : 145
 		// - Article alignside @957px       : 372
@@ -83,7 +90,7 @@ if ( ! function_exists( 'digitalepracht_image_sizes' ) ) :
 				'crop'   => false,
 			),
 			'digitalepracht-article-aligncenter'      => array(
-				'width'  => 846,
+				'width'  => digitalepracht_get_content_width(),
 				'height' => 9999,
 				'crop'   => false,
 			),
@@ -121,8 +128,8 @@ if ( ! function_exists( 'digitalepracht_content_image_sizes_attr' ) ) :
 
 		// Assume that big images will be displayed as aligncenter or alignnone,
 		// meaning in full width.
-		if ( $width >= get_option( 'large_size_w' ) ) {
-			$sizes = '(max-width: 957px) 88vw, (max-width: 1199px) 77vw, (max-width: 1397px) 61vw, 846px';
+		if ( $width >= digitalepracht_get_content_width() ) {
+			$sizes = '(max-width: 957px) 88vw, (max-width: 1199px) 77vw, (max-width: 1397px) 61vw, ' . digitalepracht_get_content_width() . 'px';
 		}
 		// All smaller images should be aligned left or right.
 		else {

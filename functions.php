@@ -79,17 +79,18 @@ endif;
 add_action( 'after_setup_theme', 'digitalepracht_setup' );
 
 
-/**
- * Sets the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function digitalepracht_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'digitalepracht_content_width', 846 );
-}
-
+if ( ! function_exists( 'digitalepracht_content_width' ) ) :
+	/**
+	 * Sets the content width in pixels, based on the theme's design and stylesheet.
+	 *
+	 * Priority 0 to make it available to lower priority callbacks.
+	 *
+	 * @global int $content_width
+	 */
+	function digitalepracht_content_width() {
+		$GLOBALS['content_width'] = apply_filters( 'digitalepracht_content_width', digitalepracht_get_content_width() );
+	}
+endif;
 add_action( 'after_setup_theme', 'digitalepracht_content_width', 0 );
 
 
@@ -332,7 +333,6 @@ if ( ! function_exists( 'digitalepracht_compose_tweet_text' ) ) :
 endif;
 
 
-// todo test
 /**
  * The first post on the first home index should get a different teaser viewmode.
  * @return bool
@@ -345,7 +345,6 @@ function digitalepracht_first_post_on_first_page_on_home_has_thumbnail() {
 }
 
 
-// todo test
 function digitalepracht_is_first_post_in_loop() {
 	global $wp_query;
 
