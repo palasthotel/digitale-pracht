@@ -9,7 +9,7 @@
   width: 4px;
   cursor: default;
   background-color: black;
-  transition: width $speed $ease, background-color $speed $ease, opacity $speed-slow $ease;
+  transition: opacity $speed-slow $ease;
   z-index: 40;
   opacity: 0;
 
@@ -20,7 +20,9 @@
 
 .ph-indicator {
   position: relative;
-  height: 0;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: top left;
   background-color: $accent;
-  transition: height 0.05s $ease;
+  // transition: height 0.05s $ease;
 }
