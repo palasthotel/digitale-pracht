@@ -22,18 +22,17 @@
 			}
 
 			_this.contentHeight = _this.contentDomEl.offsetHeight;
-			requestAnimationFrame(_this.setIndicatorHeight);
+			_this.setIndicatorHeight();
 		};
 
 		this.init = function () {
 			_this.initDimensions();
-			window.addEventListener('scroll', function() {
-				requestAnimationFrame(_this.setIndicatorHeight);
-			});
+			window.addEventListener('scroll', _this.setIndicatorHeight);
 			window.addEventListener('resize', _this.initDimensions);
 		};
 
 		this.setIndicatorHeight = function () {
+			requestAnimationFrame(_this.setIndicatorHeight);
 			_this.indicatorDomEl.style.transform = `scaleY(${_this.readingCompleted()})`;
 		};
 
