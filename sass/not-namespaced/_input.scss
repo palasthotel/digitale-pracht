@@ -67,6 +67,12 @@ label {
   text-align: left;
 }
 
+input[type="checkbox"] + label {
+    display: inline-block;
+    margin-left: 1em;
+    margin-top: 5px;
+}
+
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color: $gray-semilight;
 }

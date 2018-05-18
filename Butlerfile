@@ -1,0 +1,62 @@
+{
+  "tasks" : [
+    {
+      "buildchain" : [
+        {
+          "providecompass" : false,
+          "args" : [
+            "-t",
+            "expanded"
+          ],
+          "type" : "builtin",
+          "compiler" : "sassc",
+          "version" : "3.3.0"
+        },
+        {
+          "args" : [
+            "--autoprefixer.browsers",
+            "> 1%, last 2 versions, ie >= 9"
+          ],
+          "type" : "builtin",
+          "compiler" : "autoprefixer",
+          "version" : "6.3.3"
+        }
+      ],
+      "input" : "sass\/all.scss",
+      "type" : "watch",
+      "output" : "css\/all.css",
+      "observe" : {
+        "path" : "sass"
+      }
+    },
+    {
+      "buildchain" : [
+        {
+          "providecompass" : false,
+          "args" : [
+            "-t",
+            "expanded"
+          ],
+          "type" : "builtin",
+          "compiler" : "sassc",
+          "version" : "3.3.0"
+        },
+        {
+          "args" : [
+            "--autoprefixer.browsers",
+            "> 1%, last 2 versions, ie >= 9"
+          ],
+          "type" : "builtin",
+          "compiler" : "autoprefixer",
+          "version" : "6.3.3"
+        }
+      ],
+      "input" : "sass\/grid-support-backend.scss",
+      "type" : "watch",
+      "output" : "css\/grid-support-backend.css",
+      "observe" : {
+        "path" : "sass"
+      }
+    }
+  ]
+}
