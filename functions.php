@@ -134,11 +134,6 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 		);
 
 		wp_enqueue_style(
-			'digitalepracht-googlefonts',
-			'https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic|Lora:400,400italic,700,700italic'
-		);
-
-		wp_enqueue_style(
 			'digitalepracht-style',
 			get_template_directory_uri() . '/css/all.css'
 		);
