@@ -16,9 +16,9 @@
     background-color: black;
   }
 
-  &:hover,
-  &:focus,
-  &.is-active {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus,
+  &:not([disabled]).is-active {
     outline: none;
     background-color: $accent !important;
     color: black;
@@ -52,8 +52,8 @@
   background-color: $accent;
   color: black;
 
-  &:hover,
-  &:focus {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
     background-color: mix($accent, white, 80%) !important;
     transition: none;
   }

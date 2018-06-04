@@ -45,6 +45,7 @@ input[type="url"] {
 }
 
 input[type="button"],
+input[type="reset"],
 input[type="submit"],
 button {
   @extend .ph-btn;
@@ -67,35 +68,37 @@ label {
   text-align: left;
 }
 
-input[type="checkbox"] + label {
-    display: inline-block;
-    margin-left: 1em;
-    margin-top: 5px;
+input[type="checkbox"],
+input[type="radio"] {
+  @extend %f17-28;
+
+  label > & {
+    margin-right: $base-unit;
+  }
+
+  & + label {
+    display: inline;
+    margin-left: $base-unit;
+  }
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color: $gray-semilight;
+  color: $gray;
+  opacity: 1;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: $gray-semilight;
+  color: $gray;
   opacity: 1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: $gray-semilight;
+  color: $gray;
   opacity: 1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: $gray-semilight;
-}
-.ph-overlay-search .ph-search-input::-webkit-input-placeholder {
   color: $gray;
 }
-.ph-overlay-search .ph-search-input:-moz-placeholder {
-  color: $gray;
-}
-.ph-overlay-search .ph-search-input::-moz-placeholder {
-  color: $gray;
-}
-.ph-overlay-search .ph-search-input:-ms-input-placeholder {
-  color: $gray;
+
+[disabled],
+[disabled] + label {
+  opacity: .4;
 }
