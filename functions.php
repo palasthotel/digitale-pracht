@@ -207,8 +207,7 @@ if ( ! function_exists( 'digitalepracht_scripts' ) ) :
 				'digitalepracht-class-helper',
 				'digitalepracht-scroll-to',
 				'digitalepracht-toggle-class',
-				'digitalepracht-scroll-class',
-				'digitalepracht-indicator'
+				'digitalepracht-scroll-class'
 			),
 			false,
 			true
