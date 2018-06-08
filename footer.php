@@ -66,9 +66,11 @@
 	</div>
 </footer>
 
-<div class="ph-indicator-wrapper no-print">
-	<div class="ph-indicator" id="indicator"></div>
-</div>
+<?php if ( get_theme_mod( 'digitalepracht_show_reading_indicator', true ) === true ) : ?>
+	<div class="ph-indicator-wrapper no-print">
+		<div class="ph-indicator" id="indicator"></div>
+	</div>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 
