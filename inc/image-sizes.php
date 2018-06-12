@@ -124,17 +124,21 @@ if ( ! function_exists( 'digitalepracht_content_image_sizes_attr' ) ) :
 	 * for content images. This function is called for every image.
 	 */
 	function digitalepracht_content_image_sizes_attr( $sizes, $size_array ) {
-		$width = $size_array[0];  // Equals width attribute on img tag.
+		// Waiting for https://core.trac.wordpress.org/ticket/36982 to be fixed in core
+		// Until then we can only assume the largest image size to prevent blurriness.
+		$sizes = '(max-width: 957px) 88vw, (max-width: 1199px) 77vw, (max-width: 1397px) 61vw, ' . digitalepracht_get_content_width() . 'px';
 
-		// Assume that big images will be displayed as aligncenter or alignnone,
-		// meaning in full width.
-		if ( $width >= digitalepracht_get_content_width() ) {
-			$sizes = '(max-width: 957px) 88vw, (max-width: 1199px) 77vw, (max-width: 1397px) 61vw, ' . digitalepracht_get_content_width() . 'px';
-		}
-		// All smaller images should be aligned left or right.
-		else {
-			$sizes = '(max-width: 957px) 39vw, (max-width: 1397px) 21vw, 286px';
-		}
+//		$width = $size_array[0];  // Equals width attribute on img tag.
+//
+//		// Assume that big images will be displayed as aligncenter or alignnone,
+//		// meaning in full width.
+//		if ( $width >= digitalepracht_get_content_width() ) {
+//			$sizes = '(max-width: 957px) 88vw, (max-width: 1199px) 77vw, (max-width: 1397px) 61vw, ' . digitalepracht_get_content_width() . 'px';
+//		}
+//		// All smaller images should be aligned left or right.
+//		else {
+//			$sizes = '(max-width: 957px) 39vw, (max-width: 1397px) 21vw, 286px';
+//		}
 
 		// todo Define image sizes for teasers, which are placed inside a grid.
 
