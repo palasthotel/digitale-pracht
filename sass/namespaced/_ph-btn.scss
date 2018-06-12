@@ -20,7 +20,7 @@
   &:not([disabled]):focus,
   &:not([disabled]).is-active {
     outline: none;
-    background-color: $accent !important;
+    background-color: $accent;
     color: black;
     transition: none;
   }
@@ -54,7 +54,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: mix($accent, white, 80%) !important;
+    background-color: mix($accent, white, 80%);
     transition: none;
   }
 }

@@ -1,15 +1,15 @@
 // @author Kim-Christian Meyer <kim.meyer@palasthotel.de>
 
 // All possible input fields
-input[type="color"],
-input[type="email"],
-input[type="number"],
-input[type="password"],
-input[type="reset"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="url"],
+[type="color"],
+[type="email"],
+[type="number"],
+[type="password"],
+[type="reset"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"],
 textarea {
   box-sizing: border-box;
   width: 100%;
@@ -32,29 +32,28 @@ textarea {
   }
 }
 
-input[type="color"],
-input[type="email"],
-input[type="number"],
-input[type="password"],
-input[type="reset"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="url"] {
+[type="color"],
+[type="email"],
+[type="number"],
+[type="password"],
+[type="reset"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"] {
   max-width: 286px;
 }
 
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
+[type="button"],
+[type="reset"],
+[type="submit"],
 button {
   @extend .ph-btn;
   -webkit-appearance:none;
   border-radius: 0;
 }
 
-input[type="submit"],
-button[type="submit"] {
+[type="submit"] {
   @extend .ph-btn-submit;
 }
 
@@ -68,8 +67,8 @@ label {
   text-align: left;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+[type="checkbox"],
+[type="radio"] {
   @extend %f17-28;
 
   label > & {

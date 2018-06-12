@@ -195,29 +195,28 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
 		}
 		
 		.ph-btn-submit,
-		input[type="submit"],
-		button[type="submit"],
+		[type="submit"],
 		[href].grid-container-title,
 		[href].comments-title,
 		.ph-jumplink:focus {
-		  background-color: {$color};
-		  color: {$foreground_color};
+		  background-color: {$color} !important;
+		  color: {$foreground_color} !important;
 		}
 		
 		.custom-logo-link:focus .ph-page-dp-logo-svg > path {
 		  fill: {$color};
 		}
 		
-		input[type="text"].ph-search-input:focus,
-		.content-area input[type="text"].ph-search-input:focus,
+		[type="text"].ph-search-input:focus,
+		.content-area [type="text"].ph-search-input:focus,
 		.grid-container.has-no-title .grid-slot:first-child.grid-slot-1d1 .grid-box:first-child.has-no-title .ph-teaser:first-child.ph-teaser-big .ph-teaser-title,
 		.ph-article .grid-slot:first-child.grid-slot-1d1 .grid-box:first-child.has-no-title .ph-teaser:first-child.ph-teaser-big .ph-teaser-title {
 		  border-color: {$color} !important;
 		}
 		
 		.ph-btn:hover,
-		input[type="button"]:hover,
-		input[type="submit"]:hover,
+		[type="button"]:hover,
+		[type="submit"]:hover,
 		button:hover,
 		.ph-pager-btn:hover,
 		.ph-jumplink:hover:focus,
@@ -229,8 +228,8 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
 		.ph-btn-transparent-bg:hover,
 		.page-numbers:hover,
 		.ph-btn:focus,
-		input[type="button"]:focus,
-		input[type="submit"]:focus,
+		[type="button"]:focus,
+		[type="submit"]:focus,
 		button:focus,
 		.ph-pager-btn:focus,
 		.ph-jumplink:focus,
@@ -241,17 +240,17 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
 		.grid-container-readmore-link:focus,
 		.ph-btn-transparent-bg:focus,
 		.page-numbers:focus,
-		input.comments-title[type="button"],
-		input.comments-title[type="submit"],
+		.comments-title[type="button"],
+		.comments-title[type="submit"],
 		.comments-title.ph-jumplink:focus,
-		input.grid-container-title[type="button"],
-		input.grid-container-title[type="submit"],
+		.grid-container-title[type="button"],
+		.grid-container-title[type="submit"],
 		.grid-container-title.ph-jumplink:focus,
 		.grid-container-title,
 		.comments-title,
 		.is-active.ph-btn,
-		input.is-active[type="button"],
-		input.is-active[type="submit"],
+		.is-active[type="button"],
+		.is-active[type="submit"],
 		button.is-active,
 		.is-active.ph-pager-btn,
 		.is-active.ph-jumplink:focus,
@@ -264,18 +263,16 @@ if ( ! function_exists( 'digitalepracht_get_accent_color_css' ) ) :
 		.ph-icon-btn:hover,
 		.ph-icon-btn:focus {
 		  background-color: {$color} !important;
-		  color: {$foreground_color};
+		  color: {$foreground_color} !important;
 		}
 		
 		.ph-btn-submit:hover,
-		input[type="submit"]:hover,
-		button[type="submit"]:hover,
+		[type="submit"]:hover,
 		[href].grid-container-title:hover,
 		[href].comments-title:hover,
 		.ph-jumplink:hover:focus,
 		.ph-btn-submit:focus,
-		input[type="submit"]:focus,
-		button[type="submit"]:focus,
+		[type="submit"]:focus,
 		[href].grid-container-title:focus,
 		[href].comments-title:focus,
 		.ph-jumplink:focus {

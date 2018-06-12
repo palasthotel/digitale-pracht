@@ -12,7 +12,7 @@
   }
 }
 
-input[type="text"].ph-search-input {  // We need higher css level
+[type="text"].ph-search-input {  // We need higher css level
   padding: $base-unit*3/2 0;
   max-width: none;
   @extend %f28-35--f38-45;
@@ -58,11 +58,12 @@ input[type="text"].ph-search-input {  // We need higher css level
    }
 }
 
-.ph-search-btn {
+[type="submit"].ph-search-btn {  // We need higher css level
   position: absolute;
   left: 0;
   top: 15px;
-  background-color: transparent;
+  background-color: transparent !important;
+  color: black !important;
   @extend %f19-33--f32-45-icon;
   padding: 1px 11px 0 11px;
 
