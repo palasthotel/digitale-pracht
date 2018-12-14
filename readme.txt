@@ -2,7 +2,7 @@
 Contributors: Palasthotel <rezeption@palasthotel.de> (in person: Kim-Christian Meyer)
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.9
-Version: 1.24
+Version: 1.25
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, responsive-layout, custom-colors, featured-images, microformats, theme-options, threaded-comments, translation-ready
@@ -42,7 +42,7 @@ Feel free to contact us, if you have any questions or suggestions: rezeption@pal
 Hint on menus: You cannot use menus with multiple depth inside the footer.
 
 == Copyright ==
-digitale Pracht WordPress Theme, Copyright 2016 Palasthotel GfdPmbH Berlin
+digitale Pracht WordPress Theme, Copyright 2018 Palasthotel GfdPmbH Berlin
 digitale Pracht is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -82,6 +82,10 @@ Linlithgow Palace by Joseph Mallord William Turner, about 1807, no copyright.
 See this link for more information: https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_Linlithgow_Palace_-_Google_Art_Project.jpg
 
 == Changelog ==
+
+= 1.25 =
+* Released: December 14th, 2018
+- Bugfix: Allow lists to float around elements.
 
 = 1.24 =
 * Released: June 13th, 2018

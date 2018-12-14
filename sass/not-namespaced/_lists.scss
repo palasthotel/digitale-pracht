@@ -14,8 +14,6 @@ ul {
     padding: 0 0 0 3*$base-unit;
     list-style-type: none;
     counter-reset: item;
-    // prevents #359
-    clear: both;
 
     & > li {
       position: relative;
@@ -40,8 +38,6 @@ ul {
     margin: 1em 0;
     padding: 0 0 0 3*$base-unit;
     list-style-type: none;
-    // prevents #359
-    clear: both;
 
     & > li {
       position: relative;

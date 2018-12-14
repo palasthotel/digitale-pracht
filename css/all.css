@@ -761,7 +761,6 @@ ul {
   padding: 0 0 0 30px;
   list-style-type: none;
   counter-reset: item;
-  clear: both;
 }
 
 .ph-article-text ol > li {
@@ -787,7 +786,6 @@ ul {
   margin: 1em 0;
   padding: 0 0 0 30px;
   list-style-type: none;
-  clear: both;
 }
 
 .ph-article-text ul > li {
