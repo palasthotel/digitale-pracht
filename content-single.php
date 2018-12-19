@@ -124,6 +124,7 @@ $thumbnail_id = get_post_thumbnail_id();
 
 </article><!-- #post-## -->
 
+<?php if ( get_theme_mod( 'digitalepracht_relateds_number', 4 ) > 0 ) : ?>
 <div class="grid ph-article-relateds no-print">
 	<section class="grid-container grid-container-c-1d1 has-title">
 		<div class="grid-container-before">
@@ -141,3 +142,4 @@ $thumbnail_id = get_post_thumbnail_id();
 		</div>
 	</section>
 </div>
+<?php endif; ?>

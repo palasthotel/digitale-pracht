@@ -65,7 +65,7 @@ $relateds_args = array(
 
 
 // how many?
-$relateds_max = 4;
+$relateds_max = get_theme_mod( 'digitalepracht_relateds_number', 4 );
 
 // counter
 $relateds_count = 0;

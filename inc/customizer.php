@@ -60,6 +60,19 @@ if ( ! function_exists( 'digitalepracht_customize_register' ) ) :
 			'type'        => 'text',
 			'section'     => 'title_tagline',
 		) );
+
+		$wp_customize->add_setting( 'digitalepracht_relateds_number', array(
+			'type'              => 'theme_mod',
+			'default'           => '4',
+			'sanitize_callback' => 'absint',
+		) );
+
+		$wp_customize->add_control( 'digitalepracht_relateds_number', array(
+			'label'       => __( 'Number of related articles', 'digitale-pracht' ),
+			'description' => __( 'Control how many related articles will be displayed underneath each article. Disable with a value of 0.', 'digitale-pracht' ),
+			'type'        => 'number',
+			'section'     => 'title_tagline',
+		) );
 	}
 endif;
 add_action( 'customize_register', 'digitalepracht_customize_register' );
