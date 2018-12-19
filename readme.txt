@@ -2,7 +2,7 @@
 Contributors: Palasthotel <rezeption@palasthotel.de> (in person: Kim-Christian Meyer)
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.9
-Version: 1.25
+Version: 1.26
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, responsive-layout, custom-colors, featured-images, microformats, theme-options, threaded-comments, translation-ready
@@ -82,6 +82,11 @@ Linlithgow Palace by Joseph Mallord William Turner, about 1807, no copyright.
 See this link for more information: https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_Linlithgow_Palace_-_Google_Art_Project.jpg
 
 == Changelog ==
+
+= 1.26 =
+* Released: December 19th, 2018
+- Feature: Added Customizer setting for number of related articles.
+- Bugfix: Prevent duplicate related articles
 
 = 1.25 =
 * Released: December 14th, 2018
