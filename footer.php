@@ -47,7 +47,7 @@
 					) )
 				),
 				'<em>' . __( 'digitale Pracht', 'digitale-pracht' ) . '</em>',
-				'<a href="' . esc_url( __( 'http://palasthotel.de', 'digitale-pracht' ) ) . '" target="_blank">' . __( 'Palasthotel', 'digitale-pracht' ) . '</a>'
+				'<a href="' . esc_url( __( 'https://palasthotel.de', 'digitale-pracht' ) ) . '" target="_blank">' . __( 'Palasthotel', 'digitale-pracht' ) . '</a>'
 			); ?>
 		</div>
 

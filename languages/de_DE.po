@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: digitale Pracht\n"
-"POT-Creation-Date: 2016-10-04 15:05+0200\n"
-"PO-Revision-Date: 2016-10-04 15:06+0200\n"
+"POT-Creation-Date: 2018-12-19 16:10+0100\n"
+"PO-Revision-Date: 2018-12-19 16:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -77,15 +77,15 @@ msgstr "Versuchen Sie es doch mal mit der Suchfunktion."
 msgid "All articles by %s"
 msgstr "Alle Artikel von %s"
 
-#: content-author.php:45 content-index.php:60 index.php:47 search.php:47
+#: content-author.php:45 content-index.php:53 index.php:47 search.php:47
 msgid "Previous"
 msgstr "Zurück"
 
-#: content-author.php:46 content-index.php:61 index.php:48 search.php:48
+#: content-author.php:46 content-index.php:54 index.php:48 search.php:48
 msgid "Next"
 msgstr "Weiter"
 
-#: content-author.php:47 content-index.php:62 index.php:49 search.php:49
+#: content-author.php:47 content-index.php:55 index.php:49 search.php:49
 msgid "Posts navigation"
 msgstr "Beitragsnavigation"
 
@@ -109,11 +109,11 @@ msgstr "Ups, hier gibt es leider nichts anzuzeigen."
 msgid "Edit article"
 msgstr "Artikel bearbeiten"
 
-#: content-page.php:89 content-single.php:109
+#: content-page.php:74 content-single.php:94
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: content-page.php:93 content-single.php:113
+#: content-page.php:78 content-single.php:98
 msgid "Page"
 msgstr "Seite"
 
@@ -122,72 +122,67 @@ msgstr "Seite"
 msgid "by %s"
 msgstr "von %s"
 
-#: content-single.php:123
+#: content-single.php:108
 msgid "Category"
 msgstr "Kategorie"
 
-#: content-single.php:132
+#: content-single.php:117
 msgid "Tags"
 msgstr "Schlagwörter"
 
-#: content-single.php:145
+#: content-single.php:131
 msgid "Related articles"
 msgstr "Passend zum Thema"
 
-#: content-single.php:155
+#: content-single.php:141
 msgid "Read more stories on our homepage"
-msgstr "mehr Artikel gibts auf der Startseite"
+msgstr "Mehr Artikel gibts auf der Startseite"
 
-#: footer.php:32
-#, php-format
-msgid "© Copyright %s."
-msgstr "© Copyright %s."
-
-#: footer.php:34
+#: footer.php:33
 #, php-format
 msgid "Proudly powered by %s."
 msgstr "Mit bester Unterstützung von %s."
 
-#: footer.php:40
+#: footer.php:39
 msgid "https://wordpress.org"
 msgstr ""
 
-#: footer.php:40
+#: footer.php:39
 msgid "WordPress"
 msgstr ""
 
-#: footer.php:43
+#: footer.php:42
 #, php-format
 msgid "Theme %1$s by %2$s."
 msgstr "Theme %1$s von %2$s."
 
 #. Theme Name of the plugin/theme
-#: footer.php:50
+#: footer.php:49
 msgid "digitale Pracht"
 msgstr ""
 
 #. Author URI of the plugin/theme
-#: footer.php:51
-msgid "http://palasthotel.de"
+#: footer.php:50
+msgid "https://palasthotel.de"
 msgstr ""
 
-#: footer.php:51
+#: footer.php:50
 msgid "Palasthotel"
 msgstr ""
 
-#: functions.php:53
+#: functions.php:63
 msgid "Footer Menu"
 msgstr "Footer Menü"
 
-#: functions.php:91
+#: functions.php:103
 msgid "Widget Area Bottom"
 msgstr "Widget Bereich unten"
 
-#: functions.php:93
+#: functions.php:105
 msgid "Appears at the bottom of the content on posts and pages."
 msgstr "Erscheint bei Beiträgen und Seiten am unteren Ende des Inhalts."
 
-#: functions.php:309
+#: functions.php:315
 #, php-format
 msgid "via %s"
 msgstr "via %s"
@@ -201,48 +196,48 @@ msgstr "Leider gibt es kein Template für diese Box."
 msgid "The container type %s is not supported by this theme."
 msgstr "Der Containertyp %s wird leider von diesem Theme nicht unterstützt."
 
-#: header.php:54
+#: header.php:50
 msgid "Go to content"
 msgstr "Zum Inhalt"
 
-#: header.php:57
+#: header.php:53
 msgctxt "verb"
 msgid "Search"
 msgstr "Suchen"
 
-#: header.php:61
+#: header.php:57
 msgctxt "noun"
 msgid "Search"
 msgstr "Suche"
 
-#: header.php:67
+#: header.php:63
 msgid "Back to top"
 msgstr "Nach oben"
 
-#: header.php:70
+#: header.php:66
 msgctxt "verb"
 msgid "Share"
 msgstr "Teilen"
 
-#: inc/customizer.php:18
+#: inc/customizer.php:21
 msgid "Accent Color"
 msgstr "Akzentfarbe"
 
-#: inc/customizer.php:29
+#: inc/customizer.php:32
 msgid "Show reading indicator"
 msgstr "Lesefortschritt anzeigen"
 
-#: inc/customizer.php:30
+#: inc/customizer.php:33
 msgid ""
 "Enables the the reading indicator on the left side of the screen, which "
 "visualises the current position."
 msgstr "Aktiviert die Lesefortschrittsanzeige am linken Bildschirmrand."
 
-#: inc/customizer.php:42
+#: inc/customizer.php:45
 msgid "Show sharing button"
 msgstr "Teilen-Button anzeigen"
 
-#: inc/customizer.php:43
+#: inc/customizer.php:46
 msgid ""
 "Enables a small sharing button on posts, which appears on the bottom right "
 "corner when scrolling down."
@@ -250,17 +245,29 @@ msgstr ""
 "Aktiviert einen kleinen Teilen-Button auf Beitragsseiten, der in der unteren "
 "rechten Ecke beim Herunterscrollen erscheint."
 
-#: inc/customizer.php:55
+#: inc/customizer.php:58
 msgid "Twitter @Username"
 msgstr "Twitter @Benutzername"
 
-#: inc/customizer.php:56
+#: inc/customizer.php:59
 msgid ""
 "You can provide your Twitter username here, without the @ character. It will "
 "appear inside the Twitter sharing links."
 msgstr ""
 "Sie können hier Ihren Twitter Benutzernamen angeben, ohne das führende @-"
 "Zeichen. Dieser wird dann in den Tweet Links erscheinen."
+
+#: inc/customizer.php:71
+msgid "Number of related articles"
+msgstr "Anzahl der ähnlichen Beiträge"
+
+#: inc/customizer.php:72
+msgid ""
+"Control how many related articles will be displayed underneath each article. "
+"Disable with a value of 0."
+msgstr ""
+"Beeinflusse wie viele ähnliche Beiträge unter jedem Artikel angezeigt "
+"werden. Mit einem Wert von 0 werden diese deaktiviert."
 
 #: inc/setup-grid.php:71
 msgid "Teaser Big"
@@ -340,6 +347,9 @@ msgstr ""
 #. Author of the plugin/theme
 msgid "PALASTHOTEL"
 msgstr ""
+
+#~ msgid "© Copyright %s."
+#~ msgstr "© Copyright %s."
 
 #~ msgid ""
 #~ "Enables a small sharing button, which appears on the bottom right corner "
