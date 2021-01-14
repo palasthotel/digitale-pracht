@@ -1,13 +1,16 @@
 === digitale Pracht ===
 Contributors: Palasthotel <rezeption@palasthotel.de> (in person: Kim-Christian Meyer)
 Requires at least: WordPress 4.0
-Tested up to: WordPress 4.9
-Version: 1.26
+Tested up to: WordPress 5.6
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, responsive-layout, custom-colors, featured-images, microformats, theme-options, threaded-comments, translation-ready
 
 == Description ==
+THIS THEME IS NOT FULLY COMPATIBLE WITH GUTENBERG!
+It might be in the future, but for now please use it in combination with the Classic Editor plugin: https://de.wordpress.org/plugins/classic-editor/
+
 digitale Pracht is a typography focused, minimal WordPress theme, brought to you by Palasthotel. It is fully responsive and looking good whether you are using a phone, tablet or desktop pc. Contrary to most popular themes, this one makes several things differently: It is no theme for everyone, for example it has no top menu widget area. But if minimalism is your thing, you will probably like it.
 
 There are some nice features, which make this theme unique, like the reading indicator or the related posts box underneath the post texts. Also it uses square post images, which open up new design possibilities. Last but not least, this theme brings support for our Grid Plugin, which easily allows you to build custom landingpages (take a look at https://wordpress.org/plugins/grid).
@@ -82,6 +85,12 @@ Linlithgow Palace by Joseph Mallord William Turner, about 1807, no copyright.
 See this link for more information: https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_Linlithgow_Palace_-_Google_Art_Project.jpg
 
 == Changelog ==
+
+= 1.1.0 =
+* Released: January 14th, 2021
+- Breaking change: Now compatible with Grid v5.6, which means sidebar support has been removed!
+- Bugfix: Make theme compatible with Grid v5.6
+- Switched to semantic versioning
 
 = 1.26 =
 * Released: December 19th, 2018
