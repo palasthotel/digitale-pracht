@@ -2,7 +2,7 @@
 Contributors: Palasthotel <rezeption@palasthotel.de> (in person: Kim-Christian Meyer)
 Requires at least: WordPress 4.0
 Tested up to: WordPress 5.6
-Version: 1.1.0
+Version: 1.27
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, responsive-layout, custom-colors, featured-images, microformats, theme-options, threaded-comments, translation-ready
@@ -86,11 +86,10 @@ See this link for more information: https://commons.wikimedia.org/wiki/File:Jose
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.27 =
 * Released: January 14th, 2021
 - Breaking change: Now compatible with Grid v5.6, which means sidebar support has been removed!
 - Bugfix: Make theme compatible with Grid v5.6
-- Switched to semantic versioning
 
 = 1.26 =
 * Released: December 19th, 2018
