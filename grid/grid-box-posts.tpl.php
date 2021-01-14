@@ -46,19 +46,9 @@ if ( empty( $this->title ) ) {
 			grid_avoid_doublets_add( get_the_ID(), $this->grid->gridid );
 		}
 
-		$found = false;
-		// Checks if WordPress has a template for post content ...
-		if ( $this->storage->templatesPath !== null ) {
-			$template_path = trailingslashit( $this->storage->templatesPath );
-			if ( file_exists( $template_path . 'post_content.tpl.php' ) ) {
-				$found = true;
-				include $template_path . 'post_content.tpl.php';
-			}
-		}
-		// ... if not, uses Grid template for post content
-		if ( ! $found ) {
-			include dirname( __FILE__ ) . '/post_content.tpl.php';
-		}
+		// Check if WordPress has a template for post content
+		$template_path = $this->template::getPath( 'post_content.tpl.php' );
+		include $template_path ? $template_path : dirname( __FILE__ ) . '/post_content.tpl.php';
 	}
 	wp_reset_postdata();
 	// END of WordPress Loop

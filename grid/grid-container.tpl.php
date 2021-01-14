@@ -34,21 +34,7 @@ if ( $this->type !== 'c-1d1' &&
 else :
 
 	$classes_wrapper = array();
-
-	if ( $this->firstcontentcontainer ) :
-		if ( $this->space_to_right != null ) {
-			$math = explode( 'd', $this->space_to_right );
-		} else {
-			$math = explode( 'd', $this->space_to_left );
-		}
-		$width = $math[1] - $math[0];
-		$class = ( $this->space_to_right ) ? 'c-' . $width . 'd' . $math[1] . '-0' : 'c-0-' . $width . 'd' . $math[1];
-		array_push( $classes_wrapper, 'grid-container-' . $class );
-		array_push( $classes_wrapper, 'grid-container-right-space-' . $this->space_to_right );
-		array_push( $classes_wrapper, 'grid-container-left-space-' . $this->space_to_left );
-		?>
-		<div class="grid-content-container-wrapper <?php echo esc_attr( implode( $classes_wrapper, ' ' ) ); ?> grid-first-content-container">
-	<?php endif; ?>
+	?>
 
 	<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 		<?php if ( ! empty( $this->title ) || ! empty( $this->prolog ) ) : ?>
@@ -96,7 +82,4 @@ else :
 		<?php endif; ?>
 	</div>
 
-	<?php if ( ! empty( $this->lastcontentcontainer ) ) : ?>
-	</div>
-	<?php endif; ?>
 <?php endif; ?>
