@@ -1,16 +1,18 @@
 /*
-Theme Name:  digitale Pracht
-Theme URI:   http://digitale-pracht.de/digitale-pracht-ein-wordpress-theme-von-palasthotel/
-Author:      Palasthotel
-Author URI:  https://palasthotel.de
-Description: digitale Pracht is a typography focused, minimal WordPress theme, brought to you by Palasthotel. It is fully responsive and looking good whether you are using a phone, tablet or desktop pc. Contrary to most popular themes, this one makes several things differently: It is no theme for everyone, for example it has no top menu widget area. But if minimalism is your thing, you will probably like it. There are some nice features, which make this theme unique, like the reading indicator or the related posts box underneath the post texts. Also it uses square post images, which open up new design possibilities. Last but not least, this theme brings support for our Grid Plugin, which easily allows you to build custom landingpages (take a look at https://wordpress.org/plugins/grid).
-Version:     1.27
-License:     GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags:        one-column, custom-colors, custom-logo, featured-images, microformats, theme-options, threaded-comments, translation-ready
-Text Domain: digitale-pracht
+Theme Name:       digitale Pracht
+Theme URI:        http://digitale-pracht.de/digitale-pracht-ein-wordpress-theme-von-palasthotel/
+Author:           Palasthotel
+Author URI:       https://palasthotel.de
+Description:      digitale Pracht is a typography focused, minimal WordPress theme, brought to you by Palasthotel. It is fully responsive and looking good whether you are using a phone, tablet or desktop pc. Contrary to most popular themes, this one makes several things differently: It is no theme for everyone, for example it has no top menu widget area. But if minimalism is your thing, you will probably like it. There are some nice features, which make this theme unique, like the reading indicator or the related posts box underneath the post texts. Also it uses square post images, which open up new design possibilities. Last but not least, this theme brings support for our Grid Plugin, which easily allows you to build custom landingpages (take a look at https://wordpress.org/plugins/grid).
+Version:          1.27
+License:          GNU General Public License v2 or later
+License URI:      http://www.gnu.org/licenses/gpl-2.0.html
+Requires PHP:     5.6
+Tags:             one-column, custom-colors, custom-logo, featured-images, microformats, theme-options, threaded-comments, translation-ready
+Tested up to:     5.6
+Text Domain:      digitale-pracht
 GitHub Theme URI: https://github.com/palasthotel/digitale-pracht
-@copyright   Copyright (c) 2021, Palasthotel GfdPmbH Berlin
+@copyright        Copyright (c) 2021, Palasthotel GfdPmbH Berlin
 */
 
 /* FILE NOT IN USE! Have a look inside the css folder */

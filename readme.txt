@@ -89,6 +89,8 @@ See this link for more information: https://commons.wikimedia.org/wiki/File:Jose
 = 1.27 =
 * Released: January 14th, 2021
 - Breaking change: Now compatible with Grid v5.6, which means sidebar support has been removed!
+- Breaking change: Introduced PHP 5.6 requirement
+- Feature: Add `wp_body_open()` hook
 - Bugfix: Make theme compatible with Grid v5.6
 
 = 1.26 =

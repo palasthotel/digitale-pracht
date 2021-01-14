@@ -33,6 +33,15 @@ if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 
 <body id="top" <?php body_class(); ?>>
 
+<?php
+// TODO deprecated in WP >= v5.2, remove if and else.
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+}
+?>
+
 <header id="masthead" class="ph-header site-header" role="banner">
 	<div class="site-branding">
 		<?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
