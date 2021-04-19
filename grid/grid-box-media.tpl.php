@@ -16,7 +16,7 @@ if ( empty( $this->title ) ) {
 }
 
 ?>
-<article class="grid-box <?php echo esc_attr( implode( $classes, ' ' ) ); ?>">
+<article class="grid-box <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<?php if ( ! empty( $this->title ) ) : ?>
 		<?php if ( ! empty( $this->titleurl ) ) : ?>
 			<h2 class="grid-box-title"><a class="grid-box-title-link" href="<?php echo esc_attr( $this->titleurl ); ?>"><?php echo esc_html( $this->title ); ?></a></h2>
