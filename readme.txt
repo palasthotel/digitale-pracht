@@ -1,8 +1,8 @@
 === digitale Pracht ===
 Contributors: Palasthotel <rezeption@palasthotel.de> (in person: Kim-Christian Meyer)
 Requires at least: WordPress 4.0
-Tested up to: WordPress 5.6
-Version: 1.28
+Tested up to: WordPress 5.7
+Version: 1.29
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, one-column, responsive-layout, custom-colors, featured-images, microformats, theme-options, threaded-comments, translation-ready
@@ -86,16 +86,20 @@ See this link for more information: https://commons.wikimedia.org/wiki/File:Jose
 
 == Changelog ==
 
+= 1.29 =
+* Released: August 31th, 2021
+- Breaking change: Now compatible with Grid v2.2.3
+
 = 1.28 =
 * Released: April 20th, 2021
 - Bugfix: PHP Warnings
 
 = 1.27 =
 * Released: January 14th, 2021
-- Breaking change: Now compatible with Grid v5.6, which means sidebar support has been removed!
+- Breaking change: Now compatible with Grid v2, which means sidebar support has been removed!
 - Breaking change: Introduced PHP 5.6 requirement
 - Feature: Add `wp_body_open()` hook
-- Bugfix: Make theme compatible with Grid v5.6
+- Bugfix: Make theme compatible with Grid v2
 
 = 1.26 =
 * Released: December 19th, 2018

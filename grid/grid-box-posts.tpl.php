@@ -47,7 +47,7 @@ if ( empty( $this->title ) ) {
 		}
 
 		// Check if WordPress has a template for post content
-		$template_path = $this->template::getPath( 'post_content.tpl.php' );
+		$template_path = $this->template->getPath( 'post_content.tpl.php' );
 		include $template_path ? $template_path : dirname( __FILE__ ) . '/post_content.tpl.php';
 	}
 	wp_reset_postdata();
